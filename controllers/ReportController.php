@@ -150,8 +150,6 @@ class ReportController extends Controller
 
   private function header($filename)
   {
-    $headerMarginLeft = 10;
-    $headerMarginRight = 20;
     $header = array(
       'odd' => array(
         'L' => array(
@@ -189,7 +187,6 @@ class ReportController extends Controller
 
   private function footer()
   {
-
     $dtime = \DateTime::createFromFormat("Y-m-d", date('Y-m-d'));
     $timestamp = $dtime->getTimestamp();
     $footer = array(
