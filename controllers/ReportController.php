@@ -94,8 +94,7 @@ class ReportController extends Controller
     $watermark = "";
     $paperFormat = Pdf::FORMAT_A4;
 
-
-    $mpdf = new Mpdf([
+    $mpdf = new \Mpdf\Mpdf([
       'fontDir' => array_merge($fontDirs, [
         Url::base() . 'fonts/',
       ]),
@@ -106,8 +105,10 @@ class ReportController extends Controller
       'format' => $paperFormat,
       'orientation' => $orientation,
       'filename' => $filename . ".pdf",
+			'margin_top' => 14,
+			'margin_bottom' => 14,
     ]);
-
+ 
     $header = $this->header($filename);
     $footer = $this->footer();
     $mpdf->SetTitle($filename);
@@ -149,6 +150,8 @@ class ReportController extends Controller
 
   private function header($filename)
   {
+    $headerMarginLeft = 10;
+    $headerMarginRight = 20;
     $header = array(
       'odd' => array(
         'L' => array(
@@ -189,7 +192,6 @@ class ReportController extends Controller
 
     $dtime = \DateTime::createFromFormat("Y-m-d", date('Y-m-d'));
     $timestamp = $dtime->getTimestamp();
-
     $footer = array(
       'odd' => array(
         'L' => array(
