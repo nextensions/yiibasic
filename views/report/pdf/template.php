@@ -83,8 +83,8 @@
           <tr>
             <th style="width: 100px;"><i><b>หมายเลขเช็ค<br/>Cheque No.</b></i></th>
             <th style="width: 100px;" scope="col"><i><b>เช็ควันที่<br/>Date</b></i></th>
-            <th style="width: 300px;" scope="col"><i><b>ชื่อธนาคาผ/สาขา<br/>ฺBank/Branch</b></i></th>
-            <th scope="col" colspan="2"><i><b>จำนวนเงิน(บาท)<br/>Amount (Baht)</b></i></th>
+            <th style="width: 300px;" scope="col"><i><b>ชื่อธนาคาร/สาขา<br/>Bank/Branch</b></i></th>
+            <th scope="col" colspan="2"><i><b>จำนวนเงิน (บาท)<br/>Amount (Baht)</b></i></th>
           </tr>
         </thead>
         <tbody>
@@ -107,11 +107,9 @@
         </tbody>
       </table>
       <div class="column">
-      <i><b>หมายเหตุ - รับชำระเป็นเงินสดเท่านั้น<br/>- ชําระผ่านธนาคารได้ไม่เกินวันที่<br/>
-             (สําหรับธนาคาร)</b></i></div>
+      <i><b>หมายเหตุ - รับชำระเป็นเงินสดเท่านั้น<br/>- ชําระผ่านธนาคารได้ไม่เกินวันที่<br/>(สําหรับธนาคาร)</b></i></div>
   <div class="column">
   <i><b><br/>30 พฤศจิกายน 2566</b></i></div>
-  
   <div class="column2">
   <i><b>* ชําระตามยอดจํานวนเต็มเท่านั้น *</b></i>
 <div class="table-responsive">
