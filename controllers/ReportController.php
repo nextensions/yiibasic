@@ -174,4 +174,195 @@ class ReportController extends Controller
 
     $this->outputMpdf($config, $data);
   }
+
+  public function actionReceipt()
+  {
+    $config = [
+      'filename' => 'ชื่อรายงาน',
+      'template' => 'pdf/receipt',
+      'orientation' => Pdf::ORIENT_PORTRAIT,
+      'paperFormat' => Pdf::FORMAT_A4,
+      'cssFilePath' => '',
+      'watermark' => 'img/nextschool.png',
+    ];
+
+    $receiptRaws = [
+      [
+        'date' => '2024-02-12',
+        'receipt_id' => 'K67002539',
+        'code' => '4055',
+        'fullname' => 'เด็กชาย อัครโยธิน สิทธิวงษ์',
+        'name' => 'ค่าใช้จ่ายประจำปีการศึกษา 2566 ภาคเรียนที่ 2',
+        'classroom' => 'อ.1/4 MEP',
+        'paid' => '17000',
+        'method' => '1',
+        'receive_name' => 'ภัทรินญา แก้วโท',
+        'status' => 'true',
+      ],
+      [
+        'date' => '2024-02-12',
+        'receipt_id' => 'K67002540',
+        'code' => '4055',
+        'fullname' => 'เด็กชาย อัครโยธิน สิทธิวงษ์',
+        'name' => 'ค่าใช้จ่ายประจำปีการศึกษา 2566 ภาคเรียนที่ 2',
+        'classroom' => 'อ.1/4 MEP',
+        'paid' => '2900',
+        'method' => '0',
+        'receive_name' => 'ภัทรินญา แก้วโท',
+        'status' => 'true',
+      ],
+      [
+        'date' => '2024-02-12',
+        'receipt_id' => 'K67002540',
+        'code' => '4055',
+        'fullname' => 'เด็กชาย อัครโยธิน สิทธิวงษ์',
+        'name' => 'ค่าใช้จ่ายประจำปีการศึกษา 2566 ภาคเรียนที่ 2',
+        'classroom' => 'อ.1/4 MEP',
+        'paid' => '2900',
+        'method' => '0',
+        'receive_name' => 'ภัทรินญา แก้วโท',
+        'status' => 'true',
+      ],
+      [
+        'date' => '2024-02-12',
+        'receipt_id' => 'K67002540',
+        'code' => '4055',
+        'fullname' => 'เด็กชาย อัครโยธิน สิทธิวงษ์',
+        'name' => 'ค่าใช้จ่ายประจำปีการศึกษา 2566 ภาคเรียนที่ 2',
+        'classroom' => 'อ.1/4 MEP',
+        'paid' => '2900',
+        'method' => '0',
+        'receive_name' => 'ภัทรินญา แก้วโท',
+        'status' => 'true',
+      ],
+      [
+        'date' => '2024-02-12',
+        'receipt_id' => 'K67002540',
+        'code' => '4055',
+        'fullname' => 'เด็กชาย อัครโยธิน สิทธิวงษ์',
+        'name' => 'ค่าใช้จ่ายประจำปีการศึกษา 2566 ภาคเรียนที่ 2',
+        'classroom' => 'อ.1/4 MEP',
+        'paid' => '2900',
+        'method' => '0',
+        'receive_name' => 'ภัทรินญา แก้วโท',
+        'status' => 'true',
+      ],
+      [
+        'date' => '2024-02-12',
+        'receipt_id' => 'K67002540',
+        'code' => '4055',
+        'fullname' => 'เด็กชาย อัครโยธิน สิทธิวงษ์',
+        'name' => 'ค่าใช้จ่ายประจำปีการศึกษา 2566 ภาคเรียนที่ 2',
+        'classroom' => 'อ.1/4 MEP',
+        'paid' => '2900',
+        'method' => '0',
+        'receive_name' => 'ภัทรินญา แก้วโท',
+        'status' => 'true',
+      ],
+      [
+        'date' => '2024-02-12',
+        'receipt_id' => 'K67002540',
+        'code' => '4055',
+        'fullname' => 'เด็กชาย อัครโยธิน สิทธิวงษ์',
+        'name' => 'ค่าใช้จ่ายประจำปีการศึกษา 2566 ภาคเรียนที่ 2',
+        'classroom' => 'อ.1/4 MEP',
+        'paid' => '2900',
+        'method' => '0',
+        'receive_name' => 'ภัทรินญา แก้วโท',
+        'status' => 'true',
+      ],
+      [
+        'date' => '2024-02-13',
+        'receipt_id' => 'K67002540',
+        'code' => '4055',
+        'fullname' => 'เด็กชาย อัครโยธิน สิทธิวงษ์',
+        'name' => 'ค่าใช้จ่ายประจำปีการศึกษา 2566 ภาคเรียนที่ 2',
+        'classroom' => 'อ.1/4 MEP',
+        'paid' => '2900',
+        'method' => '0',
+        'receive_name' => 'ภัทรินญา แก้วโท',
+        'status' => 'true',
+      ],
+      [
+        'date' => '2024-02-14',
+        'receipt_id' => 'K67002540',
+        'code' => '4055',
+        'fullname' => 'เด็กชาย อัครโยธิน สิทธิวงษ์',
+        'name' => 'ค่าใช้จ่ายประจำปีการศึกษา 2566 ภาคเรียนที่ 2',
+        'classroom' => 'อ.1/4 MEP',
+        'paid' => '2900',
+        'method' => '0',
+        'receive_name' => 'ภัทรินญา แก้วโท',
+        'status' => 'true',
+      ],
+      [
+        'date' => '2024-02-14',
+        'receipt_id' => 'K67002540',
+        'code' => '4055',
+        'fullname' => 'เด็กชาย อัครโยธิน สิทธิวงษ์',
+        'name' => 'ค่าใช้จ่ายประจำปีการศึกษา 2566 ภาคเรียนที่ 2',
+        'classroom' => 'อ.1/4 MEP',
+        'paid' => '2900',
+        'method' => '0',
+        'receive_name' => 'ภัทรินญา แก้วโท',
+        'status' => 'true',
+      ]
+    ];
+
+    $rowSpanIndex = array_filter(array_count_values(array_column($receiptRaws, 'date')), function ($v) {
+      return $v > 1;
+    });
+
+    $rows = '';
+    $currentDate = '';
+    $numRows = 0;
+    foreach ($receiptRaws as $receiptData) {
+
+      $numRows++;
+
+      $rowSpanNumber = isset($rowSpanIndex[$receiptData['date']]) ? $rowSpanIndex[$receiptData['date']] : 0;
+      $firstTD = '';
+
+      if (empty($currentDate)) {
+        $currentDate =  $receiptData['date'];
+        if ($rowSpanNumber) {
+          $firstTD = '<td rowspan="' . $rowSpanNumber . '">' . $receiptData['date'] . '</td>';
+        }
+      } else if ($currentDate !== $receiptData['date']) {
+        $rows .= '<tr><td colspan="10">รวม</td>';
+        $currentDate = $receiptData['date'];
+        if ($rowSpanNumber) {
+          $firstTD = '<td rowspan="' . $rowSpanNumber . '">' . $receiptData['date'] . '</td>';
+        } else {
+          $firstTD = '<td>' . $receiptData['date'] . '</td>';
+        }
+      }
+
+
+      $rows .= '<tr>
+                  ' . $firstTD . '
+                  <td>' . $receiptData['receipt_id'] . '</td>
+                  <td>' . $receiptData['code'] . '</td>
+                  <td>' . $receiptData['fullname'] . '</td>
+                  <td>' . $receiptData['name'] . '</td>
+                  <td>' . $receiptData['classroom'] . '</td>
+                  <td>' . $receiptData['paid'] . '</td>
+                  <td>' . $receiptData['method'] . '</td>
+                  <td>' . $receiptData['receive_name'] . '</td>
+                  <td>' . $receiptData['status'] . '</td>
+                </tr>
+      ';
+
+      if ($numRows == count($receiptRaws))
+        $rows .= '<tr><td colspan="10">รวม</td>';
+    }
+
+    $data = [
+      'header' => 'รายงานการรับเงินประจำวันแยกตามใบเสร็จ',
+      'sub_header' => 'ประจำวันที่ XX - XX',
+      'rows' => $rows,
+    ];
+
+    $this->outputMpdf($config, $data);
+  }
 }
