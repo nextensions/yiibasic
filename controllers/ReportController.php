@@ -105,10 +105,10 @@ class ReportController extends Controller
       'format' => $paperFormat,
       'orientation' => $orientation,
       'filename' => $filename . ".pdf",
-      'margin_top' => 14,
-      'margin_bottom' => 14,
+			'margin_top' => 14,
+			'margin_bottom' => 14,
     ]);
-
+ 
     $header = $this->header($filename);
     $footer = $this->footer();
     $mpdf->SetTitle($filename);
@@ -220,7 +220,7 @@ class ReportController extends Controller
 
     return $footer;
   }
-
+  
   private function outputMpdf($config, $data)
   {
     $params = Yii::$app->params;
@@ -297,7 +297,7 @@ class ReportController extends Controller
       'orientation' => Pdf::ORIENT_PORTRAIT,
       'paperFormat' => Pdf::FORMAT_A4,
       'cssFilePath' => '',
-      'watermark' => 'img/Triamudom.png',
+      'watermark' => 'img/nikomwitthaya.png',
     ];
 
     $data = [
@@ -306,4 +306,43 @@ class ReportController extends Controller
 
     $this->outputMpdf($config, $data);
   }
+  
+  public function actionStickerPdf(array $selection)
+    {
+        $content = $this->renderPartial('_sticker', [
+            'selection' => $selection,
+        ]);
+
+        $pdf = new Pdf([
+            // set to use core fonts only
+            'mode' => Pdf::MODE_UTF8,
+            // A4 paper format
+            //'format' => Pdf::FORMAT_A4,
+            'format' => [25, 20],//Pdf::FORMAT_A4,
+            'marginLeft' => 1,
+            'marginRight' => 1,
+            'marginTop' => 1,
+            'marginBottom' => false,
+            'marginHeader' => false,
+            'marginFooter' => false,
+            // portrait orientation
+            'orientation' => Pdf::ORIENT_PORTRAIT,
+            // stream to browser inline
+            'destination' => Pdf::DEST_BROWSER,
+            // your html content input
+            'content' => $content,
+            // format content from your own css file if needed or use the
+            // enhanced bootstrap css built by Krajee for mPDF formatting
+            'cssFile' => '@frontend/web/css/kv-mpdf-bootstrap.css',
+            // any css to be embedded if required
+            'cssInline' => 'body{font-size:11px}',
+            // set mPDF properties on the fly
+            'options' => ['title' => 'Sticker'],
+            // call mPDF methods on the fly
+            'methods' => [
+                'SetHeader' => false,
+                'SetFooter' => false,
+            ]
+        ]);
+    }
 }
