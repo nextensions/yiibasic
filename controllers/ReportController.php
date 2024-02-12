@@ -154,7 +154,7 @@ class ReportController extends Controller
       'odd' => array(
         'L' => array(
           'content' => isset(Yii::$app->user->identity->school->fullname)
-            ? user()->school->fullname
+            ? Yii::$app->user->identity->school->fullname
             : "ชื่อโรงเรียน",
           'font-size' => 8,
           'font-family' => 'garuda',
@@ -169,7 +169,7 @@ class ReportController extends Controller
       'even' => array(
         'L' => array(
           'content' => isset(Yii::$app->user->identity->school->fullname)
-            ?  user()->school->fullname : "ชื่อโรงเรียน",
+            ?  Yii::$app->user->identity->school->fullname : "ชื่อโรงเรียน",
           'font-size' => 8,
           'font-family' => 'garuda',
         ),
@@ -220,8 +220,94 @@ class ReportController extends Controller
 
     return $footer;
   }
+  
+  private function outputMpdf($config, $data)
+  {
+    $params = Yii::$app->params;
+    $fontDirs = $params['defaultConfig']['fontDir'];
+    $fontData = $params['defaultFontConfig']['fontdata'];
 
-    public function actionStickerPdf(array $selection)
+    $filename = $config['filename'];
+    $content = $this->renderPartial($config['template'], ['data' => $data]);
+
+    $orientation = $config['orientation'];
+    $cssFilePath =  $config['cssFilePath'];
+    $watermark =  $config['watermark'];
+    $paperFormat = $config['paperFormat'];
+
+    $mpdf = new \Mpdf\Mpdf([
+      'fontDir' => array_merge($fontDirs, [
+        Url::base() . 'fonts/',
+      ]),
+      'fontdata' => $fontData + ['thsarabun' => Yii::$app->params['SetFontTHsarabun']],
+      'default_font_size' => 18,
+      'default_font' => 'thsarabun',
+      'mode' => Pdf::MODE_UTF8,
+      'format' => $paperFormat,
+      'orientation' => $orientation,
+      'filename' => $filename . ".pdf",
+      'margin_top' => 14,
+      'margin_bottom' => 14,
+    ]);
+
+    $header = $this->header($filename);
+    $footer = $this->footer();
+    $mpdf->SetTitle($filename);
+    $mpdf->SetHeader($header);
+    $mpdf->SetFooter($footer);
+
+    $stylesheet = file_get_contents(Yii::getAlias('@webroot/css/kv-mpdf-bootstrap-sarabun.min.css'));
+    $stylesheetPdf = file_get_contents(Yii::getAlias('@webroot/css/pdf-sarabun.css'));
+    $mpdf->WriteHTML($stylesheet, 1);
+    $mpdf->WriteHTML($stylesheetPdf, 1);
+
+    if (!empty($cssFilePath)) {
+      $customStylesheet = file_get_contents($cssFilePath);
+      $mpdf->WriteHTML($customStylesheet, 1);
+    }
+
+    if (!empty($watermark)) {
+      $mpdf->SetWatermarkImage($watermark, 0.1, [100, 100]);
+      $mpdf->showWatermarkImage = true;
+    }
+
+    $mpdf->showWatermarkText = true;
+
+    if ($this->cssInline) {
+      $mpdf->WriteHTML($this->cssInline, 1);
+    }
+
+    $mpdf->WriteHtml($content, 2);
+
+    if ($this->download) {
+      $mpdf->destination = Pdf::DEST_DOWNLOAD;
+    }
+
+    $filename = str_replace("/", "-", $filename);
+    $filename = str_replace(".", "_", $filename);
+
+    return $mpdf->Output($filename . ".pdf", "I");
+  }
+
+  public function actionPayin()
+  {
+    $config = [
+      'filename' => 'ชื่อรายงาน',
+      'template' => 'pdf/template',
+      'orientation' => Pdf::ORIENT_PORTRAIT,
+      'paperFormat' => Pdf::FORMAT_A4,
+      'cssFilePath' => '',
+      'watermark' => 'img/nikomwitthaya.png',
+    ];
+
+    $data = [
+      'tax_id' => '0994000158149',
+    ];
+
+    $this->outputMpdf($config, $data);
+  }
+  
+  public function actionStickerPdf(array $selection)
     {
         $content = $this->renderPartial('_sticker', [
             'selection' => $selection,
@@ -254,12 +340,9 @@ class ReportController extends Controller
             'options' => ['title' => 'Sticker'],
             // call mPDF methods on the fly
             'methods' => [
-                'SetHeader'=>false,
-                'SetFooter'=>false,
+                'SetHeader' => false,
+                'SetFooter' => false,
             ]
         ]);
-
-        // return the pdf output as per the destination setting
-        return $pdf->render();
     }
 }
