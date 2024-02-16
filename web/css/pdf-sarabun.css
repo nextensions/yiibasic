@@ -2,7 +2,69 @@
   .body {
     font-family: "thsarabun";
     font-size: 18px;
+    line-height: 5px;
   }
+
+  body {
+    font-family: "thsarabun";
+    font-size: 20px;
+    line-height: 25px;
+  }
+
+  p {
+    font-family: "thsarabun";
+    font-size: 20px;
+    line-height: 25px;
+  }
+
+  .barcode {
+    padding: 1.5mm;
+    margin: 0;
+    vertical-align: top;
+  }
+  .barcodecell {
+    text-align: right;
+    vertical-align: middle;
+    float: right;
+    width: 76%;
+  }
+
+  .column {
+    float: left;
+    width: 24%;
+  }
+
+  .column5 {
+    float: left;
+    width: 75%;
+  }
+
+  .column4 {
+    float: left;
+    width: 85%;
+  }
+
+  .column3 {
+    float: left;
+    width: 15%;
+  }
+
+  .column1 {
+    float: left;
+    width: 50%;
+  }
+
+  .column2 {
+    float: right;
+    width: 23%;
+  }
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
 
   h1 {
     font-size: 32px;
@@ -13,15 +75,35 @@
   h2 {
     font-size: 30px;
     line-height: 10px;
+    font-weight: bold;
   }
 
   h3 {
     font-size: 26px;
     line-height: 10px;
+    font-weight: bold;
+  }
+
+  h4 {
+    font-size: 22px;
+    line-height: 10px;
+    font-weight: bold;
+  }
+  h5 {
+    font-size: 20px;
+    line-height: 25px;
+    font-weight: bold;
   }
 
   .table th {
     text-align: center;
+    height: 35px;
+    font-weight: normal;
+  }
+
+  .table td {
+    text-align: center;
+    height: 35px;
   }
 
   .bg-head th {
@@ -38,7 +120,7 @@
   }
 
   .dotted {
-    border-bottom: 1px dotted;
+    border-bottom: 3px dotted;
     float: left;
     text-decoration: none;
     text-align: center;
@@ -131,11 +213,5 @@
     border-spacing: 0px;
     box-sizing: none;
     padding-bottom: -2px;
-  }
-
-  p {
-    text-align: justify;
-    /* margin-bottom: 10px; */
-    margin-top: 0pt;
   }
 }
