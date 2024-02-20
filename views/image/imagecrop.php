@@ -58,6 +58,11 @@ use yii\helpers\Url;
         transform: translate(-50%, -50%);
         text-align: center;
     }
+  .img-responsive {
+        width: 300px;
+        height: 400px;
+    }
+
 
 </style>
 
@@ -71,7 +76,7 @@ use yii\helpers\Url;
             <div class="image_area">
                 <form method="post">
                     <label for="upload_image">
-                        <img src="upload/user.png" id="uploaded_image" class="img-responsive img-circle" />
+                        <img src="<?= Yii::$app->request->baseUrl ?>/upload/sample/user-profile1.jpg" id="uploaded_image" class="img-responsive" />
                         <div class="overlay">
                             <div class="text">Click to Change Profile Image</div>
                         </div>
@@ -163,7 +168,7 @@ use yii\helpers\Url;
                     reader.onloadend = function(){
                         var base64data = reader.result;
                         $.ajax({
-                            url:'upload.php',
+                            url:'<?= Yii::$app->urlManager->createUrl(['image/uploadimage']) ?>',
                             method:'POST',
                             data:{image:base64data},
                             success:function(data)
