@@ -68,10 +68,9 @@ class PaperController extends Controller
     $mpdf->genPdf($content, $customCssContent, $this->footer(), $additionals, $watermark);
   }
 
-
-  public function actionProfile()
+  private function dummyData()
   {
-    $data = [
+    return [
       'register' => [
         'date' => '2024-02-10',
         'time' => '11:09',
@@ -249,12 +248,17 @@ class PaperController extends Controller
         'disability_table' => ''
       ],
     ];
+  }
 
+
+  public function actionProfile()
+  {
+    $data = $this->dummyData();
     $html = $this->renderPartial('profile', [...$data]);
 
     $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
 
-    $fileName =   'ใบมอบตัว_';
+    $fileName =   'ใบมอบตัว_' . $data['profile']['regis_id'] . '_' . $data['model']['firstname'] . '_' . $data['model']['lastname'];
     $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
     $additionals = [];
 
