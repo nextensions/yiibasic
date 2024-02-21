@@ -14,6 +14,11 @@ return [
         'B' => 'THSarabunNew/THSarabunNew Bold.ttf',
         'I' => 'THSarabunNew/THSarabunNew Italic.ttf',
     ],
+    'SetFontTHSarabunNew' => [
+        'R' => 'THSarabunNew/THSarabunNew.ttf',
+        'B' => 'THSarabunNew/THSarabunNew Bold.ttf',
+        'I' => 'THSarabunNew/THSarabunNew Italic.ttf',
+    ],
     'SetFontGaruda' => [
         'R' => 'Garuda/Garuda.ttf',
         'B' => 'Garuda/GarudaBold.ttf',
