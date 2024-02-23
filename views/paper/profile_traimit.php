@@ -455,7 +455,7 @@ $year = $dateComponents[2];
       <div id="siblings" class="overmask" style="font-size:150%;margin-top:-577px;padding-left:-5px"><strong><?php echo $profile['elderBrother'] >= 1 ? "/" : "" ?></strong></div>
       <div id="siblings" class="overmask" style="font-size:150%;margin-top:-195px;padding-left:-5px"><strong><?php echo $profile['elderSister'] >= 1 ? "/" : "" ?></strong></div>
       <div id="siblings" class="overmask" style="font-size:150%;margin-top:-230px;padding-left:250px"><strong><?php echo $profile['youngerBrother'] >= 1 ? "/" : "" ?></strong></div>
-      <div id="siblings" class="overmask" style="font-size:150%;margin-top:-195px;padding-left:260px"><strong><?php echo $profile['youngerSister'] >= 1 ? "/" : "" ?></strong></div>
+      <div id="siblings" class="overmask" style="font-size:150%;margin-top:-195px;padding-left:255px"><strong><?php echo $profile['youngerSister'] >= 1 ? "/" : "" ?></strong></div>
       
       </div>
       </div>
