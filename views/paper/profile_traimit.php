@@ -71,7 +71,7 @@ $year = $dateComponents[2];
         <div id="stu_name_title" class="overmask" style="font-size:150%;padding-top:-45px;padding-left:-95px"><strong><?php echo $profile['title'] === 'ด.ช.' ? "/" : "" ?></strong></div>
         <div id="stu_name_title" class="overmask" style="font-size:150%;padding-top:0px;padding-left:50px"><strong><?php echo $profile['title'] === 'นาย' ? "/" : "" ?></strong></div>
         </dd>
-        <dd style="width:370px;"><?php echo $profile['title'] . $profile['firstname'] . '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . $profile['lastname'] ?></dd>
+        <dd style="width:370px;"><?php echo $profile['firstname'] . '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . $profile['lastname'] ?></dd>
         <br/>
         <dt style="width:140px;">เลขประจำตัวประชาชน</dt>
         <dd style="width:489px;">
@@ -292,7 +292,7 @@ $year = $dateComponents[2];
         <span style="font-family: fontawesome; font-size:80%;">&#xf111;</span>&nbsp;นาย
         <div id="dad_name_title" class="overmask" style="font-size:150%;padding-top:-45px;padding-left:-20px"><strong>/</strong></div>
         </dd>
-        <dd style="width:468px;"><?php echo $dad['title'] . $dad['f_name'] . '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . $dad['l_name']?></dd>
+        <dd style="width:468px;"><?php echo $dad['f_name'] . '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . $dad['l_name']?></dd>
         <br />
         <dt style="width:160px;">เลขประจำตัวประชาชนบิดา</dt>
         <dd style="width:467px;">
@@ -320,7 +320,7 @@ $year = $dateComponents[2];
         <div id="mom_name_title" class="overmask" style="font-size:150%;padding-top:-45px;padding-left:10px"><strong><?php echo $mom['title'] === 'นางสาว' ? "/" : "" ?></strong></div>
         <div id="mom_name_title" class="overmask" style="font-size:150%;padding-top:0px;padding-left:-90px"><strong><?php echo $mom['title'] === 'นาง' ? "/" : "" ?></strong></div>
         </dd>
-        <dd style="width:350px;"><?php echo $mom['title'] . $mom['f_name'] . '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . $mom['l_name'] ?></dd>
+        <dd style="width:350px;"><?php echo $mom['f_name'] . '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . $mom['l_name'] ?></dd>
         <br />
         <dt style="width:172px;">เลขประจำตัวประชาชนมารดา</dt>
         <dd style="width:457px;">
@@ -406,7 +406,7 @@ $year = $dateComponents[2];
         <div id="parent_name_title" class="overmask" style="font-size:150%;padding-top:1px;padding-left:-45px"><strong><?php echo $parent['title'] === 'นาง' ? "/" : "" ?></strong></div>
         <div id="parent_name_title" class="overmask" style="font-size:150%;padding-top:0px;padding-left:-155px"><strong><?php echo $parent['title'] === 'นาย' ? "/" : "" ?></strong></div>
         </dd>
-        <dd style="width:320px;"><?php echo $parent['title'] . $parent['firstname'] . '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . $parent['lastname'] ?></dd>
+        <dd style="width:320px;"><?php echo $parent['firstname'] . '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . $parent['lastname'] ?></dd>
         <br />
         <dt style="width:190px;">เลขประจำตัวประชาชนผู้ปกครอง</dt>
         <dd style="width:440px;">
