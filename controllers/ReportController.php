@@ -3626,21 +3626,4 @@ class ReportController extends Controller
             $this->outputMpdf($config, $data);
         
     }
-
-    public function actionTraimit()
-    {
-            $config = [
-                'filename' => 'ชื่อรายงาน',
-                'template' => 'pdf/traimit',
-                'orientation' => Pdf::ORIENT_PORTRAIT,
-                'paperFormat' => Pdf::FORMAT_A4,
-                'cssFilePath' => '',
-                'watermark' => 'img/nextschool.png',
-            ];
-
-            $data = [
-            ];
-
-            $this->outputMpdf($config, $data);
-        }
 }
