@@ -68,6 +68,8 @@ $year = $dateComponents[2];
         <dd class="noborder" style="width:140px;padding-top:3px;">
         <span style="font-family: fontawesome; font-size:80%;">&#xf111;</span>&nbsp;เด็กชาย&nbsp;
         <span style="font-family: fontawesome; font-size:80%;">&#xf111;</span>&nbsp;นาย
+        <div id="stu_name_title" class="overmask" style="font-size:150%;padding-top:-45px;padding-left:-95px"><strong><?php echo $profile['title'] === 'ด.ช.' ? "/" : "" ?></strong></div>
+        <div id="stu_name_title" class="overmask" style="font-size:150%;padding-top:0px;padding-left:50px"><strong><?php echo $profile['title'] === 'นาย' ? "/" : "" ?></strong></div>
         </dd>
         <dd style="width:370px;"><?php echo $profile['title'] . $profile['firstname'] . '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . $profile['lastname'] ?></dd>
         <br/>
@@ -106,6 +108,13 @@ $year = $dateComponents[2];
       <br />
       <span style="font-family: fontawesome; font-size:80%;">&#xf111;</span>&nbsp;ทวิศึกษา
       </div>
+      <div id="edu_program" class="overmask" style="font-size:150%;padding-top:-56px;padding-left:520px"><strong><?php echo $profile['edu_program'] === 'ทวิศึกษา ชั้นมัธยมศึกษาปีที่ 1' ? "/" : "" ?></strong></div>
+      <div id="edu_program" class="overmask" style="font-size:150%;padding-top:-30px;padding-left:335px"><strong><?php echo $profile['edu_program'] === 'ห้องเรียนพิเศษภาษาจีน ชั้นมัธยมศึกษาปีที่ 1' ? "/" : "" ?></strong></div>
+      <div id="edu_program" class="overmask" style="font-size:150%;padding-top:-56px;padding-left:335px"><strong><?php echo $profile['edu_program'] === 'ภาษาจีนเพื่อธุรกิจฯ ชั้นมัธยมศึกษาปีที่ 1' ? "/" : "" ?></strong></div>
+      <div id="edu_program" class="overmask" style="font-size:150%;padding-top:-80px;padding-left:335px"><strong><?php echo $profile['edu_program'] === 'วิทยาศาสตร์-คณิตศาสตร์ ชั้นมัธยมศึกษาปีที่ 1' ? "/" : "" ?></strong></div>
+      <div id="edu_program" class="overmask" style="font-size:150%;padding-top:-80px;padding-left:150px"><strong><?php echo $profile['edu_program'] === 'วิศวกรรมศาสตร์หุ่นยนต์ ชั้นมัธยมศึกษาปีที่ 1' ? "/" : "" ?></strong></div>
+      <div id="edu_program" class="overmask" style="font-size:150%;padding-top:-56px;padding-left:150px"><strong><?php echo $profile['edu_program'] === 'คณิตศาสตร์-ภาษาอังกฤษ ชั้นมัธยมศึกษาปีที่ 1' ? "/" : "" ?></strong></div>
+      <div id="edu_program" class="overmask" style="font-size:150%;padding-top:-30px;padding-left:150px"><strong><?php echo $profile['edu_program'] === 'อังกฤษ-ไทย-สังคม ชั้นมัธยมศึกษาปีที่ 1' ? "/" : "" ?></strong></div>
 </div>
       <dl>
         <dt style="width:53px;">เกิดวันที่</dt>
@@ -141,7 +150,8 @@ $year = $dateComponents[2];
         <dd style="width:180px;"><?php echo $profile['mobile_no'] ?></dd>
         <dt style="width:290px;">โรคประจำตัว .............................................................</dt>
         <br />
-        <dt style="width:710px;">ความถนัด/ความสนใจพิเศษ ........................................................................................................................................</dt>
+        <dt style="width:170px;">ความถนัด/ความสนใจพิเศษ</dt>
+        <dd style="width:460px;"><?php echo $profile['talent'] ?></dd>
       </dl>
       <div style="line-height:25px">
       <div class="col-1" style="float:left;width:35%">
@@ -263,6 +273,13 @@ $year = $dateComponents[2];
       <br />
       <span style="font-family: fontawesome; font-size:80%;">&#xf111;</span>&nbsp;&nbsp;รถไฟฟ้า BTS/MRT
       </div>
+      <div id="transport" class="overmask" style="font-size:150%;padding-top:-55px;padding-left:326px"><strong><?php echo $profile['transport'] === 'รถประจำทาง' ? "/" : "" ?></strong></div>
+      <div id="transport" class="overmask" style="font-size:150%;padding-top:-80px;padding-left:324px"><strong><?php echo $profile['transport'] === 'รถจักรยานยนต์ส่วนตัว' ? "/" : "" ?></strong></div>
+      <div id="transport" class="overmask" style="font-size:150%;padding-top:-80px;padding-left:490px"><strong><?php echo $profile['transport'] === 'รถจักรยานยนต์รับจ้าง' ? "/" : "" ?></strong></div>
+      <div id="transport" class="overmask" style="font-size:150%;padding-top:-55px;padding-left:490px"><strong><?php echo $profile['transport'] === 'รถไฟฟ้า BTS/MRT' ? "/" : "" ?></strong></div>
+      <div id="transport" class="overmask" style="font-size:150%;padding-top:-80px;padding-left:180px"><strong><?php echo $profile['transport'] === 'เดินเท้า' ? "/" : "" ?></strong></div>
+      <div id="transport" class="overmask" style="font-size:150%;padding-top:-55px;padding-left:180px"><strong><?php echo $profile['transport'] === 'รถยนต์ส่วนตัว' ? "/" : "" ?></strong></div>
+      <div id="transport" class="overmask" style="font-size:150%;padding-top:-32px;padding-left:180px"><strong><?php echo $profile['transport'] === 'อื่นๆ' ? "/" : "" ?></strong></div>
 </div>
 
 <pagebreak />
@@ -273,6 +290,7 @@ $year = $dateComponents[2];
         <dt style="width:100px;">ชื่อ-นามสกุลบิดา</dt>
         <dd class="noborder" style="width:60px;padding-top:3px;">
         <span style="font-family: fontawesome; font-size:80%;">&#xf111;</span>&nbsp;นาย
+        <div id="dad_name_title" class="overmask" style="font-size:150%;padding-top:-45px;padding-left:-20px"><strong>/</strong></div>
         </dd>
         <dd style="width:468px;"><?php echo $dad['title'] . $dad['f_name'] . '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . $dad['l_name']?></dd>
         <br />
@@ -299,6 +317,8 @@ $year = $dateComponents[2];
         <dd class="noborder" style="width:170px;padding-top:3px;">
         <span style="font-family: fontawesome; font-size:80%;">&#xf111;</span>&nbsp;นาง
         <span style="font-family: fontawesome; font-size:80%;">&#xf111;</span>&nbsp;นางสาว
+        <div id="mom_name_title" class="overmask" style="font-size:150%;padding-top:-45px;padding-left:10px"><strong><?php echo $mom['title'] === 'นางสาว' ? "/" : "" ?></strong></div>
+        <div id="mom_name_title" class="overmask" style="font-size:150%;padding-top:0px;padding-left:-90px"><strong><?php echo $mom['title'] === 'นาง' ? "/" : "" ?></strong></div>
         </dd>
         <dd style="width:350px;"><?php echo $mom['title'] . $mom['f_name'] . '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . $mom['l_name'] ?></dd>
         <br />
@@ -356,7 +376,7 @@ $year = $dateComponents[2];
         <dd style="width:80px;"><?php echo $profile['elderBrother'] ?></dd>
         <dt style="width:100px;">คน</dt>
         <dd class="noborder" style="width:80px;">
-        <span style="font-family: fontawesome; font-size:80%;">&#xf111;</span>&nbsp;น้องชาย
+        <span style="font-family: fontawesome; font-size:80%;">&#xf111;</span>&nbsp;น้องชาย</dd>
         <dd style="width:80px;"><?php echo $profile['youngerBrother'] ?></dd>
         <dt style="width:40px;">คน</dt>
         <dt style="width:80px;"></dt>
@@ -382,6 +402,9 @@ $year = $dateComponents[2];
         <span style="font-family: fontawesome; font-size:80%;">&#xf111;</span>&nbsp;นาย&nbsp;
         <span style="font-family: fontawesome; font-size:80%;">&#xf111;</span>&nbsp;นาง&nbsp;
         <span style="font-family: fontawesome; font-size:80%;">&#xf111;</span>&nbsp;นางสาว&nbsp;
+        <div id="parent_name_title" class="overmask" style="font-size:150%;padding-top:-45px;padding-left:60px"><strong><?php echo $parent['title'] === 'นางสาว' ? "/" : "" ?></strong></div>
+        <div id="parent_name_title" class="overmask" style="font-size:150%;padding-top:1px;padding-left:-45px"><strong><?php echo $parent['title'] === 'นาง' ? "/" : "" ?></strong></div>
+        <div id="parent_name_title" class="overmask" style="font-size:150%;padding-top:0px;padding-left:-155px"><strong><?php echo $parent['title'] === 'นาย' ? "/" : "" ?></strong></div>
         </dd>
         <dd style="width:320px;"><?php echo $parent['title'] . $parent['firstname'] . '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . $parent['lastname'] ?></dd>
         <br />
@@ -429,5 +452,10 @@ $year = $dateComponents[2];
         <p style="line-height:10px">วันที่ ......... เดือน ......................... พ.ศ. ................<p>
         </div>
       </div>
+      <div id="siblings" class="overmask" style="font-size:150%;margin-top:-577px;padding-left:-5px"><strong><?php echo $profile['elderBrother'] >= 1 ? "/" : "" ?></strong></div>
+      <div id="siblings" class="overmask" style="font-size:150%;margin-top:-195px;padding-left:-5px"><strong><?php echo $profile['elderSister'] >= 1 ? "/" : "" ?></strong></div>
+      <div id="siblings" class="overmask" style="font-size:150%;margin-top:-230px;padding-left:250px"><strong><?php echo $profile['youngerBrother'] >= 1 ? "/" : "" ?></strong></div>
+      <div id="siblings" class="overmask" style="font-size:150%;margin-top:-195px;padding-left:255px"><strong><?php echo $profile['youngerSister'] >= 1 ? "/" : "" ?></strong></div>
+      
       </div>
       </div>
