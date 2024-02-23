@@ -3564,21 +3564,21 @@ class ReportController extends Controller
                 }
                 $totalPaid += intval($receiptData['paid']);
 
-                if ($numRows % 12 === 0) {
+                if ($numRows % 11 === 0) {
                     if ($numRows !== 0) {
                         $rows .= '</tbody></table>';
                     }
                         $rows .= '<table class="table table-bordered" style="page-break-inside:avoid;">
                         <thead>
                         <tr>
-                          <td>วันที่</td>
-                          <td>เลขที่ใบเสร็จ</td>
-                          <td>เลขที่ประจำตัว</td>
-                          <td>ชื่อ-นามสกุล</td>
-                          <td>ระดับชั้น/ห้อง</td>
-                          <td>จำนวนเงิน</td>
-                          <td>วิธีชำระเงิน</td>
-                          <td>ผู้รับเงิน</td>
+                          <td style="font-size:18px">วันที่</td>
+                          <td style="font-size:18px">เลขที่ใบเสร็จ</td>
+                          <td style="font-size:18px">เลขที่ประจำตัว</td>
+                          <td style="font-size:18px">ชื่อ-นามสกุล</td>
+                          <td style="font-size:18px">ระดับชั้น/ห้อง</td>
+                          <td style="font-size:18px">จำนวนเงิน</td>
+                          <td style="font-size:18px">วิธีชำระเงิน</td>
+                          <td style="font-size:18px">ผู้รับเงิน</td>
                         </tr>
                       </thead><tbody>';
                 }
@@ -3592,14 +3592,14 @@ class ReportController extends Controller
                 }
 
                 $rows .= '<tr>
-                      <td>' . $receiptData['date'] . '</td>
-                      <td>' . $receiptData['receipt_id'] . '</td>
-                      <td>' . $receiptData['code'] . '</td>
-                      <td>' . $receiptData['fullname'] . '</td>
-                      <td>' . $receiptData['classroom'] . '</td>
-                      <td style="text-align:right;">' . $paidFormattated . '</td>
-                      <td>' . $receiptData['method'] . '</td>
-                      <td>' . $receiptData['receive_name'] . '</td>
+                      <td style="font-size:18px">' . $receiptData['date'] . '</td>
+                      <td style="font-size:18px">' . $receiptData['receipt_id'] . '</td>
+                      <td style="font-size:18px">' . $receiptData['code'] . '</td>
+                      <td style="font-size:18px">' . $receiptData['fullname'] . '</td>
+                      <td style="font-size:18px">' . $receiptData['classroom'] . '</td>
+                      <td style="text-align:right;font-size:18px">' . $paidFormattated . '</td>
+                      <td style="font-size:18px">' . $receiptData['method'] . '</td>
+                      <td style="font-size:18px">' . $receiptData['receive_name'] . '</td>
                     </tr>';
 
                     $numRows++;
@@ -3607,13 +3607,13 @@ class ReportController extends Controller
           $totalPaidFormatted = number_format($totalPaid, 2, '.');
           if ($numRows == count($receiptRaws))
                     $rows .= '<tr>
-                    <td colspan="5" style="text-align:right; background: #DAEDF8;">รวมเงินในแต่ละวัน</td>' . '
-                    <td style="text-align:right; background: #DAEDF8;">' . $totalPaidFormatted . '</td>
-                    <td style="background: #DAEDF8;"></td><td style="background: #DAEDF8;"></td>' .'
+                    <td colspan="5" style="text-align:right; background: #DAEDF8;font-size:18px">รวมเงินในแต่ละวัน</td>' . '
+                    <td style="text-align:right; background: #DAEDF8;font-size:18px">' . $totalPaidFormatted . '</td>
+                    <td style="background: #DAEDF8;"></td><td style="background: #DAEDF8;font-size:18px"></td>' .'
                     <tr>
-                    <td colspan="5" style="text-align:right; background: #FFECBE;font-weight:bold;">รวมทั้งหมด</td>
-                    <td style="text-align:right;background: #FFECBE;font-weight:bold;">' . $totalPaidAllFormatted . '</td>
-                    <td style="background: #FFECBE;"></td><td style="background: #FFECBE;"></td>';
+                    <td colspan="5" style="text-align:right; background: #FFECBE;font-weight:bold;font-size:18px">รวมทั้งหมด</td>
+                    <td style="text-align:right;background: #FFECBE;font-weight:bold;font-size:18px">' . $totalPaidAllFormatted . '</td>
+                    <td style="background: #FFECBE;font-size:18px"></td><td style="background: #FFECBE;font-size:18px"></td>';
                 }
                     $rows .= '</tbody></table>';
     

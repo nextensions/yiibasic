@@ -22,12 +22,12 @@ class PaperController extends Controller
       'odd' => array(
         'L' => array(
           'content' => 'สร้างโดย: ' . Yii::$app->name . ' (' .  Yii::$app->date->date('วันlที่ j F พ.ศ.Y เวลา H:i:s', $timestamp) . ')',
-          'font-size' => 7,
+          'font-size' => 10,
           'font-family' => 'garuda',
         ),
         'R' => array(
           'content' => "หน้า {PAGENO}/{nb}",
-          'font-size' => 8,
+          'font-size' => 11,
           'font-family' => 'garuda',
         ),
         'line' => 1,
@@ -35,12 +35,12 @@ class PaperController extends Controller
       'even' => array(
         'L' => array(
           'content' => 'สร้างโดย: ' . Yii::$app->name . ' (' .  Yii::$app->date->date('วันlที่ j F พ.ศ.Y เวลา H:i:s', $timestamp) . ')',
-          'font-size' => 7,
+          'font-size' => 10,
           'font-family' => 'garuda',
         ),
         'R' => array(
           'content' => "หน้า {PAGENO}/{nb}",
-          'font-size' => 8,
+          'font-size' => 11,
           'font-family' => 'garuda',
         ),
         'line' => 1,
@@ -255,6 +255,21 @@ class PaperController extends Controller
   {
     $data = $this->dummyData();
     $html = $this->renderPartial('profile', [...$data]);
+
+    $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
+
+    $fileName =   'ใบมอบตัว_' . $data['profile']['regis_id'] . '_' . $data['model']['firstname'] . '_' . $data['model']['lastname'];
+    $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
+    $additionals = [];
+
+    $this->outputPDF($fileName, $html, $extraCssPath, [
+      'default_font_size' => 10,
+    ], $additionals);
+  }
+  public function actionProfile_traimit()
+  {
+    $data = $this->dummyData();
+    $html = $this->renderPartial('profile_traimit', [...$data]);
 
     $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
 
