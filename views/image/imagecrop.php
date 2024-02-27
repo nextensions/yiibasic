@@ -68,8 +68,6 @@ use yii\helpers\Url;
 
 <div class="container" align="center">
     <br />
-    <h3 align="center">Crop Image Before Upload using CropperJS with PHP</h3>
-    <br />
     <div class="row">
         <div class="col-md-4">&nbsp;</div>
         <div class="col-md-4">
