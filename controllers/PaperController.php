@@ -281,4 +281,20 @@ class PaperController extends Controller
       'default_font_size' => 10,
     ], $additionals);
   }
+
+  public function actionProfile_phanarai()
+  {
+    $data = $this->dummyData();
+    $html = $this->renderPartial('profile_phanarai', [...$data]);
+
+    $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
+
+    $fileName =   'ใบมอบตัว_' . $data['profile']['regis_id'] . '_' . $data['model']['firstname'] . '_' . $data['model']['lastname'];
+    $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
+    $additionals = [];
+
+    $this->outputPDF($fileName, $html, $extraCssPath, [
+      'default_font_size' => 10,
+    ], $additionals);
+  }
 }
