@@ -25,7 +25,6 @@ thead th {
 td, th {
   padding: 1mm;
   /* border:  0.5mm solid black; */
-  vertical-align: middle;
 }
 
 table.small, table.small thead th,  table.small tbody td{
