@@ -301,8 +301,8 @@ class PaperController extends Controller
             'datetime' => '2024-02-18 09:00:00',
             'seat_name' => 'F6',
             'location_name' => '232',
-            'floor' => 2,
-            'classroom' => 3,
+            'floor' => "2",
+            'classroom_no' => "202",
         ],
         ];
   }
@@ -397,6 +397,22 @@ public function actionExamidcard()
   {
     $data = $this->dummyDataNikomwitthaya();
     $html = $this->renderPartial('payin_nikomwitthaya', [...$data]);
+
+    $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
+
+    $fileName =   'Payin';
+    $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
+    $additionals = [];
+
+    $this->outputPDF($fileName, $html, $extraCssPath, [
+      'default_font_size' => 10,
+    ], $additionals);
+  }
+
+  public function actionPutthaisong_transcript5()
+  {
+    $data = $this->dummyDataNikomwitthaya();
+    $html = $this->renderPartial('putthaisong_transcript5a', [...$data]);
 
     $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
 
