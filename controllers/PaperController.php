@@ -415,7 +415,7 @@ public function actionExamidcard()
               'student_grade_0.5' => 0,
               'student_grade_0' => 36,
               'teacher' => 'นางอุไรรัตน์ ศรีวงษ์ชัย',
-              'responsible_teacher' => 'นายสุริยันต์ แมงมล',
+              'responsible_teacher' => 'นายสุริยันต์ แสงมล',
               'deputy_director' => 'นายดาวรุ่ง สุระศรี',
               'director' => 'นายภูวนาถ ยุพานวิทย์',
               'studentid' => '13980',
