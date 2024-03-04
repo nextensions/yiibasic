@@ -117,7 +117,7 @@ class PaperController extends Controller
         'travelDuration' => '25 นาที',
         'travelCost' => '.',
         'talent' => 'N/A',
-        'familyStatus' => 'อยู่ด้วยกันจดทะเบียนสมรส',
+        'familyStatus' => 'N/A',
         'familyStatusNo' => 0,
         'transport' => 'รถประจำทาง',
         'hasfee' => true,
