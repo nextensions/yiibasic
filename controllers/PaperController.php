@@ -393,6 +393,40 @@ public function actionExamidcard()
       ],
     ];
   }
+
+  private function dummyDataTranscript()
+  {
+    return [
+      'dataTranscript' => [
+              'semester' => 2,
+              'grade' => 1,
+              'year' => 2567,
+              'total_student' => 36,
+              'student_present_exam' => 36,
+              'student_absent_exam' => 0,
+              'student_not_allowed_exam' => 0,
+              'student_grade_4' => 0,
+              'student_grade_3.5' => 0,
+              'student_grade_3' => 0,
+              'student_grade_2.5' => 0,
+              'student_grade_2' => 0,
+              'student_grade_1.5' => 0,
+              'student_grade_1' => 0,
+              'student_grade_0.5' => 0,
+              'student_grade_0' => 36,
+              'teacher' => 'นางอุไรรัตน์ ศรีวงษ์ชัย',
+              'responsible_teacher' => 'นายสุริยันต์ แมงมล',
+              'deputy_director' => 'นายดาวรุ่ง สุระศรี',
+              'director' => 'นายภูวนาถ ยุพานวิทย์',
+              'studentid' => '13980',
+              'course_code' => 'ท33102',
+              'subject_group' => 'ไม่ได้ระบุ',
+              'study_time' => '2',
+              'credit' => '1.00',
+              'subject_name' => 'ภาษาไทยพื้นฐาน',
+        ],
+    ];
+  }
   public function actionPayin_nikomwitthaya()
   {
     $data = $this->dummyDataNikomwitthaya();
@@ -411,14 +445,20 @@ public function actionExamidcard()
 
   public function actionPutthaisong_transcript5()
   {
-    $data = $this->dummyDataNikomwitthaya();
-    $html = $this->renderPartial('putthaisong_transcript5a', [...$data]);
+    $data = $this->dummyDataTranscript();
+    $html = $this->renderPartial('putthaisong_transcript5', [...$data]);
 
     $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
 
-    $fileName =   'Payin';
+    $fileName =   'ใบ_ปพ.5';
     $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
     $additionals = [];
+
+    foreach ($data as $key => $value) {
+      if ($value === 0) {
+          return ""; // Return empty string if any value is zero
+      }
+    }
 
     $this->outputPDF($fileName, $html, $extraCssPath, [
       'default_font_size' => 10,
