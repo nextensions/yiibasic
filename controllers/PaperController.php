@@ -312,7 +312,7 @@ public function actionExamidcard()
 
     $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
 
-    $fileName =   'บัตรประจำตัวผู้เข้าสอบ_' . $data['register_number'] . '_' . $data['homeown']['fullname'];
+    $fileName =   'บัตรประจำตัวผู้เข้าสอบ_' . $data['register_number'];
     $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
     $additionals = [];
 
