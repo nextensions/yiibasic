@@ -117,7 +117,7 @@ class PaperController extends Controller
         'travelDuration' => '25 นาที',
         'travelCost' => '.',
         'talent' => 'N/A',
-        'familyStatus' => 'N/A',
+        'familyStatus' => 'อยู่ด้วยกันจดทะเบียนสมรส',
         'familyStatusNo' => 0,
         'transport' => 'รถประจำทาง',
         'hasfee' => true,
@@ -261,7 +261,6 @@ class PaperController extends Controller
         'personal_id' => '1505200012123',
         'grade' => 1,
         'year' => 2567,
-        'classroom' => 2,
         ],
         'register_number' => '01388',
         'targets' => [
@@ -302,6 +301,8 @@ class PaperController extends Controller
             'datetime' => '2024-02-18 09:00:00',
             'seat_name' => 'F6',
             'location_name' => '232',
+            'floor' => 2,
+            'classroom' => 3,
         ],
         ];
   }

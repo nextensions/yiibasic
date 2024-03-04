@@ -67,9 +67,9 @@ date("h.i", strtotime($examDatetime)) . " น.";
         <dt style="width:35px;line-height:20px">อาคาร</dt>
         <dd style="width:45px;line-height:20px"><?php echo $exam['location_name'] ?></dd>
         <dt style="width:24px;line-height:20px">ชั้น</dt>
-        <dd style="width:60px;line-height:20px">ม. <?php echo $profile['grade'] ?></dd>
+        <dd style="width:60px;line-height:20px"><?php echo $exam['floor'] ?></dd>
         <dt style="width:25px;line-height:20px">ห้อง</dt>
-        <dd style="width:51px;line-height:20px"><?php echo $profile['classroom'] ?></dd>
+        <dd style="width:51px;line-height:20px"><?php echo $exam['classroom'] ?></dd>
 </dl>
 </div>
 </div>
