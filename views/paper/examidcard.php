@@ -8,7 +8,7 @@ $DateTime = str_replace(date('Y', $timestamp), $thaiYear, $DateTime);
 $examDatetime = $exam['datetime'];
 $timestamp = strtotime($examDatetime);
 $thaiYear = date('Y', $timestamp) + 543;
-$formattedDatetime = Yii::$app->date->date('j F', $timestamp) . ' ' . $thaiYear . Yii::$app->date->date(' เวลา H:i', $timestamp);
+$formattedDatetime = Yii::$app->date->date('j F', $timestamp) . ' ' . $thaiYear . Yii::$app->date->date(' เวลา H:i น.', $timestamp);
 
 $imageSource = $registrant['image'];
 if (!empty($imageSource)) {
