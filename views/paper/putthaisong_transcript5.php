@@ -1,9 +1,5 @@
 <?php
-$totalStudents = $dataTranscript['total_student'];// Assuming there are no students not allowed for exam for now
-
-// Calculate percentages
-
-
+$totalStudents = $dataTranscript['total_student'];
 
 if ($dataTranscript['student_present_exam'] == 0) {
     $presentExam = "";
