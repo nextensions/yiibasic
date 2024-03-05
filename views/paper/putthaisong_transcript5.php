@@ -184,7 +184,8 @@ $totalGradePoints = ($dataTranscript['student_grade_4'] * 4) +
                         }
                         
 ?>
-<div style="font-size:20px;padding-top:50px">
+<div style="text-align:center"><img src="img/putthaisong.png" alt="School icon" style="width:80px;height:auto;margin-top:0px;"></div>
+<div style="font-size:20px;padding-top:20px">
 <p style="font-size:30px;font-weight:bold;text-align:center;">แบบรายงานผลการพัฒนาคุณภาพผู้เรียน (ปพ.5)<p>
 <p style="text-align:center;margin-top:10px">โรงเรียนพุทไธสง อำเภอพุทไธสง จังหวัดบุรีรัมย์<p>
 
@@ -201,7 +202,7 @@ $totalGradePoints = ($dataTranscript['student_grade_4'] * 4) +
         <dd style="width:60px;"><?php echo $dataTranscript['year'] ?></dd>
         </dl>
 </div>
-<div style="margin-left:0px;margin-right:-20px">
+<div style="margin-left:20px;margin-right:-40px">
     <dl>
 <dt style="width:60px;">รหัสวิชา : </dt>
         <dd style="width:100px;"><?php echo $dataTranscript['course_code'] ?></dd>
@@ -273,90 +274,90 @@ $totalGradePoints = ($dataTranscript['student_grade_4'] * 4) +
                     </thead>
                     <tbody>
                         <tr>
-                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:45px">
+                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
                             จำนวนคน
                             </td>
-                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:45px">
+                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
                             <?php echo $student_grade_4_output ?>
                             </td>
-                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:45px">
+                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
                             <?php echo $student_grade_3_5_output ?>
                             </td>
-                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:45px">
+                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
                             <?php echo $student_grade_3_output ?>
                             </td>
-                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:45px">
+                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
                             <?php echo $student_grade_2_5_output ?>
                             </td>
-                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:45px">
+                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
                             <?php echo $student_grade_2_output ?>
                             </td>
-                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:45px">
+                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
                             <?php echo $student_grade_1_5_output ?>
                             </td>
-                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:45px">
+                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
                             <?php echo $student_grade_1_output ?>
                             </td>
-                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:45px">
+                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
                             <?php echo $student_grade_0_5_output ?>
                             </td>
-                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:45px">
+                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
                             <?php echo $student_grade_0_output ?>
                             </td>
-                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:45px">
+                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
                             <?php echo $absentExam ?>
                             </td>
-                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:45px">
+                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
                             <?php echo $notAllowedExam ?>
                             </td>
-                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:45px">
+                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
                             <?php echo $presentExam ?>
                             </td>
-                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:45px">
+                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
                             <?php echo $averageGrade ?>
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:45px">
+                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
                             คิดเป็นร้อยละ
                             </td>
-                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:45px">
+                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
                             <?php echo $student_grade_4_percentage ?>
                             </td>
-                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:45px">
+                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
                                 <?php echo $student_grade_3_5_percentage ?>
                             </td>
-                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:45px">
+                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
                                 <?php echo $student_grade_3_percentage ?>
                             </td>
-                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:45px">
+                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
                                 <?php echo $student_grade_2_5_percentage ?>
                             </td>
-                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:45px">
+                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
                                 <?php echo $student_grade_2_percentage ?>
                             </td>
-                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:45px">
+                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
                                 <?php echo $student_grade_1_5_percentage ?>
                             </td>
-                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:45px">
+                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
                                 <?php echo $student_grade_1_percentage ?>
                             </td>
-                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:45px">
+                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
                                 <?php echo $student_grade_0_5_percentage ?>
                             </td>
-                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:45px">
+                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
                                 <?php echo $student_grade_0_percentage ?>
                             </td>
-                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:45px">
+                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
                             <?php echo $absentExam_percentage ?>
                             </td>
-                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:45px">
+                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
                             <?php echo $notAllowedExam_percentage ?>
                             </td>
-                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:45px">
+                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
                             100 
                             </td>
-                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:45px">
+                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
                             
                             </td>
                         </tr>
@@ -368,60 +369,56 @@ $totalGradePoints = ($dataTranscript['student_grade_4'] * 4) +
 <table class="table table-bordered table-sm table-collapse" style="border: 1px solid">
                     <thead>
                         <tr>
-                            <th colspan="5" style="font-weight:bold;width: 30px;padding-top: -15px;vertical-align: middle;padding-bottom: 0px;background-color: white;border: 1px solid;text-align: center;height:45px;font-weight:normal;">
+                            <th colspan="5" style="font-weight:bold;width: 30px;padding-top: -15px;vertical-align: middle;padding-bottom: 0px;background-color: white;border: 1px solid;text-align: center;height:40px;font-weight:normal;">
                                 ผลการประเมิณ
                             </th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:45px">
+                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
                             จำนวนนักเรียนทั้งหมด
                             </td>
-                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:45px">
+                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
                             ดีเยี่ยม (3)
                             </td>
-                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:45px">
+                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
                             ดี (2)
                             </td>
-                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:45px">
+                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
                             ผ่านเกณฑ์ (1)
                             </td>
-                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:45px">
+                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
                             ไม่ผ่านเกณฑ์ (0)
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:45px">
+                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
 
                             </td>
-                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:45px">
+                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
                                 
                             </td>
-                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:45px">
+                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
                                 
                             </td>
-                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:45px">
+                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
                                 
                             </td>
-                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:45px">
+                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
                                 
                             </td>
                         </tr>
                     </tbody>
                 </table>
                 </div>
-                <p>ขอรับรองว่าได้ตรวจสอบข้อมูลข้างต้นแล้ว เป็นข้อมูลที่ถูกต้องตามความเป็นจริงทุกประการ</p>
+                <p style="margin-top:-10px">ขอรับรองว่าได้ตรวจสอบข้อมูลข้างต้นแล้ว เป็นข้อมูลที่ถูกต้องตามความเป็นจริงทุกประการ</p>
         <div style="padding-top:10px;margin-left:80px;text-align:center;line-height:30px">
-        <dl>
-<dt style="width:35px;margin-left:150px">ลงชื่อ</dt>
-        <dd style="width:180px;"><?php echo $dataTranscript['teacher'] ?></dd>
-        <dt style="width:50px;">ครูผู้สอน</dt>
-</dl>
+        <p style="line-height:10px;margin-left:0px;">ลงชื่อ ......................................................... ครูผู้สอน<p>
         <p style="padding-top:10px;margin-left:-25px;line-height:10px">(<?php echo $dataTranscript['teacher'] ?>)<p>
         <p style="line-height:10px">วันที่ ......... เดือน ......................... พ.ศ. ................<p>
         </div>
-        <p>เรียนเสนอเพื่อพิจารณาอนุมัติผลการเรียน</p>
+        <p style="padding-top:-10px;">เรียนเสนอเพื่อพิจารณาอนุมัติผลการเรียน</p>
         <div style="padding-top:10px;margin-left:220px;line-height:30px">
         <p style="line-height:10px;">ลงชื่อ ......................................................... หัวหน้ากลุ่มสาระการเรียนรู้<p>
         <p style="margin-left:30px;line-height:10px">(.........................................................)<p>
