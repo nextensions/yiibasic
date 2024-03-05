@@ -27,18 +27,21 @@ if ($dataTranscript['student_present_exam'] == 0) {
     $presentExam_percentage = "";
 } else {
     $presentExam_percentage = ($dataTranscript['student_present_exam'] / $totalStudents) * 100;
+    $presentExam_percentage = number_format($presentExam_percentage, 2);
 }
 
 if ($dataTranscript['student_absent_exam'] == 0) {
     $absentExam_percentage = "";
 } else {
     $absentExam_percentage = ($dataTranscript['student_absent_exam'] / $totalStudents) * 100;
+    $absentExam_percentage = number_format($absentExam_percentage, 2);
 }
 
 if ($dataTranscript['student_not_allowed_exam'] == 0) {
     $notAllowedExam_percentage = "";
 } else {
     $notAllowedExam_percentage = ($dataTranscript['student_not_allowed_exam'] / $totalStudents) * 100;
+    $notAllowedExam_percentage = number_format($notAllowedExam_percentage, 2);
 }
 
 if ($dataTranscript['student_grade_4'] == 0) {
@@ -99,21 +102,21 @@ if ($dataTranscript['student_grade_4'] == 0) {
     $student_grade_4_percentage = "";
 } else {
     $student_grade_4_percentage = ($dataTranscript['student_grade_4'] / $totalStudents) * 100;
-    $student_grade_4_percentage = number_format($student_grade_4_percentage, 0);
+    $student_grade_4_percentage = number_format($student_grade_4_percentage, 2);
 }
 
 if ($dataTranscript['student_grade_3.5'] == 0) {
     $student_grade_3_5_percentage = "";
 } else {
     $student_grade_3_5_percentage = ($dataTranscript['student_grade_3.5'] / $totalStudents) * 100;
-    $student_grade_3_5_percentage = number_format($student_grade_3_5_percentage, 0);
+    $student_grade_3_5_percentage = number_format($student_grade_3_5_percentage, 2);
 }
 
 if ($dataTranscript['student_grade_3'] == 0) {
     $student_grade_3_percentage = "";
 } else {
     $student_grade_3_percentage = ($dataTranscript['student_grade_3'] / $totalStudents) * 100;
-    $student_grade_3_percentage = number_format($student_grade_3_percentage, 0);
+    $student_grade_3_percentage = number_format($student_grade_3_percentage, 2);
     
 }
 
@@ -121,42 +124,42 @@ if ($dataTranscript['student_grade_2.5'] == 0) {
     $student_grade_2_5_percentage = "";
 } else {
     $student_grade_2_5_percentage = ($dataTranscript['student_grade_2.5'] / $totalStudents) * 100;
-    $student_grade_2_5_percentage = number_format($student_grade_2_5_percentage, 0);
+    $student_grade_2_5_percentage = number_format($student_grade_2_5_percentage, 2);
 }
 
 if ($dataTranscript['student_grade_2'] == 0) {
     $student_grade_2_percentage = "";
 } else {
     $student_grade_2_percentage = ($dataTranscript['student_grade_2'] / $totalStudents) * 100;
-    $student_grade_2_percentage = number_format($student_grade_2_percentage, 0);
+    $student_grade_2_percentage = number_format($student_grade_2_percentage, 2);
 }
 
 if ($dataTranscript['student_grade_1.5'] == 0) {
     $student_grade_1_5_percentage = "";
 } else {
     $student_grade_1_5_percentage = ($dataTranscript['student_grade_1.5'] / $totalStudents) * 100;
-    $student_grade_1_5_percentage = number_format($student_grade_1_5_percentage, 0);
+    $student_grade_1_5_percentage = number_format($student_grade_1_5_percentage, 2);
 }
 
 if ($dataTranscript['student_grade_1'] == 0) {
     $student_grade_1_percentage = "";
 } else {
     $student_grade_1_percentage = ($dataTranscript['student_grade_1'] / $totalStudents) * 100;
-    $student_grade_1_percentage = number_format($student_grade_1_percentage, 0);
+    $student_grade_1_percentage = number_format($student_grade_1_percentage, 2);
 }
 
 if ($dataTranscript['student_grade_0.5'] == 0) {
     $student_grade_0_5_percentage = "";
 } else {
     $student_grade_0_5_percentage = ($dataTranscript['student_grade_0.5'] / $totalStudents) * 100;
-    $student_grade_0_5_percentage = number_format($student_grade_0_5_percentage, 0);
+    $student_grade_0_5_percentage = number_format($student_grade_0_5_percentage, 2);
 }
 
 if ($dataTranscript['student_grade_0'] == 0) {
     $student_grade_0_percentage = "";
 } else {
     $student_grade_0_percentage = ($dataTranscript['student_grade_0'] / $totalStudents) * 100;
-    $student_grade_0_percentage = number_format($student_grade_0_percentage, 0);
+    $student_grade_0_percentage = number_format($student_grade_0_percentage, 2);
 }
 
 $totalGradePoints = ($dataTranscript['student_grade_4'] * 4) +
@@ -355,7 +358,7 @@ $totalGradePoints = ($dataTranscript['student_grade_4'] * 4) +
                             <?php echo $notAllowedExam_percentage ?>
                             </td>
                             <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
-                            100 
+                            100.00 
                             </td>
                             <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
                             
