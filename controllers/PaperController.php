@@ -250,6 +250,78 @@ class PaperController extends Controller
     ];
   }
 
+  private function dummyDataExamCard()
+  {
+    return [
+        'profile' => [
+        'title' => 'นางสาว',
+        'firstname' => 'ณิชา',
+        'lastname' => 'ทีแคส',
+        'fullname' => 'นางสาว ณิชา ทีแคส',
+        'personal_id' => '1505200012123',
+        'grade' => 1,
+        'year' => 2567,
+        ],
+        'register_number' => '01388',
+        'targets' => [
+            0 => 'วิทยาศาสตร์-คณิตศาสตร์',
+        ],
+        'old_school' => [
+            'name' => 'เมืองใหม่(ชลอราษฎร์รังสฤษฏ์)',
+            'sub_district' => 'เขาสามยอด',
+            'district' => 'เมืองลพบุรี',
+            'province' => 'ลพบุรี',
+            'type' => 'ค้นหา',
+        ],
+        'dad' => [
+            'fullname' => 'นาย ทศพล ศิริคูหาสมบูรณ์',
+            'occupation' => 'รับจ้าง',
+            'mobile_no' => '0928066647',
+        ],
+        'mom' => [
+            'fullname' => 'นางสาว ยุภา คำวิเศษ',
+            'occupation' => 'รับจ้าง',
+            'mobile_no' => '0998104766',
+        ],
+        'parent' => [
+            'fullname' => 'นางสาว อรพรรณ คำยันต์',
+            'occupation' => 'รับราชการ',
+            'mobile_no' => '0909098146',
+            'relation' => 'ป้า',
+        ],
+        'homeown' => [
+            'fullname' => '-',
+            'occupation' => '-',
+            'mobile_no' => '-',
+        ],
+        'registrant' => [
+            'image' => 'https://s3-ap-southeast-1.amazonaws.com/nextschool.com/documents/166%2Ftmb_65cc8650c4e92_image.jpg',
+        ],
+        'exam' => [
+            'datetime' => '2024-02-18 09:00:00',
+            'seat_name' => 'F6',
+            'location_name' => '232',
+            'floor' => "2",
+            'classroom_no' => "202",
+        ],
+        ];
+  }
+public function actionExamidcard()
+  {
+    $data = $this->dummyDataExamCard();
+    $html = $this->renderPartial('examidcard', [...$data]);
+
+    $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
+
+    $fileName =   'บัตรประจำตัวผู้เข้าสอบ_' . $data['register_number'];
+    $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
+    $additionals = [];
+
+    $this->outputPDF($fileName, $html, $extraCssPath, [
+      'default_font_size' => 10,
+    ], $additionals);
+  }
+
 
   public function actionProfile()
   {
@@ -292,6 +364,101 @@ class PaperController extends Controller
     $fileName =   'ใบมอบตัว_' . $data['profile']['regis_id'] . '_' . $data['model']['firstname'] . '_' . $data['model']['lastname'];
     $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
     $additionals = [];
+
+    $this->outputPDF($fileName, $html, $extraCssPath, [
+      'default_font_size' => 10,
+    ], $additionals);
+  }
+
+  private function dummyDataNikomwitthaya()
+  {
+    return [
+      'dataNikom' => [
+      'semester' => '2',
+            'year' => '2566',
+            'name' => 'เด็กชายกิตติธัช สนืทราษฎร์',
+            'studentid' => '13980',
+            'classroom' => 'ม.1/1',
+            'qr' => '099400026587500-13980-101-200000',
+            'codabar' => '099400026587500-13980-101-200000',
+            'educational_fees1' => '2,000.00',
+            'educational_fees2' => '300.00',
+            'educational_fees3' => '350.00',
+            'educational_fees4' => '500.00',
+            'educational_fees5' => '200.00',
+            'total_text' => 'สามพันสามร้อยห้าสอบบาทถ้วน',
+            'total' => '3,350.00',
+            'product_code' => '80771',
+            'classroom_no' => '101',
+      ],
+    ];
+  }
+
+  private function dummyDataTranscript()
+  {
+    return [
+      'dataTranscript' => [
+              'semester' => 2,
+              'grade' => 1,
+              'year' => 2566,
+              'total_student' => 36,
+              'student_present_exam' => 36,
+              'student_absent_exam' => 0,
+              'student_not_allowed_exam' => 0,
+              'student_grade_4' => 0,
+              'student_grade_3.5' => 0,
+              'student_grade_3' => 0,
+              'student_grade_2.5' => 0,
+              'student_grade_2' => 0,
+              'student_grade_1.5' => 0,
+              'student_grade_1' => 0,
+              'student_grade_0.5' => 0,
+              'student_grade_0' => 36,
+              'teacher' => 'นางอุไรรัตน์ ศรีวงษ์ชัย',
+              'responsible_teacher' => 'นายสุริยันต์ แสงมล',
+              'deputy_director' => 'นางดาวรุ่ง สุระศรี',
+              'director' => 'นายภูวนาถ ยุพานวิทย์',
+              'studentid' => '13980',
+              'course_code' => 'ท33102',
+              'subject_group' => 'ไม่ได้ระบุ',
+              'study_time' => '2',
+              'credit' => '1.00',
+              'subject_name' => 'ภาษาไทยพื้นฐาน',
+        ],
+    ];
+  }
+  public function actionPayin_nikomwitthaya()
+  {
+    $data = $this->dummyDataNikomwitthaya();
+    $html = $this->renderPartial('payin_nikomwitthaya', [...$data]);
+
+    $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
+
+    $fileName =   'Payin';
+    $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
+    $additionals = [];
+
+    $this->outputPDF($fileName, $html, $extraCssPath, [
+      'default_font_size' => 10,
+    ], $additionals);
+  }
+
+  public function actionPutthaisong_transcript5()
+  {
+    $data = $this->dummyDataTranscript();
+    $html = $this->renderPartial('putthaisong_transcript5', [...$data]);
+
+    $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
+
+    $fileName =   'ใบ_ปพ.5';
+    $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
+    $additionals = [];
+
+    foreach ($data as $key => $value) {
+      if ($value === 0) {
+          return ""; // Return empty string if any value is zero
+      }
+    }
 
     $this->outputPDF($fileName, $html, $extraCssPath, [
       'default_font_size' => 10,
