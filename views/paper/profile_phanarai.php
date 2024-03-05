@@ -340,7 +340,12 @@ $yearOfBirthParent = $dobP->format('Y') + 543;
 <span style="font-family: fontawesome; font-size:80%;">&#9723;</span>&nbsp;บิดาถึงแก่กรรม
 <span style="font-family: fontawesome; font-size:80%;">&#9723;</span>&nbsp;มารดาถึงแก่กรรม&nbsp;&nbsp;
 <span style="font-family: fontawesome; font-size:80%;">&#9723;</span>&nbsp;บิดาและมารดาถึงแก่กรรม
-
+<!--
+  <div id="edu_program" class="overmask" style="font-size:150%;margin-top:-65px;margin-left:125px"><strong><?php echo $profile['familyStatus'] === 'อยู่ด้วยกันจดทะเบียนสมรส' ? "/" : "" ?></strong></div>
+<div id="edu_program" class="overmask" style="font-size:150%;margin-top:-5px;margin-left:310px"><strong><?php echo $profile['familyStatus'] === 'อยู่ด้วยกันจดทะเบียนสมรสa' ? "/" : "" ?></strong></div>
+<div id="edu_program" class="overmask" style="font-size:150%;margin-top:-5px;margin-left:310px"><strong><?php echo $profile['familyStatus'] === 'อยู่ด้วยกันจดทะเบียนสมรสa' ? "/" : "" ?></strong></div>
+<br/>
+-->
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ข้าพเจ้ารับเป็นผู้ปกครองและขอให้คำมั่นสัญญาว่าจะเป็นผู้คอยตักเตือนให้นักเรียนขยันหมั่นเพียรในการเรียน<br />
 และประพฤติตน ปฏิบัติตนให้อยู่ในระเบียบวินัยด้วยความเรียบร้อยตามคำสั่งของครูตามระเบียบและแนวปฏิบัติของ<br />
 โรงเรียนทุกประการ ทั้งจะเป็นผู้อุปถัมภ์ค่าใช้จ่ายในการเรียนให้พอใช้สอย
