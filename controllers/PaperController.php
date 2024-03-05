@@ -400,7 +400,7 @@ public function actionExamidcard()
       'dataTranscript' => [
               'semester' => 2,
               'grade' => 1,
-              'year' => 2567,
+              'year' => 2566,
               'total_student' => 36,
               'student_present_exam' => 36,
               'student_absent_exam' => 0,
@@ -416,7 +416,7 @@ public function actionExamidcard()
               'student_grade_0' => 36,
               'teacher' => 'นางอุไรรัตน์ ศรีวงษ์ชัย',
               'responsible_teacher' => 'นายสุริยันต์ แสงมล',
-              'deputy_director' => 'นายดาวรุ่ง สุระศรี',
+              'deputy_director' => 'นางดาวรุ่ง สุระศรี',
               'director' => 'นายภูวนาถ ยุพานวิทย์',
               'studentid' => '13980',
               'course_code' => 'ท33102',
