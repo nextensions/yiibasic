@@ -114,7 +114,7 @@ $totalGradePoints = ($ranges[0]['count'] * 4) +
                    ($ranges[3]['count'] * 2.5) +
                    ($ranges[4]['count'] * 2) +
                    ($ranges[5]['count'] * 1.5) +
-                   ($ranges[6]['count'] * 0.5) +
+                   ($ranges[6]['count'] * 1) +
                    ($ranges[7]['count'] * 0);
 
                    $totalStudentsWithGrades = $ranges[0]['count'] +
