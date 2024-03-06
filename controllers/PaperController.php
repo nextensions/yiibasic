@@ -68,6 +68,24 @@ class PaperController extends Controller
     $mpdf->genPdf($content, $customCssContent, $this->footer(), $additionals, $watermark);
   }
 
+  private function outputPDFLandscape($fileName, $content, $cssFilePath, $overrideConfig = [], $additionals = [], $watermark = "")
+  {
+
+    $mpdf = new NgMpdf('utf-8', 'A4', 12, 'thsarabunnew', $left = 18, $right = 13, $top = 8, $bottom = 8, $mgh = 5, $mgf = 2, 'L');
+
+    $mpdf->showWatermarkText = true;
+    $mpdf->filename = $fileName . ".pdf";
+    $mpdf->title = $fileName;
+
+    $customCssContent = $this->getBasePdfCss();
+    if (!empty($cssFilePath)) {
+      $customCssContent .= file_get_contents($cssFilePath);
+    }
+
+
+    $mpdf->genPdf($content, $customCssContent, $this->footer(), $additionals, $watermark);
+  }
+
   private function dummyData()
   {
     return [
@@ -818,11 +836,43 @@ public function actionExamidcard()
 
     $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
 
-    $fileName =   'ใบ_ปพ.5';
+    $fileName =   'bp5-eva-cover';
     $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
     $additionals = [];
 
     $this->outputPDF($fileName, $html, $extraCssPath, [
+      'default_font_size' => 10,
+    ], $additionals);
+  }
+
+  public function actionPutthaisong_transcript_eva()
+  {
+    $data = $this->dummyDataTranscript();
+    $html = $this->renderPartial('putthaisong_transcript_eva', [...$data]);
+
+    $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
+
+    $fileName =   'bp5-eva';
+    $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
+    $additionals = [];
+
+    $this->outputPDF($fileName, $html, $extraCssPath, [
+      'default_font_size' => 10,
+    ], $additionals);
+  }
+
+  public function actionPutthaisong_transcript_attendance()
+  {
+    $data = $this->dummyDataTranscript();
+    $html = $this->renderPartial('putthaisong_transcript_attendance', [...$data]);
+
+    $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
+
+    $fileName =   'bp5-attendance';
+    $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
+    $additionals = [];
+
+    $this->outputPDFLandscape($fileName, $html, $extraCssPath, [
       'default_font_size' => 10,
     ], $additionals);
   }
