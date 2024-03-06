@@ -869,7 +869,7 @@ public function actionExamidcard()
     $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
 
     $fileName =   'bp5-attendance';
-    $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
+    $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/Landscapepdf.css';
     $additionals = [];
 
     $this->outputPDFLandscape($fileName, $html, $extraCssPath, [
