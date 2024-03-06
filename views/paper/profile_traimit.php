@@ -186,14 +186,15 @@ $year = $dateComponents[2];
       <dl>
       <dt style="width:125px;"><u>ที่อยู่ตามทะเบียนบ้าน</u></dt>
       <dt style="width:60px;">บ้านเลขที่</dt>
-        <dd style="width:80px;"><?php echo $address['no'] ?></dd>
+        <dd style="width:333px;"><?php echo $address['no'] ?></dd>
         <dt style="width:30px;">หมู่ที่</dt>
         <dd style="width:60px;"><?php echo $address['moo'] ?></dd>
-        <dt style="width:100px;">ถนน/ตรอก/ซอย</dt>
-        <dd style="width:142px;"><?php echo $address['street'] . " " . $address['soi'] ?></dd>
         <br />
+        <dt style="width:100px;">ถนน/ตรอก/ซอย</dt>
+        <dd style="width:300px;"><?php echo $address['street'] . '&nbsp;' . $address['soi'] ?></dd>
         <dt style="width:75px;">ตำบล/แขวง</dt>
-        <dd style="width:138px;"><?php echo $address['sub_district'] ?></dd>
+        <dd style="width:142px;"><?php echo $address['sub_district'] ?></dd>
+        <br />
         <dt style="width:75px;">อำเภอ/เขต</dt>
         <dd style="width:138px;"><?php echo $address['district'] ?></dd>
         <dt style="width:45px;">จังหวัด</dt>
@@ -221,23 +222,25 @@ $year = $dateComponents[2];
       </div>
       <dl>
       <dt style="width:55px;">บ้านเลขที่</dt>
-        <dd style="width:90px;"><?php echo $address['no'] ?></dd>
+        <dd style="width:320px;"><?php echo $address['no'] ?></dd>
         <dt style="width:35px;">หมู่ที่</dt>
         <dd style="width:50px;"><?php echo $address['moo'] ?></dd>
         <dt style="width:35px;">ซอย</dt>
-        <dd style="width:150px;"><?php echo $address['soi'] ?></dd>
+        <dd style="width:114px;"><?php echo $address['soi'] ?></dd>
+        <br />
         <dt style="width:35px;">ถนน</dt>
         <dd style="width:149px;"><?php echo $address['street'] ?></dd>
-        <br />
         <dt style="width:75px;">ตำบล/แขวง</dt>
         <dd style="width:138px;"><?php echo $address['sub_district'] ?></dd>
         <dt style="width:75px;">อำเภอ/เขต</dt>
-        <dd style="width:138px;"><?php echo $address['district'] ?></dd>
+        <dd style="width:139px;"><?php echo $address['district'] ?></dd>
+        <br />
         <dt style="width:45px;">จังหวัด</dt>
         <dd style="width:139px;"><?php echo $address['province'] ?></dd>
-        <br />
         <dt style="width:80px;">รหัสไปรษณีย์</dt>
         <dd style="width:56px;"><?php echo $address['zip'] ?></dd>
+        </dl>
+        <dl>
         <dt style="width:205px;">ที่พักอาศัยห่างจากโรงเรียนประมาณ</dt>
         <dd style="width:42px;"><?php echo $profile['distance'] ?></dd>
         <dt style="width:50px;">กิโลเมตร</dt>
