@@ -4,8 +4,6 @@ $dateComponentsSem = explode(' ', $semesterNo);
 $semText = $dateComponentsSem[0];
 $semNo = $dateComponentsSem[1];
 
-$classYear = preg_replace('/\D/', '', $model['name']);
-
 if ($ranges[0]['ratio'] == 0) {
     $ranges_ratio_0 = "";
 } else {
@@ -142,7 +140,7 @@ $totalGradePoints = ($ranges[0]['count'] * 4) +
 <div style="margin-left:30px">
     <dl>
 <dt style="width:130px;">ระดับชั้นมัธยมศึกษาปีที่</dt>
-        <dd style="width:50px;"><?php echo $classYear ?></dd>
+        <dd style="width:50px;"><?php echo $missing['grade']  ?></dd>
         <dt style="width:45px;">จำนวน</dt>
         <dd style="width:50px;"><?php echo $totalStudent ?></dd>
         <dt style="width:25px;">คน</dt>
