@@ -10,4 +10,7 @@ require(__DIR__ . '/../config/bootstrap.php');
 
 $config = require __DIR__ . '/../config/web.php';
 
+require __DIR__ . '/../common/global.php';
+
+
 (new yii\web\Application($config))->run();
