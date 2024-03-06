@@ -305,13 +305,13 @@ $totalGradePoints = ($ranges[0]['count'] * 4) +
                     </tbody>
                 </table>
                 </div>
-<p>ผลการประเมิณ การอ่าน คิด วิเคราะห์และเขียน</p>
+<p>ผลการประเมิน การอ่าน คิด วิเคราะห์และเขียน</p>
 <div style="margin-left:10px;margin-right:-20px;">
 <table class="table table-bordered table-sm table-collapse" style="border: 1px solid">
                     <thead>
                         <tr>
                             <th colspan="5" style="font-weight:bold;width: 30px;padding-top: -15px;vertical-align: middle;padding-bottom: 0px;background-color: white;border: 1px solid;text-align: center;height:40px;font-weight:normal;">
-                                ผลการประเมิณ
+                                ผลการประเมิน
                             </th>
                         </tr>
                     </thead>
