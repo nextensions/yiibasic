@@ -49,6 +49,8 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
             ['label' => 'Profile phanarai', 'url' => ['/paper/profile_phanarai']],
             ['label' => 'Profile traimit', 'url' => ['/paper/profile_traimit']],
             ['label' => 'putthaisong_transcript5', 'url' => ['/paper/putthaisong_transcript5']],
+            ['label' => 'putthaisong_transcript_eva', 'url' => ['/paper/putthaisong_transcript_eva']],
+            ['label' => 'putthaisong_transcript_attendance', 'url' => ['/paper/putthaisong_transcript_attendance']],
             Yii::$app->user->isGuest
                 ? ['label' => 'Login', 'url' => ['/site/login']]
                 : '<li class="nav-item">'
