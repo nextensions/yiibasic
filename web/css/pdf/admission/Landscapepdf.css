@@ -293,8 +293,8 @@ h3.normal{
 
 @media print {
   @page {
-    margin-left: 60px;
-    margin-right: 60px;
+    margin-left: 20px;
+    margin-right: 20px;
     margin-top: 80px;
     margin-bottom: 0px;
   }
