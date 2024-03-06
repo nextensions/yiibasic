@@ -142,7 +142,7 @@ $totalGradePoints = ($ranges[0]['count'] * 4) +
 <div style="margin-left:30px">
     <dl>
 <dt style="width:130px;">ระดับชั้นมัธยมศึกษาปีที่</dt>
-        <dd style="width:50px;"><?php echo $classYear ?></dd>
+        <dd style="width:50px;"><?php echo $missing['grade']  ?></dd>
         <dt style="width:45px;">จำนวน</dt>
         <dd style="width:50px;"><?php echo $totalStudent ?></dd>
         <dt style="width:25px;">คน</dt>
