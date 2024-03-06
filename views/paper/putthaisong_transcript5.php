@@ -1,187 +1,138 @@
 <?php
-$totalStudents = $dataTranscript['total_student'];
+$semesterNo = $semester['name'];
+$dateComponentsSem = explode(' ', $semesterNo);
+$semText = $dateComponentsSem[0];
+$semNo = $dateComponentsSem[1];
 
-if ($dataTranscript['student_present_exam'] == 0) {
-    $presentExam = "";
+$classYear = preg_replace('/\D/', '', $model['name']);
+
+if ($ranges[0]['ratio'] == 0) {
+    $ranges_ratio_0 = "";
 } else {
-    $presentExam = $dataTranscript['student_present_exam'];
+    $ranges_ratio_0 = $ranges[0]['ratio'];
+}
+if ($ranges[1]['ratio'] == 0) {
+    $ranges_ratio_1 = "";
+} else {
+    $ranges_ratio_1 = $ranges[1]['ratio'];
+}
+if ($ranges[2]['ratio'] == 0) {
+    $ranges_ratio_2 = "";
+} else {
+    $ranges_ratio_2 = $ranges[2]['ratio'];
+}
+if ($ranges[3]['ratio'] == 0) {
+    $ranges_ratio_3 = "";
+} else {
+    $ranges_ratio_3 = $ranges[3]['ratio'];
+}
+if ($ranges[4]['ratio'] == 0) {
+    $ranges_ratio_4 = "";
+} else {
+    $ranges_ratio_4 = $ranges[4]['ratio'];
+}
+if ($ranges[5]['ratio'] == 0) {
+    $ranges_ratio_5 = "";
+} else {
+    $ranges_ratio_5 = $ranges[5]['ratio'];
+}
+if ($ranges[6]['ratio'] == 0) {
+    $ranges_ratio_6 = "";
+} else {
+    $ranges_ratio_6 = $ranges[6]['ratio'];
+}
+if ($ranges[7]['ratio'] == 0) {
+    $ranges_ratio_7 = "";
+} else {
+    $ranges_ratio_7 = $ranges[7]['ratio'];
+}
+if ($ranges[8]['ratio'] == 0) {
+    $ranges_ratio_8 = "";
+} else {
+    $ranges_ratio_8 = $ranges[8]['ratio'];
+}
+if ($ranges[9]['ratio'] == 0) {
+    $ranges_ratio_9 = "";
+} else {
+    $ranges_ratio_9 = $ranges[9]['ratio'];
+}
+// Return "" when data == 0
+if ($ranges[0]['count'] == 0) {
+    $ranges_count_0 = "";
+} else {
+    $ranges_count_0 = $ranges[0]['count'];
+}
+if ($ranges[1]['count'] == 0) {
+    $ranges_count_1 = "";
+} else {
+    $ranges_count_1 = $ranges[1]['count'];
+}
+if ($ranges[2]['count'] == 0) {
+    $ranges_count_2 = "";
+} else {
+    $ranges_count_2 = $ranges[2]['count'];
+}
+if ($ranges[3]['count'] == 0) {
+    $ranges_count_3 = "";
+} else {
+    $ranges_count_3 = $ranges[3]['count'];
+}
+if ($ranges[4]['count'] == 0) {
+    $ranges_count_4 = "";
+} else {
+    $ranges_count_4 = $ranges[4]['count'];
+}
+if ($ranges[5]['count'] == 0) {
+    $ranges_count_5 = "";
+} else {
+    $ranges_count_5 = $ranges[5]['count'];
+}
+if ($ranges[6]['count'] == 0) {
+    $ranges_count_6 = "";
+} else {
+    $ranges_count_6 = $ranges[6]['count'];
+}
+if ($ranges[7]['count'] == 0) {
+    $ranges_count_7 = "";
+} else {
+    $ranges_count_7 = $ranges[7]['count'];
+}
+if ($ranges[8]['count'] == 0) {
+    $ranges_count_8 = "";
+} else {
+    $ranges_count_8 = $ranges[8]['count'];
+}
+if ($ranges[9]['count'] == 0) {
+    $ranges_count_9 = "";
+} else {
+    $ranges_count_9 = $ranges[9]['count'];
 }
 
-if ($dataTranscript['student_absent_exam'] == 0) {
-    $absentExam = "";
-} else {
-    $absentExam = $dataTranscript['student_absent_exam'];
-}
+$totalGradePoints = ($ranges[0]['count'] * 4) +
+                   ($ranges[1]['count'] * 3.5) +
+                   ($ranges[2]['count'] * 3) +
+                   ($ranges[3]['count'] * 2.5) +
+                   ($ranges[4]['count'] * 2) +
+                   ($ranges[5]['count'] * 1.5) +
+                   ($ranges[6]['count'] * 1) +
+                   ($ranges[7]['count'] * 0);
 
-if ($dataTranscript['student_not_allowed_exam'] == 0) {
-    $notAllowedExam = "";
-} else {
-    $notAllowedExam = $dataTranscript['student_not_allowed_exam'];
-}
+                   $totalStudentsWithGrades = $ranges[0]['count'] +
+                    $ranges[1]['count'] +
+                    $ranges[2]['count'] +
+                    $ranges[3]['count'] +
+                    $ranges[4]['count'] +
+                    $ranges[5]['count'] +
+                    $ranges[6]['count'] +
+                    $ranges[7]['count'];
 
-if ($dataTranscript['student_present_exam'] == 0) {
-    $presentExam_percentage = "";
-} else {
-    $presentExam_percentage = ($dataTranscript['student_present_exam'] / $totalStudents) * 100;
-    $presentExam_percentage = number_format($presentExam_percentage, 2);
-}
+                    if ($totalStudentsWithGrades != 0) {
+                        $averageGrade = $totalGradePoints / $totalStudentsWithGrades;
+                        $averageGrade = number_format($averageGrade, 2);
+                    } else {
+                        $averageGrade = 0;
+                    }
 
-if ($dataTranscript['student_absent_exam'] == 0) {
-    $absentExam_percentage = "";
-} else {
-    $absentExam_percentage = ($dataTranscript['student_absent_exam'] / $totalStudents) * 100;
-    $absentExam_percentage = number_format($absentExam_percentage, 2);
-}
-
-if ($dataTranscript['student_not_allowed_exam'] == 0) {
-    $notAllowedExam_percentage = "";
-} else {
-    $notAllowedExam_percentage = ($dataTranscript['student_not_allowed_exam'] / $totalStudents) * 100;
-    $notAllowedExam_percentage = number_format($notAllowedExam_percentage, 2);
-}
-
-if ($dataTranscript['student_grade_4'] == 0) {
-    $student_grade_4_output = "";
-} else {
-    $student_grade_4_output = $dataTranscript['student_grade_4'];
-}
-
-if ($dataTranscript['student_grade_3.5'] == 0) {
-    $student_grade_3_5_output = "";
-} else {
-    $student_grade_3_5_output = $dataTranscript['student_grade_3.5'];
-}
-
-if ($dataTranscript['student_grade_3'] == 0) {
-    $student_grade_3_output = "";
-} else {
-    $student_grade_3_output = $dataTranscript['student_grade_3'];
-}
-
-if ($dataTranscript['student_grade_2.5'] == 0) {
-    $student_grade_2_5_output = "";
-} else {
-    $student_grade_2_5_output = $dataTranscript['student_grade_2.5'];
-}
-
-if ($dataTranscript['student_grade_2'] == 0) {
-    $student_grade_2_output = "";
-} else {
-    $student_grade_2_output = $dataTranscript['student_grade_2'];
-}
-
-if ($dataTranscript['student_grade_1.5'] == 0) {
-    $student_grade_1_5_output = "";
-} else {
-    $student_grade_1_5_output = $dataTranscript['student_grade_1.5'];
-}
-
-if ($dataTranscript['student_grade_1'] == 0) {
-    $student_grade_1_output = "";
-} else {
-    $student_grade_1_output = $dataTranscript['student_grade_1'];
-}
-
-if ($dataTranscript['student_grade_0.5'] == 0) {
-    $student_grade_0_5_output = "";
-} else {
-    $student_grade_0_5_output = $dataTranscript['student_grade_0.5'];
-}
-
-if ($dataTranscript['student_grade_0'] == 0) {
-    $student_grade_0_output = "";
-} else {
-    $student_grade_0_output = $dataTranscript['student_grade_0'];
-}
-
-if ($dataTranscript['student_grade_4'] == 0) {
-    $student_grade_4_percentage = "";
-} else {
-    $student_grade_4_percentage = ($dataTranscript['student_grade_4'] / $totalStudents) * 100;
-    $student_grade_4_percentage = number_format($student_grade_4_percentage, 2);
-}
-
-if ($dataTranscript['student_grade_3.5'] == 0) {
-    $student_grade_3_5_percentage = "";
-} else {
-    $student_grade_3_5_percentage = ($dataTranscript['student_grade_3.5'] / $totalStudents) * 100;
-    $student_grade_3_5_percentage = number_format($student_grade_3_5_percentage, 2);
-}
-
-if ($dataTranscript['student_grade_3'] == 0) {
-    $student_grade_3_percentage = "";
-} else {
-    $student_grade_3_percentage = ($dataTranscript['student_grade_3'] / $totalStudents) * 100;
-    $student_grade_3_percentage = number_format($student_grade_3_percentage, 2);
-    
-}
-
-if ($dataTranscript['student_grade_2.5'] == 0) {
-    $student_grade_2_5_percentage = "";
-} else {
-    $student_grade_2_5_percentage = ($dataTranscript['student_grade_2.5'] / $totalStudents) * 100;
-    $student_grade_2_5_percentage = number_format($student_grade_2_5_percentage, 2);
-}
-
-if ($dataTranscript['student_grade_2'] == 0) {
-    $student_grade_2_percentage = "";
-} else {
-    $student_grade_2_percentage = ($dataTranscript['student_grade_2'] / $totalStudents) * 100;
-    $student_grade_2_percentage = number_format($student_grade_2_percentage, 2);
-}
-
-if ($dataTranscript['student_grade_1.5'] == 0) {
-    $student_grade_1_5_percentage = "";
-} else {
-    $student_grade_1_5_percentage = ($dataTranscript['student_grade_1.5'] / $totalStudents) * 100;
-    $student_grade_1_5_percentage = number_format($student_grade_1_5_percentage, 2);
-}
-
-if ($dataTranscript['student_grade_1'] == 0) {
-    $student_grade_1_percentage = "";
-} else {
-    $student_grade_1_percentage = ($dataTranscript['student_grade_1'] / $totalStudents) * 100;
-    $student_grade_1_percentage = number_format($student_grade_1_percentage, 2);
-}
-
-if ($dataTranscript['student_grade_0.5'] == 0) {
-    $student_grade_0_5_percentage = "";
-} else {
-    $student_grade_0_5_percentage = ($dataTranscript['student_grade_0.5'] / $totalStudents) * 100;
-    $student_grade_0_5_percentage = number_format($student_grade_0_5_percentage, 2);
-}
-
-if ($dataTranscript['student_grade_0'] == 0) {
-    $student_grade_0_percentage = "";
-} else {
-    $student_grade_0_percentage = ($dataTranscript['student_grade_0'] / $totalStudents) * 100;
-    $student_grade_0_percentage = number_format($student_grade_0_percentage, 2);
-}
-
-$totalGradePoints = ($dataTranscript['student_grade_4'] * 4) +
-                   ($dataTranscript['student_grade_3.5'] * 3.5) +
-                   ($dataTranscript['student_grade_3'] * 3) +
-                   ($dataTranscript['student_grade_2.5'] * 2.5) +
-                   ($dataTranscript['student_grade_2'] * 2) +
-                   ($dataTranscript['student_grade_1.5'] * 1.5) +
-                   ($dataTranscript['student_grade_0.5'] * 0.5) +
-                   ($dataTranscript['student_grade_0'] * 0);
-
-                   $totalStudentsWithGrades = $dataTranscript['student_grade_4'] +
-                           $dataTranscript['student_grade_3.5'] +
-                           $dataTranscript['student_grade_3'] +
-                           $dataTranscript['student_grade_2.5'] +
-                           $dataTranscript['student_grade_2'] +
-                           $dataTranscript['student_grade_1.5'] +
-                           $dataTranscript['student_grade_0.5'] +
-                           $dataTranscript['student_grade_0'];
-
-                           if ($totalStudentsWithGrades != 0) {
-                            $averageGrade = $totalGradePoints / $totalStudentsWithGrades;
-                        } else {
-                            $averageGrade = 0;
-                        }
-                        
 ?>
 <div style="text-align:center"><img src="img/putthaisong.png" alt="School icon" style="width:80px;height:auto;margin-top:0px;"></div>
 <div style="font-size:20px;padding-top:20px">
@@ -191,33 +142,33 @@ $totalGradePoints = ($dataTranscript['student_grade_4'] * 4) +
 <div style="margin-left:30px">
     <dl>
 <dt style="width:130px;">ระดับชั้นมัธยมศึกษาปีที่</dt>
-        <dd style="width:50px;"><?php echo $dataTranscript['grade'] ?></dd>
+        <dd style="width:50px;"><?php echo $classYear ?></dd>
         <dt style="width:45px;">จำนวน</dt>
-        <dd style="width:50px;"><?php echo $dataTranscript['total_student'] ?></dd>
+        <dd style="width:50px;"><?php echo $totalStudent ?></dd>
         <dt style="width:25px;">คน</dt>
         <dt style="width:100px;">ประจำภาคเรียนที่</dt>
-        <dd style="width:40px;"><?php echo $dataTranscript['semester'] ?></dd>
+        <dd style="width:40px;"><?php echo $semNo ?></dd>
         <dt style="width:65px;">ปีการศึกษา</dt>
-        <dd style="width:60px;"><?php echo $dataTranscript['year'] ?></dd>
+        <dd style="width:60px;"><?php echo $academicYear['name'] ?></dd>
         </dl>
 </div>
 <div style="margin-left:20px;margin-right:-40px">
     <dl>
 <dt style="width:60px;">รหัสวิชา : </dt>
-        <dd style="width:100px;"><?php echo $dataTranscript['course_code'] ?></dd>
+        <dd style="width:100px;"><?php echo $model['course_id'] ?></dd>
         <dt style="width:25px;">วิชา</dt>
-        <dd style="width:180px;"><?php echo $dataTranscript['subject_name'] ?></dd>
+        <dd style="width:180px;"><?php echo $missing['subject'] ?></dd>
         <dt style="width:110px;">กลุ่มสาระการเรียนรู้</dt>
-        <dd style="width:180px;"><?php echo $dataTranscript['subject_group'] ?></dd>
+        <dd style="width:180px;"><?php echo $missing['subject_areas'] ?></dd>
         </dl>
 </div>
 <div style="margin-left:100px;">
     <dl>
 <dt style="width:120px;">จำนวนหน่วยการเรียน</dt>
-        <dd style="width:40px;"><?php echo $dataTranscript['credit'] ?></dd>
+        <dd style="width:40px;"><?php echo $missing['credit'] ?></dd>
         <dt style="width:105px;">หน่วยกิต</dt>
         <dt style="width:55px;">เวลาเรียน</dt>
-        <dd style="width:45px;"><?php echo $dataTranscript['study_time'] ?></dd>
+        <dd style="width:45px;"><?php echo $missing['study_hour'] ?></dd>
         <dt style="width:80px;">ชั่วโมง/สัปดาห์</dt>
         </dl>
 </div>
@@ -231,37 +182,34 @@ $totalGradePoints = ($dataTranscript['student_grade_4'] * 4) +
                                 ระดับผลการเรียน
                             </th>
                             <th style="font-weight:bold;width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;background-color: white;border: 1px solid;text-align: center;height:60px;font-weight:normal;">
-                            4
+                            <?php echo $ranges[0]['name'] ?>
                             </th>
                             <th style="font-weight:bold;width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;background-color: white;border: 1px solid;text-align: center;height:60px;font-weight:normal;">
-                            3.5
+                            <?php echo $ranges[1]['name'] ?>
                             </th>
                             <th style="font-weight:bold;width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;background-color: white;border: 1px solid;text-align: center;height:60px;font-weight:normal;">
-                            3
+                            <?php echo $ranges[2]['name'] ?>
                             </th>
                             <th style="font-weight:bold;width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;background-color: white;border: 1px solid;text-align: center;height:60px;font-weight:normal;">
-                            2.5
+                            <?php echo $ranges[3]['name'] ?>
                             </th>
                             <th style="font-weight:bold;width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;background-color: white;border: 1px solid;text-align: center;height:60px;font-weight:normal;">
-                            2
+                            <?php echo $ranges[4]['name'] ?>
                             </th>
                             <th style="font-weight:bold;width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;background-color: white;border: 1px solid;text-align: center;height:60px;font-weight:normal;">
-                            1.5
+                            <?php echo $ranges[5]['name'] ?>
                             </th>
                             <th style="font-weight:bold;width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;background-color: white;border: 1px solid;text-align: center;height:60px;font-weight:normal;">
-                            1
+                            <?php echo $ranges[6]['name'] ?>
                             </th>
                             <th style="font-weight:bold;width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;background-color: white;border: 1px solid;text-align: center;height:60px;font-weight:normal;">
-                            0.5
+                            <?php echo $ranges[7]['name'] ?>
                             </th>
                             <th style="font-weight:bold;width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;background-color: white;border: 1px solid;text-align: center;height:60px;font-weight:normal;">
-                            0
+                            <?php echo $ranges[8]['name'] ?>
                             </th>
                             <th style="font-weight:bold;width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;background-color: white;border: 1px solid;text-align: center;height:60px;font-weight:normal;">
-                            ร
-                            </th>
-                            <th style="font-weight:bold;width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;background-color: white;border: 1px solid;text-align: center;height:60px;font-weight:normal;">
-                            มส
+                            <?php echo $ranges[9]['name'] ?>
                             </th>
                             <th style="font-weight:bold;width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;background-color: white;border: 1px solid;text-align: center;height:60px;font-weight:normal;">
                             รวม
@@ -277,40 +225,37 @@ $totalGradePoints = ($dataTranscript['student_grade_4'] * 4) +
                             จำนวนคน
                             </td>
                             <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
-                            <?php echo $student_grade_4_output ?>
+                            <?php echo $ranges_count_0 ?>
                             </td>
                             <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
-                            <?php echo $student_grade_3_5_output ?>
+                            <?php echo $ranges_count_1 ?>
                             </td>
                             <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
-                            <?php echo $student_grade_3_output ?>
+                            <?php echo $ranges_count_2 ?>
                             </td>
                             <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
-                            <?php echo $student_grade_2_5_output ?>
+                            <?php echo $ranges_count_3 ?>
                             </td>
                             <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
-                            <?php echo $student_grade_2_output ?>
+                            <?php echo $ranges_count_4 ?>
                             </td>
                             <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
-                            <?php echo $student_grade_1_5_output ?>
+                            <?php echo $ranges_count_5 ?>
                             </td>
                             <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
-                            <?php echo $student_grade_1_output ?>
+                            <?php echo $ranges_count_6 ?>
                             </td>
                             <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
-                            <?php echo $student_grade_0_5_output ?>
+                            <?php echo $ranges_count_7 ?>
                             </td>
                             <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
-                            <?php echo $student_grade_0_output ?>
+                            <?php echo $ranges_count_8 ?>
                             </td>
                             <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
-                            <?php echo $absentExam ?>
+                            <?php echo $ranges_count_9 ?>
                             </td>
                             <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
-                            <?php echo $notAllowedExam ?>
-                            </td>
-                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
-                            <?php echo $presentExam ?>
+                            <?php echo $totalStudent ?>
                             </td>
                             <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
                             <?php echo $averageGrade ?>
@@ -321,40 +266,37 @@ $totalGradePoints = ($dataTranscript['student_grade_4'] * 4) +
                             คิดเป็นร้อยละ
                             </td>
                             <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
-                            <?php echo $student_grade_4_percentage ?>
+                            <?php echo $ranges_ratio_0 ?>
                             </td>
                             <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
-                                <?php echo $student_grade_3_5_percentage ?>
+                            <?php echo $ranges_ratio_1 ?>
                             </td>
                             <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
-                                <?php echo $student_grade_3_percentage ?>
+                            <?php echo $ranges_ratio_2 ?>
                             </td>
                             <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
-                                <?php echo $student_grade_2_5_percentage ?>
+                            <?php echo $ranges_ratio_3 ?>
                             </td>
                             <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
-                                <?php echo $student_grade_2_percentage ?>
+                            <?php echo $ranges_ratio_4 ?>
                             </td>
                             <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
-                                <?php echo $student_grade_1_5_percentage ?>
+                            <?php echo $ranges_ratio_5 ?>
                             </td>
                             <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
-                                <?php echo $student_grade_1_percentage ?>
+                            <?php echo $ranges_ratio_6 ?>
                             </td>
                             <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
-                                <?php echo $student_grade_0_5_percentage ?>
+                            <?php echo $ranges_ratio_7 ?>
                             </td>
                             <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
-                                <?php echo $student_grade_0_percentage ?>
+                            <?php echo $ranges_ratio_8 ?>
                             </td>
                             <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
-                            <?php echo $absentExam_percentage ?>
+                            <?php echo $ranges_ratio_9 ?>
                             </td>
                             <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
-                            <?php echo $notAllowedExam_percentage ?>
-                            </td>
-                            <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
-                            100.00 
+                            100
                             </td>
                             <td style="width: 30px;padding-top: -15px;padding-bottom: 0px;vertical-align: middle;text-align: center;border: 1px solid;height:40px">
                             
@@ -363,13 +305,13 @@ $totalGradePoints = ($dataTranscript['student_grade_4'] * 4) +
                     </tbody>
                 </table>
                 </div>
-<p>ผลการประเมิณ การอ่าน คิด วิเคราะห์และเขียน</p>
+<p>ผลการประเมิน การอ่าน คิด วิเคราะห์และเขียน</p>
 <div style="margin-left:10px;margin-right:-20px;">
 <table class="table table-bordered table-sm table-collapse" style="border: 1px solid">
                     <thead>
                         <tr>
                             <th colspan="5" style="font-weight:bold;width: 30px;padding-top: -15px;vertical-align: middle;padding-bottom: 0px;background-color: white;border: 1px solid;text-align: center;height:40px;font-weight:normal;">
-                                ผลการประเมิณ
+                                ผลการประเมิน
                             </th>
                         </tr>
                     </thead>
@@ -414,7 +356,7 @@ $totalGradePoints = ($dataTranscript['student_grade_4'] * 4) +
                 <p style="margin-top:-10px">ขอรับรองว่าได้ตรวจสอบข้อมูลข้างต้นแล้ว เป็นข้อมูลที่ถูกต้องตามความเป็นจริงทุกประการ</p>
         <div style="padding-top:10px;margin-left:80px;text-align:center;line-height:30px">
         <p style="line-height:10px;margin-left:0px;">ลงชื่อ ......................................................... ครูผู้สอน<p>
-        <p style="padding-top:10px;margin-left:-25px;line-height:10px">(<?php echo $dataTranscript['teacher'] ?>)<p>
+        <p style="padding-top:10px;margin-left:-25px;line-height:10px">(<?php echo $teachName ?>)<p>
         <p style="line-height:10px">วันที่ ......... เดือน ......................... พ.ศ. ................<p>
         </div>
         <p style="padding-top:-10px;">เรียนเสนอเพื่อพิจารณาอนุมัติผลการเรียน</p>
@@ -422,11 +364,11 @@ $totalGradePoints = ($dataTranscript['student_grade_4'] * 4) +
         <p style="line-height:10px;">ลงชื่อ ......................................................... หัวหน้ากลุ่มสาระการเรียนรู้<p>
         <p style="margin-left:30px;line-height:10px">(.........................................................)<p>
         <p style="line-height:10px;margin-left:0px;">ลงชื่อ ......................................................... หัวหน้างานวัดผลและประเมินผล<p>
-        <p style="margin-left:70px;line-height:10px">(<?php echo $dataTranscript['responsible_teacher'] ?>)<p>
+        <p style="margin-left:70px;line-height:10px">(นายสุริยันต์ แสงมล)<p>
         <p style="line-height:10px;margin-left:0px;">ลงชื่อ ......................................................... รองผู้อำนวยการกลุ่มบริหารวิชาการ<p>
-        <p style="margin-left:70px;line-height:10px">(<?php echo $dataTranscript['deputy_director'] ?>)<p>
+        <p style="margin-left:70px;line-height:10px">(นางดาวรุ่ง สุระศรี)<p>
         <p style="line-height:10px;margin-left:-155px;"><span style="font-family: fontawesome; font-size:120%;">&#9723;</span>&nbsp;&nbsp;&nbsp;&nbsp;อนุมัติ&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-family: fontawesome; font-size:120%;">&#9723;</span>&nbsp;&nbsp;&nbsp;&nbsp;ไม่อนุมัติ&nbsp;&nbsp;&nbsp;&nbsp;ลงชื่อ ......................................................... ผู้อำนวยการโรงเรียนพุทไธสง<p>
-        <p style="margin-left:70px;line-height:10px">(<?php echo $dataTranscript['director'] ?>)<p>
+        <p style="margin-left:70px;line-height:10px">(นายภูวนาถ ยุพานวิทย์)<p>
         <p style="line-height:10px;margin-left:5px;">วันที่ ......... เดือน ......................... พ.ศ. ................<p>
         </div>
 </div>

@@ -43,8 +43,12 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
             ['label' => 'About', 'url' => ['/site/about']],
             ['label' => 'Contact', 'url' => ['/site/contact']],
             ['label' => 'Payin', 'url' => ['/report/payin']],
-            ['label' => 'Payin Nikomwitthaya', 'url' => ['/report/payin_nikomwitthaya']],
+            ['label' => 'Payin Nikomwitthaya', 'url' => ['/paper/payin_nikomwitthaya']],
             ['label' => 'Jindaporn', 'url' => ['/report/receipt']],
+            ['label' => 'Nikom examcard', 'url' => ['/paper/examidcard']],
+            ['label' => 'Profile phanarai', 'url' => ['/paper/profile_phanarai']],
+            ['label' => 'Profile traimit', 'url' => ['/paper/profile_traimit']],
+            ['label' => 'putthaisong_transcript5', 'url' => ['/paper/putthaisong_transcript5']],
             Yii::$app->user->isGuest
                 ? ['label' => 'Login', 'url' => ['/site/login']]
                 : '<li class="nav-item">'
