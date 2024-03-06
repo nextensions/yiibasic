@@ -4,8 +4,6 @@ $dateComponentsSem = explode(' ', $semesterNo);
 $semText = $dateComponentsSem[0];
 $semNo = $dateComponentsSem[1];
 
-$classYear = preg_replace('/\D/', '', $model['name']);
-
 if ($ranges[0]['ratio'] == 0) {
     $ranges_ratio_0 = "";
 } else {
