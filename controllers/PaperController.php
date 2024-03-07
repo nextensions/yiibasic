@@ -53,37 +53,36 @@ class PaperController extends Controller
   private function outputPDF($fileName, $content, $cssFilePath, $overrideConfig = [], $additionals = [], $watermark = "")
   {
 
-    $mpdf = new NgMpdf('utf-8', 'A4', 12, 'thsarabunnew', $left = 18, $right = 13, $top = 8, $bottom = 8, $mgh = 5, $mgf = 2, 'P');
+    $margin_left = $overrideConfig['margin_left'] ?? null;
+    $margin_right = $overrideConfig['margin_right'] ?? null;
+    $margin_top = $overrideConfig['margin_top'] ?? null;
+    $margin_bottom = $overrideConfig['margin_bottom'] ?? null;
 
-    $mpdf->showWatermarkText = true;
-    $mpdf->filename = $fileName . ".pdf";
-    $mpdf->title = $fileName;
+      $mpdf = new NgMpdf('utf-8', 'A4', 12, 'thsarabunnew', $left = 18, $right = 13, $top = 8, $bottom = 8, $mgh = 5, $mgf = 2, 'P');
+  
+      $mpdf->showWatermarkText = true;
+      $mpdf->filename = $fileName . ".pdf";
+      $mpdf->title = $fileName;
+  
+      $customCssContent = $this->getBasePdfCss();
+      if (!empty($cssFilePath)) {
+          $customCssContent .= file_get_contents($cssFilePath);
+      }
 
-    $customCssContent = $this->getBasePdfCss();
-    if (!empty($cssFilePath)) {
-      $customCssContent .= file_get_contents($cssFilePath);
+      if ($margin_left !== null) {
+        $customCssContent .= '@page { margin-left: ' . $margin_left . 'px; }';
     }
-
-
-    $mpdf->genPdf($content, $customCssContent, $this->footer(), $additionals, $watermark);
-  }
-
-  private function outputPDFLandscape($fileName, $content, $cssFilePath, $overrideConfig = [], $additionals = [], $watermark = "")
-  {
-
-    $mpdf = new NgMpdf('utf-8', 'A4', 12, 'thsarabunnew', $left = 18, $right = 13, $top = 8, $bottom = 8, $mgh = 5, $mgf = 2, 'L');
-
-    $mpdf->showWatermarkText = true;
-    $mpdf->filename = $fileName . ".pdf";
-    $mpdf->title = $fileName;
-
-    $customCssContent = $this->getBasePdfCss();
-    if (!empty($cssFilePath)) {
-      $customCssContent .= file_get_contents($cssFilePath);
+    if ($margin_right !== null) {
+        $customCssContent .= '@page { margin-right: ' . $margin_right . 'px; }';
     }
-
-
-    $mpdf->genPdf($content, $customCssContent, $this->footer(), $additionals, $watermark);
+    if ($margin_top !== null) {
+        $customCssContent .= '@page { margin-top: ' . $margin_top . 'px; }';
+    }
+    if ($margin_bottom !== null) {
+        $customCssContent .= '@page { margin-bottom: ' . $margin_bottom . 'px; }';
+    }
+  
+      $mpdf->genPdf($content, $customCssContent, $this->footer(), $additionals, $watermark);
   }
 
   private function dummyData()
@@ -831,18 +830,23 @@ public function actionExamidcard()
 
   public function actionPutthaisong_transcript5()
   {
-    $data = $this->dummyDataTranscript();
-    $html = $this->renderPartial('putthaisong_transcript5', [...$data]);
-
-    $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
-
-    $fileName =   'bp5-eva-cover';
-    $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
-    $additionals = [];
-
-    $this->outputPDF($fileName, $html, $extraCssPath, [
-      'default_font_size' => 10,
-    ], $additionals);
+      $data = $this->dummyDataTranscript();
+      $html = $this->renderPartial('putthaisong_transcript5', [...$data]);
+  
+      $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
+  
+      $fileName = 'bp5-eva-cover';
+      $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
+      $additionals = [];
+  
+      $overrideConfig = [
+        'margin_left' => 80,
+        'margin_right' => 20,
+        'margin_top' => 40,
+        'margin_bottom' => 40,
+    ];
+  
+      $this->outputPDF($fileName, $html, $extraCssPath, $overrideConfig, $additionals);
   }
 
   public function actionPutthaisong_transcript_eva()
@@ -856,9 +860,14 @@ public function actionExamidcard()
     $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
     $additionals = [];
 
-    $this->outputPDF($fileName, $html, $extraCssPath, [
-      'default_font_size' => 10,
-    ], $additionals);
+    $overrideConfig = [
+      'margin_left' => 80,
+      'margin_right' => 20,
+      'margin_top' => 40,
+      'margin_bottom' => 40,
+  ];
+
+    $this->outputPDF($fileName, $html, $extraCssPath, $overrideConfig, $additionals);
   }
 
   public function actionPutthaisong_transcript_attendance()
@@ -869,11 +878,16 @@ public function actionExamidcard()
     $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
 
     $fileName =   'bp5-attendance';
-    $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/Landscapepdf.css';
+    $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
     $additionals = [];
 
-    $this->outputPDFLandscape($fileName, $html, $extraCssPath, [
-      'default_font_size' => 10,
-    ], $additionals);
+    $overrideConfig = [
+      'margin_left' => 80,
+      'margin_right' => 20,
+      'margin_top' => 40,
+      'margin_bottom' => 40,
+  ];
+
+    $this->outputPDF($fileName, $html, $extraCssPath, $overrideConfig, $additionals);
   }
 }
