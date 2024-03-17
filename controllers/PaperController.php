@@ -890,4 +890,384 @@ public function actionExamidcard()
 
     $this->outputPDF($fileName, $html, $extraCssPath, $overrideConfig, $additionals);
   }
+
+  public function actionVisit_bodin_summary()
+  {
+    $data = $this->dummyDataVisitBodinSum();
+    $html = $this->renderPartial('visit_bodin_summary', [...$data]);
+
+    $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
+
+    $fileName =   'แบบสรุปการเยี่ยมบ้าน';
+    $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
+    $additionals = [];
+
+    $this->outputPDF($fileName, $html, $extraCssPath, [
+      'default_font_size' => 10,
+    ], $additionals);
+  }
+
+  public function actionVisit_bodin()
+  {
+    $data = $this->dummyDataVisit();
+    $html = $this->renderPartial('visit_bodin', [...$data]);
+
+    $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
+
+    $fileName =   'แบบบันทึกการเยี่ยมบ้าน';
+    $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
+    $additionals = [];
+
+    $this->outputPDF($fileName, $html, $extraCssPath, [
+      'default_font_size' => 10,
+    ], $additionals);
+  }
+
+  public function actionVisit_siyanuson()
+  {
+    $data = $this->dummyDataVisit();
+    $html = $this->renderPartial('visit_siyanuson', [...$data]);
+
+    $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
+
+    $fileName =   'แบบบันทึกการเยี่ยมบ้าน';
+    $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
+    $additionals = [];
+
+    $this->outputPDF($fileName, $html, $extraCssPath, [
+      'default_font_size' => 10,
+    ], $additionals);
+  }
+
+  private function dummyDataVisit()
+  {
+    return [
+      'missing'=> [
+      'living_environment' => 'ดี',
+      'family_care' => 'ครอบครัวเอาใจใส่ ดูแลด้านพฤติกรรมและการเรียน',
+      'student_no'=> '1',
+      'totalFamilyMember'=> 5,
+      'familyMemberMale'=> 2,
+      'familyMemberFemale'=> 3,
+      'bloodRelatedSibling'=> 2,
+      'bloodRelatedSon'=> 1,
+      'bloodRelatedDaughter'=> 1,
+      'nonBloodRelatedSibling'=> 1,
+      'nonBloodRelatedSon'=> 0,
+      'nonBloodRelatedDaughter'=> 1,
+      'familyMemberNeedHelp'=> 1,
+      'home_kind_siyanusorn'=> 'อื่นๆ',
+      'home_tidy'=> 'สกปรกไม่มีระเบียบ',
+      'hasElectricity'=> false,
+      'hasWater'=> false,
+      'hasBathroom'=> true,
+      'familyRelationship'=> 'อื่นๆ',
+      'relationshipWithDad'=> 'ขัดแย้ง',
+      'relationshipWithMom'=> 'ห่างเหิน',
+      'relationshipWithBrother'=> 'เฉยๆ',
+      'relationshipWithSister'=> 'สนิทสนม',
+      'relationshipWithElder'=> 'เฉยๆ',
+      'relationshipWithRelative'=> 'ห่างเหิน',
+      'relationshipWithOther'=> 'ขัดแย้ง',
+      'hobby'=> 'ดูทีวี/ฟังเพลง',
+      'hobbyChoice'=> ['ดูทีวี/ฟังเพลง', 'อ่านหนังสือ', 'แว้น/สก๊อย', 'ไปสวนสาธารณะ', 'อื่นๆ', 'ไปเที่ยวห้าง/ดูหนัง', 'ไปหาเพื่อน/เพื่อน', 'เล่นเกม คอมพิวเตอร์/มือถือ', 'เล่นดนตรี'],
+      'whenParentNotHome'=> 'ป้า',
+      'getLivingCostFrom'=> 'พ่อ',
+      'studentPartTime'=> 'พนักงานเสริฟร้านอาหาร',
+      'studentPartTimeIncome'=> '10,500',
+      'studentGetMoney'=> '150',
+      'studentHealth' => ['สมรรถภาพทางกายต่ำ', 'ร่างกายไม่แข็งแรง' ],
+      'studentSafety' => ['มีความขัดแย้ง/ทะเลาะกันในครอบครัว', 'ถูกล่วงละเมิดทางเพศ'],
+      'drugBehavior' => ['คบเพื่อนในกลุ่มที่ใช้สารเสพติด','อยู่ในสภาพแวดล้อมที่ใช้สารเสพติด','เป็นผู้ติดบุหรี่ สุรา หรือการใช้สารเสพติดอื่นๆ','สมาชิกในครอบครัวข้องเกี่ยวกับสารเสพติด','ปัจจุบันเกี่ยวข้องกับสารเสพติด'],
+      'sexualBehavior' => ['อยู่ในกลุ่มขายบริการ','ขายบริการทางเพศ','มีการมั่วสุมทางเพศ','ใช้เครื่องมือสื่อสารที่เกี่ยวข้องกับด้านเพศเป็นเวลานานและบ่อยครั้ง','หมกมุ่นในการใช้เครื่องมือสื่อสารที่เกี่ยวข้องทางเพศ','ตั้งครรภ์'],
+      'gameAddictive' => ['เล่นเกมเกินวันละ 1 ชั่วโมง','เก็บตัว แยกตัวจากกลุ่มเพื่อน','อยู่ในกลุ่มเพื่อนติดเกม','เล่นเกมเกินวันละ 2 ชั่วโมง','ใช้เงินสิ้นเปลือง โกหก ลักขโมยเงินเพื่อเล่นเกม','ขาดจินตนาการและความคิดสร้างสรรค์','ใช่จ่ายเงินผิดปกติ','ร้านเกมอยู่ใกล้บ้านหรือโรงเรียน','หมกมุ่น จริงจังในการเล่นเกม','อื่นๆ'],
+      'computerInternetAccessible'=> false,
+      'socialMediaAddictive' => 'ใช้โซเชียลมีเดีย/เกม (ไม่เกินวันละ 3 ชั่วโมง)',
+      'line_id'=> '123',
+      'need_assist'=> 'ไม่จำเป็น',
+      'assist'=> 'ด้านเศรษฐกิจ',
+      'facebook'=> '321',
+      'visit_count'=> 1,
+      'beingTogether'=> '6 ชั่วโมง',
+      'studentViolent'=> ['มีการทะเลาะวิวาท','ก้าวร้าว เกเร','ทะเลาะวิวาทเป็นประจำ','ทำร้ายร่างกายผู้อื่น','ทำร้ายร่างกายตนเอง','อื่นๆ'],
+      'student_responsibility'=> 'ช่วยงานบ้าน',
+      'student_responsibilityChoice'=> ['ช่วยงานบ้าน', 'ช่วยค้าขายเล็กๆน้อยๆ', 'ช่วยงานในนาไร่', 'ช่วยดูแลคนเจ็บป่วย/พิการ', 'ทำงานพิเศษแถวบ้าน', 'อื่นๆ'],
+      'nickname'=> 'เจม',
+      'method' => ['ผู้ปกครองมาส่ง', 'รถโดยสารประจำทาง', 'รถจักรยานยนต์', 'รถยนต์', 'รถจักรยาน', 'รถโรงเรียน', 'เดิน','อื่นๆ'],
+      ],
+          'totalVisitStudent' => 20,
+          'totalNonVisitStudent' => 16,
+      'profile' => [
+        'regis_id' => 293048,
+        'seat_id' => '',
+        'gender' => 0,
+        'title' => 'ด.ช.',
+        'firstname' => 'ฉัตรปรัชญา',
+        'lastname' => 'มุ้งบัง',
+        'mobile_no' => '0810548699',
+        'fullname' => 'ด.ช. ฉัตรปรัชญา มุ้งบัง',
+        'personal_id' => '1129902294330',
+        'race' => 'ไทย',
+        'nationality' => 'ไทย',
+        'religion' => 'พุทธ',
+        'dob' => '29 กันยายน 2554',
+        'height' => 140,
+        'weight' => 46,
+        'ageYear' => '12',
+        'ageMonth' => '4',
+        'blood' => 'ไม่ทราบ',
+        'email' => 'namotassa17@gmail.com',
+        'hospital' => 'N/A',
+        'born' => '-',
+        'mainLang' => 'N/A',
+        'graduate' => 'อนุบาลนนทบุรี',
+        'graduateSubDistrict' => 'สวนใหญ่',
+        'graduateDistrict' => 'เมืองนนทบุรี',
+        'graduateProvince' => 'นนทบุรี',
+        'elderBrother' => '0',
+        'elderSister' => 1,
+        'youngerBrother' => '0',
+        'youngerSister' => '0',
+        'birthOrder' => 1,
+        'childInSchool' => 1,
+        'distance' => '19',
+        'travelDuration' => '25 นาที',
+        'travelCost' => '.',
+        'talent' => 'N/A',
+        'familyStatus' => 'N/A',
+        'familyStatusNo' => 0,
+        'transport' => 'รถประจำทาง',
+        'hasfee' => true,
+        'livingType' => 'N/A',
+        'siblings' => 1,
+      ],
+      'address' => [
+        'no' => '49',
+        'moo' => '4',
+        'village' => '-',
+        'soi' => 'เรวดี 27',
+        'street' => 'ติวานนท์',
+        'sub_district' => 'ตลาดขวัญ',
+        'district' => 'เมืองนนทบุรี',
+        'province' => 'นนทบุรี',
+        'zip' => '11000',
+        'tel' => '0810548699',
+      ],
+      'dad' => [
+        'title' => 'นาย',
+        'f_name' => 'ธรรมนูญ',
+        'l_name' => 'มุ้งบัง',
+        'fullname' => 'นาย ธรรมนูญ มุ้งบัง',
+        'job' => 'รับราชการ',
+        'phone' => '0881994519',
+        'citizen' => '3250700112548',
+        'age' => 50,
+        'dob' => '10 ธันวาคม 2517',
+        'blood' => 'ไม่ทราบ',
+        'income' => '25,000',
+        'occupation' => 'รับราชการ',
+        'nationality' => 'ไทย',
+        'race' => 'ไทย',
+        'religion' => 'พุทธ',
+      ],
+      'mom' => [
+        'title' => 'นางสาว',
+        'f_name' => 'นิตญา',
+        'l_name' => 'ราชบุตร',
+        'fullname' => 'นางสาว นิตญา ราชบุตร',
+        'job' => 'พนักงานราชการ',
+        'phone' => '0999486517',
+        'citizen' => '3250700142293',
+        'age' => 44,
+        'dob' => '14 เมษายน 2523',
+        'blood' => 'ไม่ทราบ',
+        'income' => '20,000',
+        'occupation' => 'พนักงานราชการ',
+        'nationality' => 'ไทย',
+        'race' => 'ไทย',
+        'religion' => 'พุทธ',
+      ],
+      'parent' => [
+        'title' => 'นาย',
+        'firstname' => 'ธรรมนูญ',
+        'lastname' => 'มุ้งบัง',
+        'fullname' => 'นาย ธรรมนูญ มุ้งบัง',
+        'age' => 50,
+        'job' => 'รับราชการ',
+        'phone' => '0881994519',
+        'citizen' => '3250700112548',
+        'blood' => 'ไม่ทราบ',
+        'income' => '25,000',
+        'occupation' => 'รับราชการ',
+        'patronize' => 'N/A',
+        'relative' => 'บิดา',
+        'relativeDad' => true,
+        'relativeMom' => 'none',
+        'relativeOther' => 'none',
+        'nationality' => 'ไทย',
+        'race' => 'ไทย',
+        'religion' => '-',
+      ],
+      'semester' => [
+        'id' => 1251,
+        'academic_id' => 9,
+        'school_id' => 268,
+        'start_date' => '2023-10-30',
+        'end_date' => '2024-03-08',
+        'created_at' => '2023-11-06 18:21:22.682898',
+        'updated_at' => '2024-02-14 12:34:45.606355',
+        'name' => 'ภาคเรียนที่ 2',
+        'grade_sync_type' => null,
+        'grade_sync_param' => null,
+        'grade_sync_updated_at' => null,
+        'is_active' => true,
+        'study_start_date' => '2023-10-30',
+        'study_end_date' => '2024-03-08',
+    ],
+      'model' => [
+        'id' => 257098,
+        'name' => 'ม.2/6',
+        'date' => '2024-02-10',
+        'time' => '11:09',
+      ],
+      'VisitInfoObservation' => [
+        'sibling' => '2',
+        'rank' => '2',
+        'son' => '2',
+        'daughter' => '2',
+        'brotherhood' => '2',
+      ],
+      'VisitInfoTransport' => [
+        'distance' => '2',
+        'method' => 'รถจักรยานยนต์',
+        'style' => '2',
+        'is_safe' => '2',
+        'lat' => '2',
+        'lng' => '2',
+      ],
+      'VisitInfoPersonal' => [
+        'home_kind' => 'บ้านของตัวเอง',
+        'home_condition' => 'ไม่มีความเป็นสัดส่วน',
+        'live_with' => '2',
+        'marital_status' => '2',
+        'income' => '40,000',
+      ],
+      'VisitInfoMisc' => [
+        'study_support' => '2',
+        'behavior_care' => '2',
+        'bad_things' => '2',
+        'relationship_level' => 'ใกล้ชิด / อบอุ่น / มีเหตุผล',
+        'parent_feedback' => '2',
+      ],
+      'VisitInfoOpinion' => [
+        'study_assist' => '2',
+        'ability_assist' => '2',
+        'physical_assist' => '2',
+        'mental_assist' => '2',
+        'financial_assist' => '2',
+        'security_assist' => '2',
+        'drug_assist' => '2',
+        'house_assist' => '2',
+        'drug' => '2',
+        'violence' => '2',
+        'sexual' => '2',
+        'game' => '2',
+        'electronic' => '2',
+        'remark' => 'ข้อเสนอแนะ',
+      ],
+      'VisitInfoFiles' => [
+        'path' => [
+          'image1'=> 'https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg',
+          'image2'=> 'https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg',
+        ]
+      ],
+    ];
+  }
+
+  private function dummyDataVisitBodinSum()
+  {
+    return [
+      'missing'=> [
+      'living_environment' => 'ดี',
+      'family_care' => 'ครอบครัวเอาใจใส่ ดูแลด้านพฤติกรรมและการเรียน',
+      'totalStudent' => 36,
+      'totalMaleStudent' => 14,
+      'totalFemaleStudent' => 12,
+      'student_home_condition_good' => 20,
+      'student_home_condition_normal' => 13,
+      'student_home_condition_bad' => 0,
+      'student_living_environment_good' => 20,
+      'student_living_environment_normal' => 16,
+      'student_relationship_level_close' => 0,
+      'student_relationship_level_care' => 36,
+      'student_relationship_level_let_free' => 0,
+      'student_family_care_close' => 36,
+      'student_family_care_care' => 0,
+      'student_family_care_let_free' => 0,
+      ],
+      'teacherClass' => [
+          0 => [
+              'fullname' => 'นายธีระชัย เถลิงลาภ',
+          ],
+          1 => [
+              'fullname' => 'นายพรพล เทพไทยอำนวย',
+          ],
+          2 => [
+            'fullname' => '',
+        ],
+          ],
+          'totalVisitStudent' => 36,
+          'totalNonVisitStudent' => 0,
+      'model' => [
+        'name' => 'ม.6/6',
+        'date' => '2024-02-10',
+        'time' => '11:09',
+      ],
+      'VisitInfoObservation' => [
+        'sibling' => '2024-02-10',
+        'rank' => '2',
+        'son' => '2',
+        'daughter' => '2',
+        'brotherhood' => '2',
+      ],
+      'VisitInfoPersonal' => [
+        'distance' => '2',
+        'method' => '2',
+        'style' => '2',
+        'is_safe' => '2',
+        'lat' => '2',
+        'lng' => '2',
+      ],
+      'VisitInfoPersonal' => [
+        'home_kind' => '2',
+        'home_condition' => 'ดี',
+        'live_with' => '2',
+        'marital_status' => '2',
+        'income' => '2',
+      ],
+      'VisitInfoMisc' => [
+        'study_support' => '2',
+        'behavior_care' => '2',
+        'bad_things' => '2',
+        'relationship_level' => 'อื่นๆ',
+        'parent_feedback' => '2',
+      ],
+      'VisitInfoOpinion' => [
+        'study_assist' => '2',
+        'ability_assist' => '2',
+        'physical_assist' => '2',
+        'mental_assist' => '2',
+        'financial_assist' => '2',
+        'security_assist' => '2',
+        'drug_assist' => '2',
+        'house_assist' => '2',
+        'drug' => '2',
+        'violence' => '2',
+        'sexual' => '2',
+        'game' => '2',
+        'electronic' => '2',
+        'remark' => '2',
+      ],
+    ];
+  }
 }
