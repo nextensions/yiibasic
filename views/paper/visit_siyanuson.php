@@ -42,7 +42,8 @@ $minute = $dateComponentsTralvel[1];
 <div id="hasWater" class="overmask" style="font-size:150%;padding-top:622px;padding-left:382px"><strong><?php echo $missing['hasWater'] === true ? "/" : "" ?></strong></div>
 <div id="hasWater" class="overmask" style="font-size:150%;padding-top:622px;padding-left:502px"><strong><?php echo $missing['hasWater'] === false ? "/" : "" ?></strong></div>
 <div id="hasBathroom" class="overmask" style="font-size:150%;padding-top:648px;padding-left:382px"><strong><?php echo $missing['hasBathroom'] === true ? "/" : "" ?></strong></div>
-<div id="hasBathroom" class="overmask" style="font-size:150%;padding-top:648px;padding-left:502px"><strong><?php echo $missing['hasBathroom'] === false ? "/" : "" ?></strong></div>
+<div id="hasBathroom" class="overmask" style="font-size:150%;padding-top:188px;padding-left:115px"><strong><?php echo $missing['visit_count'] > 0 ? "/" : "" ?></strong></div>
+<div id="hasBathroom" class="overmask" style="font-size:150%;padding-top:188px;padding-left:440px"><strong><?php echo $missing['visit_count'] === 0 ? "/" : "" ?></strong></div>
 <div style="font-size:16pt;line-height:26px;">
 <div style="padding-top:40px;padding-bottom:20px">
     <p style="text-align:center;font-size:20pt;font-weight:bold;border:1px solid #43729B;border-radius: 10px;background-color:#F2F2F2;width:210px;height:35px;padding-top:10px;margin-left:250px;">แบบบันทึกการเยี่ยมบ้าน</p>
@@ -68,7 +69,6 @@ $minute = $dateComponentsTralvel[1];
     <dt style="width:70px;">ภาคเรียนที่</dt>
     <dd style="width:60px;"><?php echo empty($semNo) ? "&nbsp;" : $semNo; ?></dd>
     <dt style="width:100px;"><span style="font-family: fontawesome; font-size:80%;">&#9723;</span>&nbsp;&nbsp;ยังไม่ได้เยี่ยม</dt>
-    <dd style="width:135px;"><?php echo "." ?></dd>
     <dt style="width:500px;"><strong>ข้อมูลจากการสังเกตและสอบถาม :</strong> ให้ทำเครื่องหมาย <span style="font-family: fontawesome; font-size:80%;">&#x2713;</span> ถูกในช่องสี่เหลี่ยม</dt>
 </dl>
 <p style="font-weight:bold;">บ้านที่พักอาศัย</p>
