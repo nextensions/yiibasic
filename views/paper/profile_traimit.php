@@ -55,8 +55,8 @@ $year = $dateComponents[2];
     <dd style="width:67px;"><?php echo $title['grade'] . '&nbsp;/&nbsp;&nbsp;' ?></dd>
     <dt style="width:70px;">ปีการศึกษา</dt>
     <dd style="width:60px;"><?php echo $title['year'] ?></dd>
-    <dt style="width:130px;">เลขประจำตัวนักเรียน</dt>
-    <dd style="width:84px;">&nbsp;</dd>
+    <dt style="width:128px;">เลขประจำตัวนักเรียน</dt>
+    <dd style="width:86px;">&nbsp;</dd>
   </dl>
   <div style="line-height:25px">
     <div class="col-1" style="float:left;width:22%">
