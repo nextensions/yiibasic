@@ -85,6 +85,468 @@ class PaperController extends Controller
       $mpdf->genPdf($content, $customCssContent, $this->footer(), $additionals, $watermark);
   }
 
+public function actionExamidcard()
+  {
+    $data = $this->dummyDataExamCard();
+    $html = $this->renderPartial('examidcard', [...$data]);
+
+    $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
+
+    $fileName =   'บัตรประจำตัวผู้เข้าสอบ_' . $data['register_number'];
+    $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
+    $additionals = [];
+
+    $this->outputPDF($fileName, $html, $extraCssPath, [
+      'default_font_size' => 10,
+    ], $additionals);
+  }
+
+
+  public function actionProfile()
+  {
+    $data = $this->dummyData();
+    $html = $this->renderPartial('profile', [...$data]);
+
+    $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
+
+    $fileName =   'ใบมอบตัว_' . $data['profile']['regis_id'] . '_' . $data['model']['firstname'] . '_' . $data['model']['lastname'];
+    $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
+    $additionals = [];
+
+    $this->outputPDF($fileName, $html, $extraCssPath, [
+      'default_font_size' => 10,
+    ], $additionals);
+  }
+  public function actionProfile_traimit()
+  {
+    $data = $this->dummyData();
+    $html = $this->renderPartial('profile_traimit', [...$data]);
+
+    $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
+
+    $fileName =   'ใบมอบตัว_' . $data['profile']['regis_id'] . '_' . $data['model']['firstname'] . '_' . $data['model']['lastname'];
+    $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
+    $additionals = [];
+
+    $this->outputPDF($fileName, $html, $extraCssPath, [
+      'default_font_size' => 10,
+    ], $additionals);
+  }
+
+  public function actionProfile_phanarai()
+  {
+    $data = $this->dummyData();
+    $html = $this->renderPartial('profile_phanarai', [...$data]);
+
+    $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
+
+    $fileName =   'ใบมอบตัว_' . $data['profile']['regis_id'] . '_' . $data['model']['firstname'] . '_' . $data['model']['lastname'];
+    $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
+    $additionals = [];
+
+    $this->outputPDF($fileName, $html, $extraCssPath, [
+      'default_font_size' => 10,
+    ], $additionals);
+  }
+
+  public function actionPayin_nikomwitthaya()
+  {
+    $data = $this->dummyDataNikomwitthaya();
+    $html = $this->renderPartial('payin_nikomwitthaya', [...$data]);
+
+    $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
+
+    $fileName =   'Payin';
+    $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
+    $additionals = [];
+
+    $this->outputPDF($fileName, $html, $extraCssPath, [
+      'default_font_size' => 10,
+    ], $additionals);
+  }
+
+  public function actionPutthaisong_transcript5()
+  {
+      $data = $this->dummyDataTranscript();
+      $html = $this->renderPartial('putthaisong_transcript5', [...$data]);
+  
+      $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
+  
+      $fileName = 'bp5-eva-cover';
+      $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
+      $additionals = [];
+  
+      $overrideConfig = [
+        'margin_left' => 80,
+        'margin_right' => 20,
+        'margin_top' => 40,
+        'margin_bottom' => 40,
+    ];
+  
+      $this->outputPDF($fileName, $html, $extraCssPath, $overrideConfig, $additionals);
+  }
+
+  public function actionPutthaisong_transcript_eva()
+  {
+    $data = $this->dummyDataTranscript();
+    $html = $this->renderPartial('putthaisong_transcript_eva', [...$data]);
+
+    $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
+
+    $fileName =   'bp5-eva';
+    $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
+    $additionals = [];
+
+    $overrideConfig = [
+      'margin_left' => 80,
+      'margin_right' => 20,
+      'margin_top' => 40,
+      'margin_bottom' => 40,
+  ];
+
+    $this->outputPDF($fileName, $html, $extraCssPath, $overrideConfig, $additionals);
+  }
+
+  public function actionPutthaisong_transcript_attendance()
+  {
+    $data = $this->dummyDataTranscript();
+    $html = $this->renderPartial('putthaisong_transcript_attendance', [...$data]);
+
+    $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
+
+    $fileName =   'bp5-attendance';
+    $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
+    $additionals = [];
+
+    $overrideConfig = [
+      'margin_left' => 80,
+      'margin_right' => 20,
+      'margin_top' => 40,
+      'margin_bottom' => 40,
+  ];
+
+    $this->outputPDF($fileName, $html, $extraCssPath, $overrideConfig, $additionals);
+  }
+
+  public function actionVisit_bodin_summary()
+  {
+    $data = $this->dummyDataVisitBodinSum();
+    $html = $this->renderPartial('visit_bodin_summary', [...$data]);
+
+    $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
+
+    $fileName =   'แบบสรุปการเยี่ยมบ้าน';
+    $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
+    $additionals = [];
+
+    $this->outputPDF($fileName, $html, $extraCssPath, [
+      'default_font_size' => 10,
+    ], $additionals);
+  }
+
+  public function actionVisit_bodin()
+  {
+    $data = $this->dummyDataVisit();
+    $html = $this->renderPartial('visit_bodin', [...$data]);
+
+    $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
+
+    $fileName =   'แบบบันทึกการเยี่ยมบ้าน';
+    $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
+    $additionals = [];
+
+    $this->outputPDF($fileName, $html, $extraCssPath, [
+      'default_font_size' => 10,
+    ], $additionals);
+  }
+
+  public function actionVisit_siyanuson()
+  {
+    $data = $this->dummyDataVisit();
+    $html = $this->renderPartial('visit_siyanuson', [...$data]);
+
+    $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
+
+    $fileName =   'แบบบันทึกการเยี่ยมบ้าน สพฐ ปี 66';
+    $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
+    $additionals = [];
+
+    $this->outputPDF($fileName, $html, $extraCssPath, [
+      'default_font_size' => 10,
+    ], $additionals);
+  }
+
+  public function actionNikom_print_profile()
+  {
+    $data = $this->dummyDataNikom_print_profile();
+    $html = $this->renderPartial('nikom_print_profile', [...$data]);
+
+    $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
+
+    $fileName =   'ทะเบียนประวัตินักเรียนรายบุคคล';
+    $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
+    $additionals = [];
+
+    $this->outputPDF($fileName, $html, $extraCssPath, [
+      'default_font_size' => 10,
+    ], $additionals);
+  }
+
+  private function dummyDataVisit()
+  {
+    return [
+      'missing'=> [
+      'parent_remark' => 'ดี เอื้อต่อการดำรงชีวิต',
+      'living_environment' => 'ดี เอื้อต่อการดำรงชีวิต',
+      'environmentDetail' => '',
+      'family_care' => 'ครอบครัวเอาใจใส่ ดูแลด้านพฤติกรรมและการเรียน',
+      'student_no'=> '1',
+      'totalFamilyMember'=> 5,
+      'familyMemberMale'=> 2,
+      'familyMemberFemale'=> 3,
+      'bloodRelatedSibling'=> 2,
+      'bloodRelatedSon'=> 1,
+      'bloodRelatedDaughter'=> 1,
+      'nonBloodRelatedSibling'=> 1,
+      'nonBloodRelatedSon'=> 0,
+      'nonBloodRelatedDaughter'=> 1,
+      'familyMemberNeedHelp'=> 1,
+      'home_kind'=> 'บ้านของตัวเอง',
+      'home_tidy'=> 'สกปรกไม่มีระเบียบ',
+      'hasElectricity'=> false,
+      'hasWater'=> false,
+      'hasBathroom'=> true,
+      'familyRelationship'=> 'อื่นๆ',
+      'relationshipWithDad'=> 'ขัดแย้ง',
+      'relationshipWithMom'=> 'ห่างเหิน',
+      'relationshipWithBrother'=> 'เฉยๆ',
+      'relationshipWithSister'=> 'สนิทสนม',
+      'relationshipWithElder'=> 'เฉยๆ',
+      'relationshipWithRelative'=> 'ห่างเหิน',
+      'relationshipWithOther'=> 'ไม่มี',
+      'hobby'=> 'ดูทีวี/ฟังเพลง',
+      'hobbyChoice'=> ['ดูทีวี/ฟังเพลง', 'อ่านหนังสือ', 'แว้น/สก๊อย', 'ไปสวนสาธารณะ', 'อื่นๆ', 'ไปเที่ยวห้าง/ดูหนัง', 'ไปหาเพื่อน/เพื่อน', 'เล่นเกม คอมพิวเตอร์/มือถือ', 'เล่นดนตรี'],
+      'whenParentNotHome'=> 'ป้า',
+      'getLivingCostFrom'=> 'พ่อ',
+      'studentPartTime'=> 'พนักงานเสริฟร้านอาหาร',
+      'studentPartTimeIncome'=> '10,500',
+      'studentGetMoney'=> '150',
+      'studentHealth' => ['สมรรถภาพทางกายต่ำ', 'ร่างกายไม่แข็งแรง' ],
+      'studentSafety' => ['มีความขัดแย้ง/ทะเลาะกันในครอบครัว', 'ถูกล่วงละเมิดทางเพศ'],
+      'drugBehavior' => ['คบเพื่อนในกลุ่มที่ใช้สารเสพติด','อยู่ในสภาพแวดล้อมที่ใช้สารเสพติด','เป็นผู้ติดบุหรี่ สุรา หรือการใช้สารเสพติดอื่นๆ','สมาชิกในครอบครัวข้องเกี่ยวกับสารเสพติด','ปัจจุบันเกี่ยวข้องกับสารเสพติด'],
+      'sexualBehavior' => ['อยู่ในกลุ่มขายบริการ','ขายบริการทางเพศ','มีการมั่วสุมทางเพศ','ใช้เครื่องมือสื่อสารที่เกี่ยวข้องกับด้านเพศเป็นเวลานานและบ่อยครั้ง','หมกมุ่นในการใช้เครื่องมือสื่อสารที่เกี่ยวข้องทางเพศ','ตั้งครรภ์'],
+      'gameAddictive' => ['เล่นเกมเกินวันละ 1 ชั่วโมง','เก็บตัว แยกตัวจากกลุ่มเพื่อน','อยู่ในกลุ่มเพื่อนติดเกม','เล่นเกมเกินวันละ 2 ชั่วโมง','ใช้เงินสิ้นเปลือง โกหก ลักขโมยเงินเพื่อเล่นเกม','ขาดจินตนาการและความคิดสร้างสรรค์','ใช่จ่ายเงินผิดปกติ','ร้านเกมอยู่ใกล้บ้านหรือโรงเรียน','หมกมุ่น จริงจังในการเล่นเกม','อื่นๆ'],
+      'computerInternetAccessible'=> false,
+      'socialMediaAddictive' => 'ใช้โซเชียลมีเดีย/เกม (ไม่เกินวันละ 3 ชั่วโมง)',
+      'line_id'=> '123',
+      'need_assist'=> 'ไม่จำเป็น',
+      'assist'=> 'ด้านเศรษฐกิจ',
+      'facebook'=> '321',
+      'visit_count'=> 1,
+      'beingTogether'=> '6 ชั่วโมง',
+      'studentViolent'=> ['มีการทะเลาะวิวาท','ก้าวร้าว เกเร','ทะเลาะวิวาทเป็นประจำ','ทำร้ายร่างกายผู้อื่น','ทำร้ายร่างกายตนเอง','อื่นๆ'],
+      'student_responsibility'=> 'ช่วยงานบ้าน',
+      'student_responsibilityChoice'=> ['ช่วยงานบ้าน', 'ช่วยค้าขายเล็กๆน้อยๆ', 'ช่วยงานในนาไร่', 'ช่วยดูแลคนเจ็บป่วย/พิการ', 'ทำงานพิเศษแถวบ้าน', 'อื่นๆ'],
+      'nickname'=> 'เจม',
+      'method' => ['ผู้ปกครองมาส่ง', 'รถโดยสารประจำทาง', 'รถจักรยานยนต์', 'รถยนต์', 'รถจักรยาน', 'รถโรงเรียน', 'เดิน','อื่นๆ'],
+      ],
+      'profile' => [
+        'regis_id' => 293048,
+        'seat_id' => '',
+        'gender' => 0,
+        'title' => 'ด.ช.',
+        'firstname' => 'ฉัตรปรัชญา',
+        'lastname' => 'มุ้งบัง',
+        'mobile_no' => '0810548699',
+        'fullname' => 'ด.ช. ฉัตรปรัชญา มุ้งบัง',
+        'personal_id' => '1129902294330',
+        'race' => 'ไทย',
+        'nationality' => 'ไทย',
+        'religion' => 'พุทธ',
+        'dob' => '29 กันยายน 2554',
+        'height' => 140,
+        'weight' => 46,
+        'ageYear' => '12',
+        'ageMonth' => '4',
+        'blood' => 'ไม่ทราบ',
+        'email' => 'namotassa17@gmail.com',
+        'hospital' => 'N/A',
+        'born' => '-',
+        'mainLang' => 'N/A',
+        'graduate' => 'อนุบาลนนทบุรี',
+        'graduateSubDistrict' => 'สวนใหญ่',
+        'graduateDistrict' => 'เมืองนนทบุรี',
+        'graduateProvince' => 'นนทบุรี',
+        'elderBrother' => '0',
+        'elderSister' => 1,
+        'youngerBrother' => '0',
+        'youngerSister' => '0',
+        'birthOrder' => 1,
+        'childInSchool' => 1,
+        'distance' => '19',
+        'travelDuration' => '25 นาที',
+        'travelCost' => '.',
+        'talent' => 'N/A',
+        'familyStatus' => 'N/A',
+        'familyStatusNo' => 0,
+        'transport' => 'รถประจำทาง',
+        'hasfee' => true,
+        'livingType' => 'N/A',
+        'siblings' => 1,
+      ],
+      'address' => [
+        'no' => '49',
+        'moo' => '4',
+        'village' => '-',
+        'soi' => 'เรวดี 27',
+        'street' => 'ติวานนท์',
+        'sub_district' => 'ตลาดขวัญ',
+        'district' => 'เมืองนนทบุรี',
+        'province' => 'นนทบุรี',
+        'zip' => '11000',
+        'tel' => '0810548699',
+      ],
+      'dad' => [
+        'title' => 'นาย',
+        'f_name' => 'ธรรมนูญ',
+        'l_name' => 'มุ้งบัง',
+        'fullname' => 'นาย ธรรมนูญ มุ้งบัง',
+        'job' => 'รับราชการ',
+        'phone' => '0881994519',
+        'citizen' => '3250700112548',
+        'age' => 50,
+        'dob' => '10 ธันวาคม 2517',
+        'blood' => 'ไม่ทราบ',
+        'income' => '25,000',
+        'occupation' => 'รับราชการ',
+        'nationality' => 'ไทย',
+        'race' => 'ไทย',
+        'religion' => 'พุทธ',
+      ],
+      'mom' => [
+        'title' => 'นางสาว',
+        'f_name' => 'นิตญา',
+        'l_name' => 'ราชบุตร',
+        'fullname' => 'นางสาว นิตญา ราชบุตร',
+        'job' => 'พนักงานราชการ',
+        'phone' => '0999486517',
+        'citizen' => '3250700142293',
+        'age' => 44,
+        'dob' => '14 เมษายน 2523',
+        'blood' => 'ไม่ทราบ',
+        'income' => '20,000',
+        'occupation' => 'พนักงานราชการ',
+        'nationality' => 'ไทย',
+        'race' => 'ไทย',
+        'religion' => 'พุทธ',
+      ],
+      'parent' => [
+        'title' => 'นาย',
+        'firstname' => 'ธรรมนูญ',
+        'lastname' => 'มุ้งบัง',
+        'fullname' => 'นาย ธรรมนูญ มุ้งบัง',
+        'age' => 50,
+        'job' => 'รับราชการ',
+        'phone' => '0881994519',
+        'citizen' => '3250700112548',
+        'blood' => 'ไม่ทราบ',
+        'income' => '25,000',
+        'occupation' => 'รับราชการ',
+        'patronize' => 'N/A',
+        'relative' => 'บิดา',
+        'relativeDad' => true,
+        'relativeMom' => 'none',
+        'relativeOther' => 'none',
+        'nationality' => 'ไทย',
+        'race' => 'ไทย',
+        'religion' => '-',
+      ],
+      'semester' => [
+        'id' => 1251,
+        'academic_id' => 9,
+        'school_id' => 268,
+        'start_date' => '2023-10-30',
+        'end_date' => '2024-03-08',
+        'created_at' => '2023-11-06 18:21:22.682898',
+        'updated_at' => '2024-02-14 12:34:45.606355',
+        'name' => 'ภาคเรียนที่ 2',
+        'grade_sync_type' => null,
+        'grade_sync_param' => null,
+        'grade_sync_updated_at' => null,
+        'is_active' => true,
+        'study_start_date' => '2023-10-30',
+        'study_end_date' => '2024-03-08',
+    ],
+      'model' => [
+        'id' => 257098,
+        'name' => 'ม.2/6',
+        'date' => '2024-02-10',
+        'time' => '11:09',
+      ],
+      'VisitInfoTransport' => [
+        'distance' => '19',
+        'method' => 'รถจักรยานยนต์',
+      ],
+      'VisitInfoPersonal' => [
+        'home_kind' => 'บ้านของตัวเอง',
+        'home_condition' => 'ดี เอื้อต่อการดำรงชีวิต',
+        'income' => '40,000',
+      ],
+      'VisitInfoMisc' => [
+        'relationship_level' => 'ใกล้ชิด / อบอุ่น / มีเหตุผล',
+      ],
+      'VisitInfoOpinion' => [
+        'remark' => 'ข้อเสนอแนะ',
+      ],
+      'VisitInfoFiles' => [
+        'path' => [
+          'image1'=> 'https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg',
+          'image2'=> 'https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg',
+        ]
+      ],
+    ];
+  }
+
+  private function dummyDataVisitBodinSum()
+  {
+    return [
+      'missing'=> [
+      'totalStudent' => 36,
+      'totalMaleStudent' => 14,
+      'totalFemaleStudent' => 12,
+      'student_home_condition_good' => 20,
+      'student_home_condition_normal' => 13,
+      'student_home_condition_bad' => 0,
+      'student_living_environment_good' => 20,
+      'student_living_environment_normal' => 16,
+      'student_relationship_level_close' => 0,
+      'student_relationship_level_care' => 36,
+      'student_relationship_level_let_free' => 0,
+      'student_family_care_close' => 36,
+      'student_family_care_care' => 0,
+      'student_family_care_let_free' => 0,
+      'totalVisitStudent' => 36,
+      'totalNonVisitStudent' => 0,
+      ],
+      'teacherClass' => [
+          0 => [
+              'fullname' => 'นายธีระชัย เถลิงลาภ',
+          ],
+          1 => [
+              'fullname' => 'นายพรพล เทพไทยอำนวย',
+          ],
+          2 => [
+            'fullname' => '',
+        ],
+          ],
+      'model' => [
+        'name' => 'ม.6/6',
+        'date' => '2024-02-10',
+        'time' => '11:09',
+      ],
+    ];
+  }
+
   private function dummyData()
   {
     return [
@@ -320,69 +782,6 @@ class PaperController extends Controller
             'location_name' => '232',
         ],
         ];
-  }
-public function actionExamidcard()
-  {
-    $data = $this->dummyDataExamCard();
-    $html = $this->renderPartial('examidcard', [...$data]);
-
-    $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
-
-    $fileName =   'บัตรประจำตัวผู้เข้าสอบ_' . $data['register_number'];
-    $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
-    $additionals = [];
-
-    $this->outputPDF($fileName, $html, $extraCssPath, [
-      'default_font_size' => 10,
-    ], $additionals);
-  }
-
-
-  public function actionProfile()
-  {
-    $data = $this->dummyData();
-    $html = $this->renderPartial('profile', [...$data]);
-
-    $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
-
-    $fileName =   'ใบมอบตัว_' . $data['profile']['regis_id'] . '_' . $data['model']['firstname'] . '_' . $data['model']['lastname'];
-    $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
-    $additionals = [];
-
-    $this->outputPDF($fileName, $html, $extraCssPath, [
-      'default_font_size' => 10,
-    ], $additionals);
-  }
-  public function actionProfile_traimit()
-  {
-    $data = $this->dummyData();
-    $html = $this->renderPartial('profile_traimit', [...$data]);
-
-    $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
-
-    $fileName =   'ใบมอบตัว_' . $data['profile']['regis_id'] . '_' . $data['model']['firstname'] . '_' . $data['model']['lastname'];
-    $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
-    $additionals = [];
-
-    $this->outputPDF($fileName, $html, $extraCssPath, [
-      'default_font_size' => 10,
-    ], $additionals);
-  }
-
-  public function actionProfile_phanarai()
-  {
-    $data = $this->dummyData();
-    $html = $this->renderPartial('profile_phanarai', [...$data]);
-
-    $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
-
-    $fileName =   'ใบมอบตัว_' . $data['profile']['regis_id'] . '_' . $data['model']['firstname'] . '_' . $data['model']['lastname'];
-    $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
-    $additionals = [];
-
-    $this->outputPDF($fileName, $html, $extraCssPath, [
-      'default_font_size' => 10,
-    ], $additionals);
   }
 
   private function dummyDataNikomwitthaya()
@@ -812,82 +1211,344 @@ public function actionExamidcard()
   'logoImage' => '/asset',
     ];
   }
-  public function actionPayin_nikomwitthaya()
+
+  private function dummyDataNikom_print_profile()
   {
-    $data = $this->dummyDataNikomwitthaya();
-    $html = $this->renderPartial('payin_nikomwitthaya', [...$data]);
-
-    $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
-
-    $fileName =   'Payin';
-    $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
-    $additionals = [];
-
-    $this->outputPDF($fileName, $html, $extraCssPath, [
-      'default_font_size' => 10,
-    ], $additionals);
-  }
-
-  public function actionPutthaisong_transcript5()
-  {
-      $data = $this->dummyDataTranscript();
-      $html = $this->renderPartial('putthaisong_transcript5', [...$data]);
-  
-      $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
-  
-      $fileName = 'bp5-eva-cover';
-      $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
-      $additionals = [];
-  
-      $overrideConfig = [
-        'margin_left' => 80,
-        'margin_right' => 20,
-        'margin_top' => 40,
-        'margin_bottom' => 40,
-    ];
-  
-      $this->outputPDF($fileName, $html, $extraCssPath, $overrideConfig, $additionals);
-  }
-
-  public function actionPutthaisong_transcript_eva()
-  {
-    $data = $this->dummyDataTranscript();
-    $html = $this->renderPartial('putthaisong_transcript_eva', [...$data]);
-
-    $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
-
-    $fileName =   'bp5-eva';
-    $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
-    $additionals = [];
-
-    $overrideConfig = [
-      'margin_left' => 80,
-      'margin_right' => 20,
-      'margin_top' => 40,
-      'margin_bottom' => 40,
-  ];
-
-    $this->outputPDF($fileName, $html, $extraCssPath, $overrideConfig, $additionals);
-  }
-
-  public function actionPutthaisong_transcript_attendance()
-  {
-    $data = $this->dummyDataTranscript();
-    $html = $this->renderPartial('putthaisong_transcript_attendance', [...$data]);
-
-    $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
-
-    $fileName =   'bp5-attendance';
-    $extraCssPath = Yii::getAlias('@frontend') . '/web/css/pdf/admission/base.css';
-    $additionals = [];
-
-    $overrideConfig = [
-      'margin_left' => 80,
-      'margin_right' => 20,
-      'margin_top' => 40,
-      'margin_bottom' => 40,
-  ];
-
-    $this->outputPDF($fileName, $html, $extraCssPath, $overrideConfig, $additionals);
+return [
+    'missing' => [
+        'edu_programChoice' => [
+          1 => [
+            'edu_programName'=> 'วิทยาศาสตร์สุขภาพ',
+          ],
+          2 => [
+            'edu_programName'=> 'วิทยาศาสตร์วิศวกรรมศาสตร์',
+          ],
+          3 => [
+            'edu_programName'=> 'วิทยาศาสตร์เทคโนโลยีดิจิทัล',
+          ],
+          4 => [
+            'edu_programName'=> 'วิทยาศาสตร์พลังงานและสิ่งแวดล้อม',
+          ],
+          5 => [
+            'edu_programName'=> 'ภาษาเพื่อการสื่อสารและการประกอบธุรกิจ (อังกฤษ-ธุรกิจ)',
+          ],
+          6 => [
+            'edu_programName'=> 'ภาษาเพื่อการสื่อสาร แผน ก (อังกฤษ-จีน)',
+          ],
+          7 => [
+            'edu_programName'=> 'ภาษาเพื่อการสื่อสาร แผน ข (อังกฤษ-ญี่ปุ่น)',
+          ],
+          8 => [
+            'edu_programName'=> '', // in case there are more than 7 choices
+          ],
+          9 => [
+            'edu_programName'=> '',
+          ],
+          10 => [
+            'edu_programName'=> '',
+          ],
+        ],
+        'image'=> '',
+        'dynamic_edu_program' => 1,
+        
+    ],
+    'register' => [
+        'date' => '2023-11-21',
+        'time' => '18:53',
+    ],
+    'exam' => [
+        'date' => '2024-02-28',
+        'time' => '08:00',
+    ],
+    'profile' => [
+        'regis_id' => 277561,
+        'seat_id' => '',
+        'edu_program' => 'แผนการเรียนภาษาเพื่อการสื่อสารและการประกอบธุรกิจ (อังกฤษ-ธุรกิจ)',
+        'gender' => 1,
+        'title' => 'น.ส.',
+        'firstname' => 'สุมลรัตน์',
+        'lastname' => 'ไขแจ้ง',
+        'mobile_no' => '0809652194',
+        'fullname' => 'น.ส. สุมลรัตน์ ไขแจ้ง',
+        'personal_id' => '1219901211901',
+        'race' => 'ไทย',
+        'nationality' => 'ไทย',
+        'religion' => 'พุทธ',
+        'dob' => '15 กันยายน 2551',
+        'height' => 162,
+        'weight' => 81,
+        'ageYear' => '15',
+        'ageMonth' => '6',
+        'blood' => 'O',
+        'email' => '13372@nikhomwit.ac.th',
+        'hospital' => 'N/A',
+        'born' => '-',
+        'mainLang' => 'N/A',
+        'graduate' => 'นิคมวิทยา',
+        'graduateSubDistrict' => 'นิคมพัฒนา',
+        'graduateDistrict' => 'นิคมพัฒนา',
+        'graduateProvince' => 'ระยอง',
+        'elderBrother' => '0',
+        'elderSister' => '0',
+        'youngerBrother' => '0',
+        'youngerSister' => '0',
+        'birthOrder' => 1,
+        'childInSchool' => '0',
+        'distance' => '5',
+        'travelDuration' => '9 นาที',
+        'travelCost' => '.',
+        'talent' => 'N/A',
+        'familyStatus' => 'บิดาถึงแก่กรรม',
+        'familyStatusNo' => 4,
+        'transport' => 'รถยนต์ส่วนบุคคล / Taxi',
+        'hasfee' => false,
+        'livingType' => 'N/A',
+        'siblings' => 0,
+    ],
+    'address' => [
+        'no' => '288/2',
+        'moo' => '1',
+        'soi' => '2',
+        'street' => '-',
+        'sub_district' => 'นิคมพัฒนา',
+        'district' => 'นิคมพัฒนา',
+        'province' => 'ระยอง',
+        'zip' => '21180',
+        'tel' => '0809652194',
+    ],
+    'dad' => [
+        'title' => 'นาย',
+        'f_name' => 'สุรชัย',
+        'l_name' => 'ไขแจ้ง',
+        'fullname' => 'นาย สุรชัย ไขแจ้ง',
+        'job' => 'ถึงแก่กรรม',
+        'phone' => '-',
+        'citizen' => '3640700385711',
+        'age' => 46,
+        'dob' => '23 กันยายน 2521',
+        'blood' => 'A',
+        'income' => '-',
+        'occupation' => 'ถึงแก่กรรม',
+        'nationality' => 'ไทย',
+        'race' => 'ไทย',
+        'religion' => 'พุทธ',
+    ],
+    'mom' => [
+        'title' => 'นางสาว',
+        'f_name' => 'มลฤดี',
+        'l_name' => 'ทับจันทร์',
+        'fullname' => 'นางสาว มลฤดี ทับจันทร์',
+        'job' => 'รับราชการ',
+        'phone' => '0818631929',
+        'citizen' => '1210500078021',
+        'age' => 34,
+        'dob' => '28 สิงหาคม 2533',
+        'blood' => 'B',
+        'income' => '9,000',
+        'occupation' => 'รับราชการ',
+        'nationality' => 'ไทย',
+        'race' => 'ไทย',
+        'religion' => 'พุทธ',
+    ],
+    'parent' => [
+        'title' => 'นางสาว',
+        'firstname' => 'มลฤดี',
+        'lastname' => 'ทับจันทร์',
+        'fullname' => 'นางสาว มลฤดี ทับจันทร์',
+        'age' => 34,
+        'job' => 'รับราชการ',
+        'phone' => '0818631929',
+        'citizen' => '1210500078021',
+        'blood' => 'B',
+        'income' => '9,000',
+        'occupation' => 'รับราชการ',
+        'patronize' => 'N/A',
+        'relative' => 'มารดา',
+        'relativeDad' => 'none',
+        'relativeMom' => true,
+        'relativeOther' => 'none',
+        'nationality' => 'ไทย',
+        'race' => 'ไทย',
+        'religion' => '-',
+    ],
+    'old_school' => [
+        'name' => 'นิคมวิทยา',
+        'sub_district' => 'นิคมพัฒนา',
+        'district' => 'นิคมพัฒนา',
+        'province' => 'ระยอง',
+        'type' => 'ค้นหา',
+    ],
+    'img' => 'https://app.nextschool.io/img/logo/15581693201021470238.jpg',
+    'title' => [
+        'name' => 'นิคมวิทยา',
+        'grade' => 4,
+        'year' => 2567,
+    ],
+    'model' => [/* common\models\RegistrantInfo#1
+    (
+        [yii\base\Component:_events] => [
+            'beforeInsert' => [
+                0 => [
+                    0 => [
+                        0 => yii\behaviors\TimestampBehavior,#2
+                        (
+                            [owner] => common\models\RegistrantInfo#1(...)
+                            [yii\base\Behavior:_attachedEvents] => [
+                                'beforeInsert' => 'evaluateAttributes'
+                                'beforeUpdate' => 'evaluateAttributes'
+                            ]
+                            [attributes] => [
+                                'beforeInsert' => [
+                                    0 => 'created_at'
+                                    1 => 'updated_at'
+                                ]
+                                'beforeUpdate' => 'updated_at'
+                            ]
+                            [value] => yii\db\Expression#3
+                            (
+                                [expression] => 'NOW()'
+                                [params] => []
+                            )
+                            [skipUpdateOnClean] => true
+                            [preserveNonEmptyValues] => false
+                            [createdAtAttribute] => 'created_at'
+                            [updatedAtAttribute] => 'updated_at'
+                        )
+                        1 => 'evaluateAttributes'
+                    ]
+                    1 => null
+                ]
+            ]
+            'beforeUpdate' => [
+                0 => [
+                    0 => [
+                        0 => yii\behaviors\TimestampBehavior#2(...)
+                        1 => 'evaluateAttributes'
+                    ]
+                    1 => null
+                ]
+            ]
+        ]
+        [yii\base\Component:_eventWildcards] => []
+        [yii\base\Component:_behaviors] => [
+            0 => yii\behaviors\TimestampBehavior#2(...)
+        ]
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\db\BaseActiveRecord:_attributes] => [
+          */
+            'id' => 46566,
+            'registrant_id' => 277561,
+            'title' => 'น.ส.',
+            'firstname' => 'สุมลรัตน์',
+            'lastname' => 'ไขแจ้ง',
+            'gender' => 1,
+            'dob' => '2008-09-15',
+            'weight' => 81,
+            'height' => 162,
+            'blood_type' => 'O',
+            'religion' => 'พุทธ',
+            'nationality' => 'ไทย',
+            'race' => 'ไทย',
+            'mobile_no' => '0809652194',
+            'email' => '13372@nikhomwit.ac.th',
+            'mobile_no_verify_status' => null,
+            'citizen_card_address_id' => 65072,
+            'current_address_id' => 65072,
+            'parent_id' => 94001,
+            'family_status' => 4,
+            'created_at' => '2023-11-21 18:53:33',
+            'updated_at' => '2023-11-23 20:06:07',
+            'lat' => '12.8507',
+            'lng' => '101.1936',
+            'has_fee' => false,
+            'transport' => 3,
+            'travel_distance' => 4628,
+            'travel_duration' => '9 นาที',
+            'prev_edu_type' => 'ค้นหา',
+            'prev_edu_name' => 'นิคมวิทยา',
+            'prev_edu_sub_district' => 'นิคมพัฒนา',
+            'prev_edu_district' => 'นิคมพัฒนา',
+            'prev_edu_province' => 'ระยอง',
+            'prev_edu_postal_code' => null,
+            'prev_edu_gpa' => 3.28,
+            'extra' => null,
+            'home_owner_relation' => null,
+            'home_owner_firstname' => null,
+            'home_owner_lastname' => null,
+            'home_owner_citizen_id' => null,
+            'home_owner_mobile_no' => null,
+            'need_book' => false,
+            'need_stationary' => false,
+            'need_lunch' => false,
+            'need_uniform' => false,
+            'num_elder_brother' => 0,
+            'num_younger_brother' => 0,
+            'num_elder_sister' => 0,
+            'num_younger_sister' => 0,
+            'num_children_in_school' => 0,
+            'birth_order' => 1,
+            'living_type' => 0,
+            'underprivileged' => 0,
+            'completed_last_step_at' => '2023-11-23 20:06:07',
+            'in_area' => false,
+            'meta' => null,
+            'homeown_id' => null,
+        ],
+        'yii\db\BaseActiveRecord:_oldAttributes' => [
+            'id' => 46566,
+            'registrant_id' => 277561,
+            'title' => 'น.ส.',
+            'firstname' => 'สุมลรัตน์',
+            'lastname' => 'ไขแจ้ง',
+            'gender' => 1,
+            'dob' => '2008-09-15',
+            'weight' => 81,
+            'height' => 162,
+            'blood_type' => 'O',
+            'religion' => 'พุทธ',
+            'nationality' => 'ไทย',
+            'race' => 'ไทย',
+            'mobile_no' => '0809652194',
+            'email' => '13372@nikhomwit.ac.th',
+            'mobile_no_verify_status' => null,
+            'citizen_card_address_id' => 65072,
+            'current_address_id' => 65072,
+            'parent_id' => 94001,
+            'family_status' => 4,
+            'created_at' => '2023-11-21 18:53:33',
+            'updated_at' => '2023-11-23 20:06:07',
+            'lat' => '12.8507',
+            'lng' => '101.1936',
+            'has_fee' => false,
+            'transport' => 3,
+            'travel_distance' => 4628,
+            'travel_duration' => '9 นาที',
+            'prev_edu_type' => 'ค้นหา',
+            'prev_edu_name' => 'นิคมวิทยา',
+            'prev_edu_sub_district' => 'นิคมพัฒนา',
+            'prev_edu_district' => 'นิคมพัฒนา',
+            'prev_edu_province' => 'ระยอง',
+            'prev_edu_postal_code' => null,
+            'prev_edu_gpa' => 3.28,
+            'extra' => null,
+            'home_owner_relation' => null,
+            'home_owner_firstname' => null,
+            'home_owner_lastname' => null,
+            'home_owner_citizen_id' => null,
+            'home_owner_mobile_no' => null,
+            'need_book' => false,
+            'need_stationary' => false,
+            'need_lunch' => false,
+            'need_uniform' => false,
+            'num_elder_brother' => 0,
+            'num_younger_brother' => 0,
+            'num_elder_sister' => 0,
+            'num_younger_sister' => 0,
+            'num_child' => 0,
+        ],
+      ];
+    
   }
 }
