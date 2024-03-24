@@ -42,6 +42,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
             ['label' => 'Home', 'url' => ['/site/index']],
             ['label' => 'About', 'url' => ['/site/about']],
             ['label' => 'Contact', 'url' => ['/site/contact']],
+            ['label' => 'Image cropper', 'url' => ['/image/imagecrop']],
             ['label' => 'Payin', 'url' => ['/report/payin']],
             ['label' => 'Payin Nikomwitthaya', 'url' => ['/paper/payin_nikomwitthaya']],
             Yii::$app->user->isGuest
