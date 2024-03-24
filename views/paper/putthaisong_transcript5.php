@@ -153,7 +153,7 @@ $totalGradePoints = ($ranges[0]['count'] * 4) +
 <div style="margin-left:20px;margin-right:-40px">
     <dl>
 <dt style="width:60px;">รหัสวิชา : </dt>
-        <dd style="width:100px;"><?php echo $model['course_id'] ?></dd>
+        <dd style="width:100px;"><?php echo $missing['course_code'] ?></dd>
         <dt style="width:25px;">วิชา</dt>
         <dd style="width:180px;"><?php echo $missing['subject'] ?></dd>
         <dt style="width:110px;">กลุ่มสาระการเรียนรู้</dt>
@@ -170,9 +170,9 @@ $totalGradePoints = ($ranges[0]['count'] * 4) +
         <dt style="width:80px;">ชั่วโมง/สัปดาห์</dt>
         </dl>
 </div>
-<div style="margin-left:40px;margin-top:10px;">
+<div style="margin-left:20px;margin-top:10px;">
 <p>ตารางแสดงผลสัมฤทธิ์ทางการเรียน</p>
-<div style="margin-left:10px;margin-right:-20px;">
+<div style="margin-left:10px;">
 <table class="table table-bordered table-sm table-collapse" style="border: 1px solid">
                     <thead>
                         <tr>
@@ -304,7 +304,7 @@ $totalGradePoints = ($ranges[0]['count'] * 4) +
                 </table>
                 </div>
 <p>ผลการประเมิน การอ่าน คิด วิเคราะห์และเขียน</p>
-<div style="margin-left:10px;margin-right:-20px;">
+<div style="margin-left:10px;">
 <table class="table table-bordered table-sm table-collapse" style="border: 1px solid">
                     <thead>
                         <tr>
@@ -352,7 +352,7 @@ $totalGradePoints = ($ranges[0]['count'] * 4) +
                 </table>
                 </div>
                 <p style="margin-top:-10px">ขอรับรองว่าได้ตรวจสอบข้อมูลข้างต้นแล้ว เป็นข้อมูลที่ถูกต้องตามความเป็นจริงทุกประการ</p>
-        <div style="padding-top:10px;margin-left:80px;text-align:center;line-height:30px">
+        <div style="padding-top:10px;margin-left:30px;text-align:center;line-height:30px">
         <p style="line-height:10px;margin-left:0px;">ลงชื่อ ......................................................... ครูผู้สอน<p>
         <p style="padding-top:10px;margin-left:-25px;line-height:10px">(<?php echo $teachName ?>)<p>
         <p style="line-height:10px">วันที่ ......... เดือน ......................... พ.ศ. ................<p>
@@ -365,7 +365,7 @@ $totalGradePoints = ($ranges[0]['count'] * 4) +
         <p style="margin-left:70px;line-height:10px">(นายสุริยันต์ แสงมล)<p>
         <p style="line-height:10px;margin-left:0px;">ลงชื่อ ......................................................... รองผู้อำนวยการกลุ่มบริหารวิชาการ<p>
         <p style="margin-left:70px;line-height:10px">(นางดาวรุ่ง สุระศรี)<p>
-        <p style="line-height:10px;margin-left:-155px;"><span style="font-family: fontawesome; font-size:120%;">&#9723;</span>&nbsp;&nbsp;&nbsp;&nbsp;อนุมัติ&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-family: fontawesome; font-size:120%;">&#9723;</span>&nbsp;&nbsp;&nbsp;&nbsp;ไม่อนุมัติ&nbsp;&nbsp;&nbsp;&nbsp;ลงชื่อ ......................................................... ผู้อำนวยการโรงเรียนพุทไธสง<p>
+        <p style="line-height:10px;margin-left:-187px;"><span style="font-family: fontawesome; font-size:120%;">&#9723;</span>&nbsp;&nbsp;&nbsp;&nbsp;อนุมัติ&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-family: fontawesome; font-size:120%;">&#9723;</span>&nbsp;&nbsp;&nbsp;&nbsp;ไม่อนุมัติ&nbsp;&nbsp;&nbsp;&nbsp;ลงชื่อ ......................................................... ผู้อำนวยการโรงเรียนพุทไธสง<p>
         <p style="margin-left:70px;line-height:10px">(นายภูวนาถ ยุพานวิทย์)<p>
         <p style="line-height:10px;margin-left:5px;">วันที่ ......... เดือน ......................... พ.ศ. ................<p>
         </div>
