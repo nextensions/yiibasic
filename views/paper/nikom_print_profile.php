@@ -8,17 +8,6 @@ if (!empty($imageSource)) {
   $image = '<p style="text-align:center;margin-top:60px;font-size:16pt">รูปถ่ายนักเรียน<br />ขนาด 1 - 2 นิ่้ว</p>';
 }
 ?>
-<div id="edu_programChoice" class="overmask" style="font-size:150%;padding-top:328px;padding-left:5px"><strong><?php // echo ($missing['dynamic_edu_program'] == 1) ? "/" : "" ?></strong></div>
-<div id="edu_programChoice" class="overmask" style="font-size:150%;padding-top:328px;padding-left:343px"><strong><?php // echo ($missing['dynamic_edu_program'] == 2) ? "/" : "" ?></strong></div>
-<div id="edu_programChoice" class="overmask" style="font-size:150%;padding-top:358px;padding-left:5px"><strong><?php // echo ($missing['dynamic_edu_program'] == 3) ? "/" : "" ?></strong></div>
-<div id="edu_programChoice" class="overmask" style="font-size:150%;padding-top:358px;padding-left:343px"><strong><?php // echo ($missing['dynamic_edu_program'] == 4) ? "/" : "" ?></strong></div>
-<div id="edu_programChoice" class="overmask" style="font-size:150%;padding-top:385px;padding-left:5px"><strong><?php // echo ($missing['dynamic_edu_program'] == 5) ? "/" : "" ?></strong></div>
-<div id="edu_programChoice" class="overmask" style="font-size:150%;padding-top:385px;padding-left:343px"><strong><?php // echo ($missing['dynamic_edu_program'] == 6) ? "/" : "" ?></strong></div>
-<div id="edu_programChoice" class="overmask" style="font-size:150%;padding-top:415px;padding-left:5px"><strong><?php // echo ($missing['dynamic_edu_program'] == 7) ? "/" : "" ?></strong></div>
-<div id="edu_programChoice" class="overmask" style="font-size:150%;padding-top:415px;padding-left:343px"><strong><?php // echo ($missing['dynamic_edu_program'] == 8) ? "/" : "" ?></strong></div>
-<div id="edu_programChoice" class="overmask" style="font-size:150%;padding-top:445px;padding-left:5px"><strong><?php // echo ($missing['dynamic_edu_program'] == 9) ? "/" : "" ?></strong></div>
-<div id="edu_programChoice" class="overmask" style="font-size:150%;padding-top:445px;padding-left:343px"><strong><?php // echo ($missing['dynamic_edu_program'] == 10) ? "/" : "" ?></strong></div>
-
 <div style="font-size:16pt;line-height:26px;">
 <div style="width:35%;float:left;">
 <div style="width:3.5cm;height:4.5cm;border:2px solid;float:left;">
