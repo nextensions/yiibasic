@@ -83,6 +83,18 @@ if (!empty($imageSource)) {
 <strong>ประเภท</strong>&nbsp;<span style="font-family: fontawesome; font-size:80%;">&#xf111;</span>&nbsp;นักเรียนโควตา&nbsp;<span style="font-family: fontawesome; font-size:80%;">&#xf111;</span>&nbsp;นักเรียนทั่วไป<br />
 <p style="font-weight:bold;padding-top:5px;">*แผนการเรียน (เฉพาะนักเรียน ม.ปลาย)*</p>
 <div style="width:50%;float:left;font-size:12pt;">
+<?php echo ($missing['dynamic_edu_program'] == 0) ? '<p style="font-size:150%;padding-top:-3px;padding-bottom:-33px;padding-left:7px"><strong>/</strong></p>' : "" ?>
+<?php echo !empty($missing['edu_programChoice'][0]['edu_programName']) ? '<p style="padding-bottom:-10px;"><span style="font-family: fontawesome; font-size:100%;">&#xf111;</span>&nbsp;&nbsp;' . $missing['edu_programChoice'][0]['edu_programName'] . '</p>' : "" ?>
+<?php echo ($missing['dynamic_edu_program'] == 2) ? '<p style="font-size:150%;padding-top:-3px;padding-bottom:-33px;padding-left:7px"><strong>/</strong></p>' : "" ?>
+<?php echo !empty($missing['edu_programChoice'][2]['edu_programName']) ? '<p style="padding-bottom:-10px;"><span style="font-family: fontawesome; font-size:100%;">&#xf111;</span>&nbsp;&nbsp;' . $missing['edu_programChoice'][2]['edu_programName'] . '</p>' : "" ?>
+<?php echo ($missing['dynamic_edu_program'] == 4) ? '<p style="font-size:150%;padding-top:-3px;padding-bottom:-33px;padding-left:7px"><strong>/</strong></p>' : "" ?>
+<?php echo !empty($missing['edu_programChoice'][4]['edu_programName']) ? '<p style="padding-bottom:-10px;"><span style="font-family: fontawesome; font-size:100%;">&#xf111;</span>&nbsp;&nbsp;' . $missing['edu_programChoice'][4]['edu_programName'] . '</p>' : "" ?>
+<?php echo ($missing['dynamic_edu_program'] == 6) ? '<p style="font-size:150%;padding-top:-3px;padding-bottom:-33px;padding-left:7px"><strong>/</strong></p>' : "" ?>
+<?php echo !empty($missing['edu_programChoice'][6]['edu_programName']) ? '<p style="padding-bottom:-10px;"><span style="font-family: fontawesome; font-size:100%;">&#xf111;</span>&nbsp;&nbsp;' . $missing['edu_programChoice'][6]['edu_programName'] . '</p>' : "" ?>
+<?php echo ($missing['dynamic_edu_program'] == 8) ? '<p style="font-size:150%;padding-top:-3px;padding-bottom:-33px;padding-left:7px"><strong>/</strong></p>' : "" ?>
+<?php echo !empty($missing['edu_programChoice'][8]['edu_programName']) ? '<p style="padding-top:-3px;padding-bottom:-10px;"><span style="font-family: fontawesome; font-size:100%;">&#xf111;</span>&nbsp;&nbsp;' . $missing['edu_programChoice'][8]['edu_programName'] . '</p>' : "" ?>
+</div>
+<div style="width:50%;float:left;font-size:12pt;">
 <?php echo ($missing['dynamic_edu_program'] == 1) ? '<p style="font-size:150%;padding-top:-3px;padding-bottom:-33px;padding-left:7px"><strong>/</strong></p>' : "" ?>
 <?php echo !empty($missing['edu_programChoice'][1]['edu_programName']) ? '<p style="padding-bottom:-10px;"><span style="font-family: fontawesome; font-size:100%;">&#xf111;</span>&nbsp;&nbsp;' . $missing['edu_programChoice'][1]['edu_programName'] . '</p>' : "" ?>
 <?php echo ($missing['dynamic_edu_program'] == 3) ? '<p style="font-size:150%;padding-top:-3px;padding-bottom:-33px;padding-left:7px"><strong>/</strong></p>' : "" ?>
@@ -92,19 +104,7 @@ if (!empty($imageSource)) {
 <?php echo ($missing['dynamic_edu_program'] == 7) ? '<p style="font-size:150%;padding-top:-3px;padding-bottom:-33px;padding-left:7px"><strong>/</strong></p>' : "" ?>
 <?php echo !empty($missing['edu_programChoice'][7]['edu_programName']) ? '<p style="padding-bottom:-10px;"><span style="font-family: fontawesome; font-size:100%;">&#xf111;</span>&nbsp;&nbsp;' . $missing['edu_programChoice'][7]['edu_programName'] . '</p>' : "" ?>
 <?php echo ($missing['dynamic_edu_program'] == 9) ? '<p style="font-size:150%;padding-top:-3px;padding-bottom:-33px;padding-left:7px"><strong>/</strong></p>' : "" ?>
-<?php echo !empty($missing['edu_programChoice'][9]['edu_programName']) ? '<p style="padding-top:-3px;padding-bottom:-10px;"><span style="font-family: fontawesome; font-size:100%;">&#xf111;</span>&nbsp;&nbsp;' . $missing['edu_programChoice'][9]['edu_programName'] . '</p>' : "" ?>
-</div>
-<div style="width:50%;float:left;font-size:12pt;">
-<?php echo ($missing['dynamic_edu_program'] == 2) ? '<p style="font-size:150%;padding-top:-3px;padding-bottom:-33px;padding-left:7px"><strong>/</strong></p>' : "" ?>
-<?php echo !empty($missing['edu_programChoice'][2]['edu_programName']) ? '<p style="padding-bottom:-10px;"><span style="font-family: fontawesome; font-size:100%;">&#xf111;</span>&nbsp;&nbsp;' . $missing['edu_programChoice'][2]['edu_programName'] . '</p>' : "" ?>
-<?php echo ($missing['dynamic_edu_program'] == 4) ? '<p style="font-size:150%;padding-top:-3px;padding-bottom:-33px;padding-left:7px"><strong>/</strong></p>' : "" ?>
-<?php echo !empty($missing['edu_programChoice'][4]['edu_programName']) ? '<p style="padding-bottom:-10px;"><span style="font-family: fontawesome; font-size:100%;">&#xf111;</span>&nbsp;&nbsp;' . $missing['edu_programChoice'][4]['edu_programName'] . '</p>' : "" ?>
-<?php echo ($missing['dynamic_edu_program'] == 6) ? '<p style="font-size:150%;padding-top:-3px;padding-bottom:-33px;padding-left:7px"><strong>/</strong></p>' : "" ?>
-<?php echo !empty($missing['edu_programChoice'][6]['edu_programName']) ? '<p style="padding-bottom:-10px;"><span style="font-family: fontawesome; font-size:100%;">&#xf111;</span>&nbsp;&nbsp;' . $missing['edu_programChoice'][6]['edu_programName'] . '</p>' : "" ?>
-<?php echo ($missing['dynamic_edu_program'] == 8) ? '<p style="font-size:150%;padding-top:-3px;padding-bottom:-33px;padding-left:7px"><strong>/</strong></p>' : "" ?>
-<?php echo !empty($missing['edu_programChoice'][8]['edu_programName']) ? '<p style="padding-bottom:-10px;"><span style="font-family: fontawesome; font-size:100%;">&#xf111;</span>&nbsp;&nbsp;' . $missing['edu_programChoice'][8]['edu_programName'] . '</p>' : "" ?>
-<?php echo ($missing['dynamic_edu_program'] == 10) ? '<p style="font-size:150%;padding-top:-3px;padding-bottom:-33px;padding-left:7px"><strong>/</strong></p>' : "" ?>
-<?php echo !empty($missing['edu_programChoice'][10]['edu_programName']) ? '<p style="padding-bottom:-10px;"><span style="font-family: fontawesome; font-size:100%;">&#xf111;</span>&nbsp;&nbsp;' . $missing['edu_programChoice'][10]['edu_programName'] . '</p>' : "" ?>
+<?php echo !empty($missing['edu_programChoice'][9]['edu_programName']) ? '<p style="padding-bottom:-10px;"><span style="font-family: fontawesome; font-size:100%;">&#xf111;</span>&nbsp;&nbsp;' . $missing['edu_programChoice'][9]['edu_programName'] . '</p>' : "" ?>
 </div>
 <dl>
     <dt style="width:80px;font-weight:bold;">ชื่อภาษาไทย</dt>
