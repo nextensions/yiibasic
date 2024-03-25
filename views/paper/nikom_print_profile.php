@@ -116,21 +116,24 @@ if (!empty($imageSource)) {
     <dt style="width:215px;font-weight:bold;">นามสกุลภาษาอังกฤษ (ตัวพิมพ์ใหญ่)</dt>
     <dd style="width:454px;">&nbsp;</dd>
     <dt style="width:20px;"><?php echo ($profile['gender'] == 0) ? '<div id="gender" class="overmask" style="font-size:150%;padding-left:55px;padding-top:-15px;"><strong>/</strong></div>' : (($profile['gender'] == 1) ? '<div id="gender" class="overmask" style="font-size:150%;padding-left:105px;padding-top:-15px;"><strong>/</strong></div>' : "" ); ?></dt>
-    <dt style="width:140px;padding-left:-30px;"><strong>เพศ</strong>&nbsp;&nbsp;&nbsp;<span style="font-family: fontawesome; font-size:80%;">&#xf111;</span>&nbsp;ชาย&nbsp;<span style="font-family: fontawesome; font-size:80%;">&#xf111;</span>&nbsp;หญิง</dt>
+    <dt style="width:140px;padding-left:-30px;"><strong>เพศ</strong>&nbsp;&nbsp;<span style="font-family: fontawesome; font-size:80%;">&#xf111;</span>&nbsp;ชาย&nbsp;<span style="font-family: fontawesome; font-size:80%;">&#xf111;</span>&nbsp;หญิง</dt>
     <dt style="width:95px;font-weight:bold;">วัน/เดือน/ปีเกิด</dt>
-    <dd style="width:140px;"><?php echo $profile['dob'] ?></dd>
+    <dd style="width:192px;"><?php echo $profile['dob'] ?></dd>
     <dt style="width:30px;font-weight:bold;">อายุ</dt>
-    <dd style="width:40px;"><?php echo $profile['ageYear'] ?></dd>
-    <dt style="width:80px;font-weight:bold;">จังหวัดที่เกิด</dt>
-    <dd style="width:115px;"><?php echo $profile['born'] ?></dd>
+    <dd style="width:60px;"><?php echo $profile['ageYear'] ?></dd>
+    <dt style="width:30px;font-weight:bold;padding-right:-10px;">ปี</dt>
+    <dd style="width:60px;"><?php echo $profile['ageMonth'] ?></dd>
+    <dt style="width:35px;font-weight:bold;">เดือน</dt>
+    <dt style="width:76px;font-weight:bold;">จังหวัดที่เกิด</dt>
+    <dd style="width:98px;"><?php echo $profile['born'] ?></dd>
     <dt style="width:50px;font-weight:bold;">สัญชาติ</dt>
-    <dd style="width:95px;"><?php echo $profile['nationality'] ?></dd>
+    <dd style="width:57px;"><?php echo $profile['nationality'] ?></dd>
     <dt style="width:50px;font-weight:bold;">เชื้อชาติ</dt>
-    <dd style="width:95px;"><?php echo $profile['race'] ?></dd>
-    <dt style="width:47px;font-weight:bold;">ศาสนา</dt>
-    <dd style="width:142px;"><?php echo $profile['religion'] ?></dd>
+    <dd style="width:57px;"><?php echo $profile['race'] ?></dd>
+    <dt style="width:45px;font-weight:bold;">ศาสนา</dt>
+    <dd style="width:57px;"><?php echo $profile['religion'] ?></dd>
     <dt style="width:60px;font-weight:bold;">กรุ๊ปเลือด</dt>
-    <dd style="width:100px;"><?php echo $profile['blood'] ?></dd>
+    <dd style="width:80px;"><?php echo $profile['blood'] ?></dd>
     <dt style="width:140px;font-weight:bold;">เลขประจำตัวประชาชน</dt>
     <dd style="width:324px;">
       <strong><?php echo citizenWithSpaceGlobal($profile['personal_id'], "-") ?></strong>
