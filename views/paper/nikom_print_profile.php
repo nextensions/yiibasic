@@ -144,8 +144,8 @@ if (!empty($imageSource)) {
     <dd style="width:38px;"><?php echo $profile['weight'] ?></dd>
     <dt style="width:45px;font-weight:bold;">ส่วนสูง</dt>
     <dd style="width:37px;"><?php echo $profile['height'] ?></dd>
-    <dt style="width:90px;font-weight:bold;">เบอร์โทรติดต่อ</dt>
-    <dd style="width:95px;"><?php echo $profile['mobile_no'] ?></dd>
+    <dt style="width:89px;font-weight:bold;">เบอร์โทรติดต่อ</dt>
+    <dd style="width:96px;"><?php echo $profile['mobile_no'] ?></dd>
     <dt style="width:45px;font-weight:bold;">E-Mail</dt>
     <dd style="width:245px;"><?php echo $profile['email'] ?></dd>
     <dt style="width:50px;font-weight:bold;">ID LINE</dt>
