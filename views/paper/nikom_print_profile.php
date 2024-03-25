@@ -80,8 +80,8 @@ if (!empty($imageSource)) {
 <p style="padding-top:10px;padding-bottom:-20px;font-weight:bold;margin-left:20px;">(งานทะเบียนนักเรียน)<p>
 </div>
 <p style="font-weight:bold;font-size:18pt;line-height:10px;padding-bottom:5px;"><u>ข้อมูลนักเรียน</u></p>
-<strong>ประเภท</strong>&nbsp;<span style="font-family: fontawesome; font-size:80%;">&#xf111;</span>&nbsp;นักเรียนโควตา&nbsp;<span style="font-family: fontawesome; font-size:80%;">&#xf111;</span>&nbsp;นักเรียนทั่วไป<br />
-<p style="font-weight:bold;padding-top:5px;">*แผนการเรียน (เฉพาะนักเรียน ม.ปลาย)*</p>
+<strong>ประเภท</strong>&nbsp;<span style="font-family: fontawesome; font-size:80%;">&#xf111;<?php echo ($title['grade'] >= 4) ? '</span>&nbsp;นักเรียนโควตา&nbsp;<span style="font-family: fontawesome; font-size:80%;">&#xf111;</span>&nbsp;นักเรียนทั่วไป<br />' : '</span>&nbsp;ในเขต&nbsp;<span style="font-family: fontawesome; font-size:80%;">&#xf111;</span>&nbsp;ทั่วไป<br />' ?>
+<p style="font-weight:bold;padding-top:5px;">*แผนการเรียน <?php echo ($title['grade'] >= 4) ? '(เฉพาะนักเรียน ม.ปลาย)' : '(เฉพาะนักเรียน ม.ต้น)' ?>*</p>
 <div style="width:50%;float:left;font-size:12pt;">
 <?php echo ($missing['dynamic_edu_program'] == 0) ? '<p style="font-size:150%;padding-top:-3px;padding-bottom:-33px;padding-left:7px"><strong>/</strong></p>' : "" ?>
 <?php echo !empty($missing['edu_programChoice'][0]['edu_programName']) ? '<p style="padding-bottom:-10px;"><span style="font-family: fontawesome; font-size:100%;">&#xf111;</span>&nbsp;&nbsp;' . $missing['edu_programChoice'][0]['edu_programName'] . '</p>' : "" ?>

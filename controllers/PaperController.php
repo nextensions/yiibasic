@@ -1217,39 +1217,39 @@ public function actionExamidcard()
 return [
     'missing' => [
         'edu_programChoice' => [
-          1 => [
+          0 => [
             'edu_programName'=> 'แผนการเรียนภาษาเพื่อการสื่อสาร แผน ข (อังกฤษ-ญี่ปุ่น)',
           ],
-          2 => [
+          1 => [
             'edu_programName'=> 'แผนการเรียนภาษาเพื่อการสื่อสารและการประกอบธุรกิจ (อังกฤษ-ธุรกิจ)',
           ],
-          3 => [
+          2 => [
             'edu_programName'=> 'แผนการเรียนวิทยาศาสตร์เทคโนโลยีดิจิทัล',
           ],
-          4 => [
+          3 => [
             'edu_programName'=> 'แผนการเรียนวิทยาศาสตร์พลังงานและสิ่งแวดล้อม',
           ],
-          5 => [
+          4 => [
             'edu_programName'=> 'แผนการเรียนวิทยาศาสตร์วิศวกรรมศาสตร์',
           ],
-          6 => [
+          5 => [
             'edu_programName'=> 'แผนการเรียนวิทยาศาสตร์สุขภาพ',
           ],
-          7 => [
+          6 => [
             'edu_programName'=> '',
           ],
-          8 => [
+          7 => [
             'edu_programName'=> '', // in case there are more than 7 choices
+          ],
+          8 => [
+            'edu_programName'=> '',
           ],
           9 => [
             'edu_programName'=> '',
           ],
-          10 => [
-            'edu_programName'=> '',
-          ],
         ],
         'image'=> '',
-        'dynamic_edu_program' => 6,
+        'dynamic_edu_program' => 5,
         
     ],
     'register' => [
