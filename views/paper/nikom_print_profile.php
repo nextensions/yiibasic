@@ -144,10 +144,10 @@ if (!empty($imageSource)) {
     <dd style="width:38px;"><?php echo $profile['weight'] ?></dd>
     <dt style="width:45px;font-weight:bold;">ส่วนสูง</dt>
     <dd style="width:37px;"><?php echo $profile['height'] ?></dd>
-    <dt style="width:100px;font-weight:bold;">เบอร์โทรติดต่อ</dt>
-    <dd style="width:90px;"><?php echo $profile['mobile_no'] ?></dd>
+    <dt style="width:89px;font-weight:bold;">เบอร์โทรติดต่อ</dt>
+    <dd style="width:96px;"><?php echo $profile['mobile_no'] ?></dd>
     <dt style="width:45px;font-weight:bold;">E-Mail</dt>
-    <dd style="width:240px;"><?php echo $profile['email'] ?></dd>
+    <dd style="width:245px;"><?php echo $profile['email'] ?></dd>
     <dt style="width:50px;font-weight:bold;">ID LINE</dt>
     <dd style="width:182px;">&nbsp;</dd>
     <dt style="width:110px;font-weight:bold;">จำนวนพี่น้อง (คน)</dt>
@@ -282,18 +282,18 @@ if (!empty($imageSource)) {
 <div style="padding-top:-8px;padding-left:10px;float:left;">
 <dl>
     <dt style="width:60px;font-weight:bold;">บ้านเลขที่</dt>
-    <dd style="width:95px;"><?php echo $address['no'] ?></dd>
-    <dt style="width:50px;font-weight:bold;">หมู่บ้าน</dt>
-    <dd style="width:100px;">&nbsp;</dd>
+    <dd style="width:257px;"><?php echo $address['no'] ?></dd>
 </dl>
 </div>
 <dl>
+<dt style="width:50px;font-weight:bold;">หมู่บ้าน</dt>
+    <dd style="width:140px;">&nbsp;</dd>
 <dt style="width:35px;font-weight:bold;">หมู่ที่</dt>
     <dd style="width:50px;"><?php echo $address['moo'] ?></dd>
     <dt style="width:35px;font-weight:bold;">ซอย</dt>
-    <dd style="width:245px;"><?php echo $address['soi'] ?></dd>
+    <dd style="width:145px;"><?php echo $address['soi'] ?></dd>
     <dt style="width:35px;font-weight:bold;">ถนน</dt>
-    <dd style="width:245px;"><?php echo $address['street'] ?></dd>
+    <dd style="width:145px;"><?php echo $address['street'] ?></dd>
     <dt style="width:75px;font-weight:bold;">ตำบล/แขวง</dt>
     <dd style="width:150px;"><?php echo $address['sub_district'] ?></dd>
     <dt style="width:70px;font-weight:bold;">อำเภอ/เขต</dt>
@@ -342,13 +342,13 @@ if (!empty($imageSource)) {
     <dt style="width:70px;font-weight:bold;">เกิดเมื่อวันที่</dt>
     <dd style="width:490px;"><?php echo $dad['dob'] ?></dd>
     <dt style="width:30px;font-weight:bold;">ชื่อ</dt>
-    <dd style="width:185px;"><?php echo $dad['title'] . '&nbsp;' . $dad['f_name'] ?></dd>
+    <dd style="width:160px;"><?php echo $dad['title'] . '&nbsp;' . $dad['f_name'] ?></dd>
     <dt style="width:60px;font-weight:bold;">นามสกุล</dt>
-    <dd style="width:185px;"><?php echo $dad['l_name'] ?></dd>
+    <dd style="width:160px;"><?php echo $dad['l_name'] ?></dd>
     <dt style="width:30px;font-weight:bold;">อายุ</dt>
     <dd style="width:40px;"><?php echo $dad['age'] ?></dd>
     <dt style="width:75px;font-weight:bold;">ปี&nbsp;&nbsp;กรุ๊ปเลือด</dt>
-    <dd style="width:34px;"><?php echo $dad['blood'] ?></dd>
+    <dd style="width:85px;"><?php echo $dad['blood'] ?></dd>
     <dt style="width:50px;font-weight:bold;">สัญชาติ</dt>
     <dd style="width:40px;"><?php echo $dad['nationality'] ?></dd>
     <dt style="width:50px;font-weight:bold;">เชื้อชาติ</dt>
@@ -373,13 +373,13 @@ if (!empty($imageSource)) {
     <dt style="width:70px;font-weight:bold;">เกิดเมื่อวันที่</dt>
     <dd style="width:490px;"><?php echo $mom['dob'] ?></dd>
     <dt style="width:30px;font-weight:bold;">ชื่อ</dt>
-    <dd style="width:185px;"><?php echo $mom['title'] . '&nbsp;' . $mom['f_name'] ?></dd>
+    <dd style="width:160px;"><?php echo $mom['title'] . '&nbsp;' . $mom['f_name'] ?></dd>
     <dt style="width:60px;font-weight:bold;">นามสกุล</dt>
-    <dd style="width:185px;"><?php echo $mom['l_name'] ?></dd>
+    <dd style="width:160px;"><?php echo $mom['l_name'] ?></dd>
     <dt style="width:30px;font-weight:bold;">อายุ</dt>
     <dd style="width:40px;"><?php echo $mom['age'] ?></dd>
     <dt style="width:75px;font-weight:bold;">ปี&nbsp;&nbsp;กรุ๊ปเลือด</dt>
-    <dd style="width:34px;"><?php echo $mom['blood'] ?></dd>
+    <dd style="width:85px;"><?php echo $mom['blood'] ?></dd>
     <dt style="width:50px;font-weight:bold;">สัญชาติ</dt>
     <dd style="width:40px;"><?php echo $mom['nationality'] ?></dd>
     <dt style="width:50px;font-weight:bold;">เชื้อชาติ</dt>
@@ -408,13 +408,13 @@ if (!empty($imageSource)) {
     <dt style="width:40px;font-weight:bold;">พ.ศ.</dt>
     <dd style="width:130px;">&nbsp;</dd>
     <dt style="width:30px;font-weight:bold;">ชื่อ</dt>
-    <dd style="width:185px;"><?php echo $parent['title'] . '&nbsp;' . $parent['firstname'] ?></dd>
+    <dd style="width:160px;"><?php echo $parent['title'] . '&nbsp;' . $parent['firstname'] ?></dd>
     <dt style="width:60px;font-weight:bold;">นามสกุล</dt>
-    <dd style="width:185px;"><?php echo $parent['lastname'] ?></dd>
+    <dd style="width:160px;"><?php echo $parent['lastname'] ?></dd>
     <dt style="width:30px;font-weight:bold;">อายุ</dt>
     <dd style="width:40px;"><?php echo $parent['age'] ?></dd>
     <dt style="width:75px;font-weight:bold;">ปี&nbsp;&nbsp;กรุ๊ปเลือด</dt>
-    <dd style="width:34px;"><?php echo $parent['blood'] ?></dd>
+    <dd style="width:85px;"><?php echo $parent['blood'] ?></dd>
     <dt style="width:50px;font-weight:bold;">สัญชาติ</dt>
     <dd style="width:40px;"><?php echo $parent['nationality'] ?></dd>
     <dt style="width:50px;font-weight:bold;">เชื้อชาติ</dt>
