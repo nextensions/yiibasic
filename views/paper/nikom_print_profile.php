@@ -80,8 +80,20 @@ if (!empty($imageSource)) {
 <p style="padding-top:10px;padding-bottom:-20px;font-weight:bold;margin-left:20px;">(งานทะเบียนนักเรียน)<p>
 </div>
 <p style="font-weight:bold;font-size:18pt;line-height:10px;padding-bottom:5px;"><u>ข้อมูลนักเรียน</u></p>
-<strong>ประเภท</strong>&nbsp;<span style="font-family: fontawesome; font-size:80%;">&#xf111;</span>&nbsp;นักเรียนโควตา&nbsp;<span style="font-family: fontawesome; font-size:80%;">&#xf111;</span>&nbsp;นักเรียนทั่วไป<br />
-<p style="font-weight:bold;padding-top:5px;">*แผนการเรียน (เฉพาะนักเรียน ม.ปลาย)*</p>
+<strong>ประเภท</strong>&nbsp;<span style="font-family: fontawesome; font-size:80%;">&#xf111;<?php echo ($title['grade'] >= 4) ? '</span>&nbsp;นักเรียนโควตา&nbsp;<span style="font-family: fontawesome; font-size:80%;">&#xf111;</span>&nbsp;นักเรียนทั่วไป<br />' : '</span>&nbsp;ในเขต&nbsp;<span style="font-family: fontawesome; font-size:80%;">&#xf111;</span>&nbsp;ทั่วไป<br />' ?>
+<p style="font-weight:bold;padding-top:5px;">*แผนการเรียน <?php echo ($title['grade'] >= 4) ? '(เฉพาะนักเรียน ม.ปลาย)' : '(เฉพาะนักเรียน ม.ต้น)' ?>*</p>
+<div style="width:50%;float:left;font-size:12pt;">
+<?php echo ($missing['dynamic_edu_program'] == 0) ? '<p style="font-size:150%;padding-top:-3px;padding-bottom:-33px;padding-left:7px"><strong>/</strong></p>' : "" ?>
+<?php echo !empty($missing['edu_programChoice'][0]['edu_programName']) ? '<p style="padding-bottom:-10px;"><span style="font-family: fontawesome; font-size:100%;">&#xf111;</span>&nbsp;&nbsp;' . $missing['edu_programChoice'][0]['edu_programName'] . '</p>' : "" ?>
+<?php echo ($missing['dynamic_edu_program'] == 2) ? '<p style="font-size:150%;padding-top:-3px;padding-bottom:-33px;padding-left:7px"><strong>/</strong></p>' : "" ?>
+<?php echo !empty($missing['edu_programChoice'][2]['edu_programName']) ? '<p style="padding-bottom:-10px;"><span style="font-family: fontawesome; font-size:100%;">&#xf111;</span>&nbsp;&nbsp;' . $missing['edu_programChoice'][2]['edu_programName'] . '</p>' : "" ?>
+<?php echo ($missing['dynamic_edu_program'] == 4) ? '<p style="font-size:150%;padding-top:-3px;padding-bottom:-33px;padding-left:7px"><strong>/</strong></p>' : "" ?>
+<?php echo !empty($missing['edu_programChoice'][4]['edu_programName']) ? '<p style="padding-bottom:-10px;"><span style="font-family: fontawesome; font-size:100%;">&#xf111;</span>&nbsp;&nbsp;' . $missing['edu_programChoice'][4]['edu_programName'] . '</p>' : "" ?>
+<?php echo ($missing['dynamic_edu_program'] == 6) ? '<p style="font-size:150%;padding-top:-3px;padding-bottom:-33px;padding-left:7px"><strong>/</strong></p>' : "" ?>
+<?php echo !empty($missing['edu_programChoice'][6]['edu_programName']) ? '<p style="padding-bottom:-10px;"><span style="font-family: fontawesome; font-size:100%;">&#xf111;</span>&nbsp;&nbsp;' . $missing['edu_programChoice'][6]['edu_programName'] . '</p>' : "" ?>
+<?php echo ($missing['dynamic_edu_program'] == 8) ? '<p style="font-size:150%;padding-top:-3px;padding-bottom:-33px;padding-left:7px"><strong>/</strong></p>' : "" ?>
+<?php echo !empty($missing['edu_programChoice'][8]['edu_programName']) ? '<p style="padding-top:-3px;padding-bottom:-10px;"><span style="font-family: fontawesome; font-size:100%;">&#xf111;</span>&nbsp;&nbsp;' . $missing['edu_programChoice'][8]['edu_programName'] . '</p>' : "" ?>
+</div>
 <div style="width:50%;float:left;font-size:12pt;">
 <?php echo ($missing['dynamic_edu_program'] == 1) ? '<p style="font-size:150%;padding-top:-3px;padding-bottom:-33px;padding-left:7px"><strong>/</strong></p>' : "" ?>
 <?php echo !empty($missing['edu_programChoice'][1]['edu_programName']) ? '<p style="padding-bottom:-10px;"><span style="font-family: fontawesome; font-size:100%;">&#xf111;</span>&nbsp;&nbsp;' . $missing['edu_programChoice'][1]['edu_programName'] . '</p>' : "" ?>
@@ -92,19 +104,7 @@ if (!empty($imageSource)) {
 <?php echo ($missing['dynamic_edu_program'] == 7) ? '<p style="font-size:150%;padding-top:-3px;padding-bottom:-33px;padding-left:7px"><strong>/</strong></p>' : "" ?>
 <?php echo !empty($missing['edu_programChoice'][7]['edu_programName']) ? '<p style="padding-bottom:-10px;"><span style="font-family: fontawesome; font-size:100%;">&#xf111;</span>&nbsp;&nbsp;' . $missing['edu_programChoice'][7]['edu_programName'] . '</p>' : "" ?>
 <?php echo ($missing['dynamic_edu_program'] == 9) ? '<p style="font-size:150%;padding-top:-3px;padding-bottom:-33px;padding-left:7px"><strong>/</strong></p>' : "" ?>
-<?php echo !empty($missing['edu_programChoice'][9]['edu_programName']) ? '<p style="padding-top:-3px;padding-bottom:-10px;"><span style="font-family: fontawesome; font-size:100%;">&#xf111;</span>&nbsp;&nbsp;' . $missing['edu_programChoice'][9]['edu_programName'] . '</p>' : "" ?>
-</div>
-<div style="width:50%;float:left;font-size:12pt;">
-<?php echo ($missing['dynamic_edu_program'] == 2) ? '<p style="font-size:150%;padding-top:-3px;padding-bottom:-33px;padding-left:7px"><strong>/</strong></p>' : "" ?>
-<?php echo !empty($missing['edu_programChoice'][2]['edu_programName']) ? '<p style="padding-bottom:-10px;"><span style="font-family: fontawesome; font-size:100%;">&#xf111;</span>&nbsp;&nbsp;' . $missing['edu_programChoice'][2]['edu_programName'] . '</p>' : "" ?>
-<?php echo ($missing['dynamic_edu_program'] == 4) ? '<p style="font-size:150%;padding-top:-3px;padding-bottom:-33px;padding-left:7px"><strong>/</strong></p>' : "" ?>
-<?php echo !empty($missing['edu_programChoice'][4]['edu_programName']) ? '<p style="padding-bottom:-10px;"><span style="font-family: fontawesome; font-size:100%;">&#xf111;</span>&nbsp;&nbsp;' . $missing['edu_programChoice'][4]['edu_programName'] . '</p>' : "" ?>
-<?php echo ($missing['dynamic_edu_program'] == 6) ? '<p style="font-size:150%;padding-top:-3px;padding-bottom:-33px;padding-left:7px"><strong>/</strong></p>' : "" ?>
-<?php echo !empty($missing['edu_programChoice'][6]['edu_programName']) ? '<p style="padding-bottom:-10px;"><span style="font-family: fontawesome; font-size:100%;">&#xf111;</span>&nbsp;&nbsp;' . $missing['edu_programChoice'][6]['edu_programName'] . '</p>' : "" ?>
-<?php echo ($missing['dynamic_edu_program'] == 8) ? '<p style="font-size:150%;padding-top:-3px;padding-bottom:-33px;padding-left:7px"><strong>/</strong></p>' : "" ?>
-<?php echo !empty($missing['edu_programChoice'][8]['edu_programName']) ? '<p style="padding-bottom:-10px;"><span style="font-family: fontawesome; font-size:100%;">&#xf111;</span>&nbsp;&nbsp;' . $missing['edu_programChoice'][8]['edu_programName'] . '</p>' : "" ?>
-<?php echo ($missing['dynamic_edu_program'] == 10) ? '<p style="font-size:150%;padding-top:-3px;padding-bottom:-33px;padding-left:7px"><strong>/</strong></p>' : "" ?>
-<?php echo !empty($missing['edu_programChoice'][10]['edu_programName']) ? '<p style="padding-bottom:-10px;"><span style="font-family: fontawesome; font-size:100%;">&#xf111;</span>&nbsp;&nbsp;' . $missing['edu_programChoice'][10]['edu_programName'] . '</p>' : "" ?>
+<?php echo !empty($missing['edu_programChoice'][9]['edu_programName']) ? '<p style="padding-bottom:-10px;"><span style="font-family: fontawesome; font-size:100%;">&#xf111;</span>&nbsp;&nbsp;' . $missing['edu_programChoice'][9]['edu_programName'] . '</p>' : "" ?>
 </div>
 <dl>
     <dt style="width:80px;font-weight:bold;">ชื่อภาษาไทย</dt>
@@ -116,21 +116,24 @@ if (!empty($imageSource)) {
     <dt style="width:215px;font-weight:bold;">นามสกุลภาษาอังกฤษ (ตัวพิมพ์ใหญ่)</dt>
     <dd style="width:454px;">&nbsp;</dd>
     <dt style="width:20px;"><?php echo ($profile['gender'] == 0) ? '<div id="gender" class="overmask" style="font-size:150%;padding-left:55px;padding-top:-15px;"><strong>/</strong></div>' : (($profile['gender'] == 1) ? '<div id="gender" class="overmask" style="font-size:150%;padding-left:105px;padding-top:-15px;"><strong>/</strong></div>' : "" ); ?></dt>
-    <dt style="width:140px;padding-left:-30px;"><strong>เพศ</strong>&nbsp;&nbsp;&nbsp;<span style="font-family: fontawesome; font-size:80%;">&#xf111;</span>&nbsp;ชาย&nbsp;<span style="font-family: fontawesome; font-size:80%;">&#xf111;</span>&nbsp;หญิง</dt>
+    <dt style="width:140px;padding-left:-30px;"><strong>เพศ</strong>&nbsp;&nbsp;<span style="font-family: fontawesome; font-size:80%;">&#xf111;</span>&nbsp;ชาย&nbsp;<span style="font-family: fontawesome; font-size:80%;">&#xf111;</span>&nbsp;หญิง</dt>
     <dt style="width:95px;font-weight:bold;">วัน/เดือน/ปีเกิด</dt>
-    <dd style="width:140px;"><?php echo $profile['dob'] ?></dd>
+    <dd style="width:192px;"><?php echo $profile['dob'] ?></dd>
     <dt style="width:30px;font-weight:bold;">อายุ</dt>
-    <dd style="width:40px;"><?php echo $profile['ageYear'] ?></dd>
-    <dt style="width:80px;font-weight:bold;">จังหวัดที่เกิด</dt>
-    <dd style="width:115px;"><?php echo $profile['born'] ?></dd>
+    <dd style="width:60px;"><?php echo $profile['ageYear'] ?></dd>
+    <dt style="width:30px;font-weight:bold;padding-right:-10px;">ปี</dt>
+    <dd style="width:60px;"><?php echo $profile['ageMonth'] ?></dd>
+    <dt style="width:35px;font-weight:bold;">เดือน</dt>
+    <dt style="width:76px;font-weight:bold;">จังหวัดที่เกิด</dt>
+    <dd style="width:98px;"><?php echo $profile['born'] ?></dd>
     <dt style="width:50px;font-weight:bold;">สัญชาติ</dt>
-    <dd style="width:95px;"><?php echo $profile['nationality'] ?></dd>
+    <dd style="width:57px;"><?php echo $profile['nationality'] ?></dd>
     <dt style="width:50px;font-weight:bold;">เชื้อชาติ</dt>
-    <dd style="width:95px;"><?php echo $profile['race'] ?></dd>
-    <dt style="width:47px;font-weight:bold;">ศาสนา</dt>
-    <dd style="width:142px;"><?php echo $profile['religion'] ?></dd>
+    <dd style="width:57px;"><?php echo $profile['race'] ?></dd>
+    <dt style="width:45px;font-weight:bold;">ศาสนา</dt>
+    <dd style="width:57px;"><?php echo $profile['religion'] ?></dd>
     <dt style="width:60px;font-weight:bold;">กรุ๊ปเลือด</dt>
-    <dd style="width:100px;"><?php echo $profile['blood'] ?></dd>
+    <dd style="width:80px;"><?php echo $profile['blood'] ?></dd>
     <dt style="width:140px;font-weight:bold;">เลขประจำตัวประชาชน</dt>
     <dd style="width:324px;">
       <strong><?php echo citizenWithSpaceGlobal($profile['personal_id'], "-") ?></strong>
@@ -144,10 +147,10 @@ if (!empty($imageSource)) {
     <dd style="width:38px;"><?php echo $profile['weight'] ?></dd>
     <dt style="width:45px;font-weight:bold;">ส่วนสูง</dt>
     <dd style="width:37px;"><?php echo $profile['height'] ?></dd>
-    <dt style="width:100px;font-weight:bold;">เบอร์โทรติดต่อ</dt>
-    <dd style="width:90px;"><?php echo $profile['mobile_no'] ?></dd>
+    <dt style="width:89px;font-weight:bold;">เบอร์โทรติดต่อ</dt>
+    <dd style="width:96px;"><?php echo $profile['mobile_no'] ?></dd>
     <dt style="width:45px;font-weight:bold;">E-Mail</dt>
-    <dd style="width:240px;"><?php echo $profile['email'] ?></dd>
+    <dd style="width:245px;"><?php echo $profile['email'] ?></dd>
     <dt style="width:50px;font-weight:bold;">ID LINE</dt>
     <dd style="width:182px;">&nbsp;</dd>
     <dt style="width:110px;font-weight:bold;">จำนวนพี่น้อง (คน)</dt>
@@ -282,18 +285,18 @@ if (!empty($imageSource)) {
 <div style="padding-top:-8px;padding-left:10px;float:left;">
 <dl>
     <dt style="width:60px;font-weight:bold;">บ้านเลขที่</dt>
-    <dd style="width:95px;"><?php echo $address['no'] ?></dd>
-    <dt style="width:50px;font-weight:bold;">หมู่บ้าน</dt>
-    <dd style="width:100px;">&nbsp;</dd>
+    <dd style="width:257px;"><?php echo $address['no'] ?></dd>
 </dl>
 </div>
 <dl>
+<dt style="width:50px;font-weight:bold;">หมู่บ้าน</dt>
+    <dd style="width:140px;">&nbsp;</dd>
 <dt style="width:35px;font-weight:bold;">หมู่ที่</dt>
     <dd style="width:50px;"><?php echo $address['moo'] ?></dd>
     <dt style="width:35px;font-weight:bold;">ซอย</dt>
-    <dd style="width:245px;"><?php echo $address['soi'] ?></dd>
+    <dd style="width:145px;"><?php echo $address['soi'] ?></dd>
     <dt style="width:35px;font-weight:bold;">ถนน</dt>
-    <dd style="width:245px;"><?php echo $address['street'] ?></dd>
+    <dd style="width:145px;"><?php echo $address['street'] ?></dd>
     <dt style="width:75px;font-weight:bold;">ตำบล/แขวง</dt>
     <dd style="width:150px;"><?php echo $address['sub_district'] ?></dd>
     <dt style="width:70px;font-weight:bold;">อำเภอ/เขต</dt>
@@ -342,13 +345,13 @@ if (!empty($imageSource)) {
     <dt style="width:70px;font-weight:bold;">เกิดเมื่อวันที่</dt>
     <dd style="width:490px;"><?php echo $dad['dob'] ?></dd>
     <dt style="width:30px;font-weight:bold;">ชื่อ</dt>
-    <dd style="width:185px;"><?php echo $dad['title'] . '&nbsp;' . $dad['f_name'] ?></dd>
+    <dd style="width:160px;"><?php echo $dad['title'] . '&nbsp;' . $dad['f_name'] ?></dd>
     <dt style="width:60px;font-weight:bold;">นามสกุล</dt>
-    <dd style="width:185px;"><?php echo $dad['l_name'] ?></dd>
+    <dd style="width:160px;"><?php echo $dad['l_name'] ?></dd>
     <dt style="width:30px;font-weight:bold;">อายุ</dt>
     <dd style="width:40px;"><?php echo $dad['age'] ?></dd>
     <dt style="width:75px;font-weight:bold;">ปี&nbsp;&nbsp;กรุ๊ปเลือด</dt>
-    <dd style="width:34px;"><?php echo $dad['blood'] ?></dd>
+    <dd style="width:85px;"><?php echo $dad['blood'] ?></dd>
     <dt style="width:50px;font-weight:bold;">สัญชาติ</dt>
     <dd style="width:40px;"><?php echo $dad['nationality'] ?></dd>
     <dt style="width:50px;font-weight:bold;">เชื้อชาติ</dt>
@@ -373,13 +376,13 @@ if (!empty($imageSource)) {
     <dt style="width:70px;font-weight:bold;">เกิดเมื่อวันที่</dt>
     <dd style="width:490px;"><?php echo $mom['dob'] ?></dd>
     <dt style="width:30px;font-weight:bold;">ชื่อ</dt>
-    <dd style="width:185px;"><?php echo $mom['title'] . '&nbsp;' . $mom['f_name'] ?></dd>
+    <dd style="width:160px;"><?php echo $mom['title'] . '&nbsp;' . $mom['f_name'] ?></dd>
     <dt style="width:60px;font-weight:bold;">นามสกุล</dt>
-    <dd style="width:185px;"><?php echo $mom['l_name'] ?></dd>
+    <dd style="width:160px;"><?php echo $mom['l_name'] ?></dd>
     <dt style="width:30px;font-weight:bold;">อายุ</dt>
     <dd style="width:40px;"><?php echo $mom['age'] ?></dd>
     <dt style="width:75px;font-weight:bold;">ปี&nbsp;&nbsp;กรุ๊ปเลือด</dt>
-    <dd style="width:34px;"><?php echo $mom['blood'] ?></dd>
+    <dd style="width:85px;"><?php echo $mom['blood'] ?></dd>
     <dt style="width:50px;font-weight:bold;">สัญชาติ</dt>
     <dd style="width:40px;"><?php echo $mom['nationality'] ?></dd>
     <dt style="width:50px;font-weight:bold;">เชื้อชาติ</dt>
@@ -408,13 +411,13 @@ if (!empty($imageSource)) {
     <dt style="width:40px;font-weight:bold;">พ.ศ.</dt>
     <dd style="width:130px;">&nbsp;</dd>
     <dt style="width:30px;font-weight:bold;">ชื่อ</dt>
-    <dd style="width:185px;"><?php echo $parent['title'] . '&nbsp;' . $parent['firstname'] ?></dd>
+    <dd style="width:160px;"><?php echo $parent['title'] . '&nbsp;' . $parent['firstname'] ?></dd>
     <dt style="width:60px;font-weight:bold;">นามสกุล</dt>
-    <dd style="width:185px;"><?php echo $parent['lastname'] ?></dd>
+    <dd style="width:160px;"><?php echo $parent['lastname'] ?></dd>
     <dt style="width:30px;font-weight:bold;">อายุ</dt>
     <dd style="width:40px;"><?php echo $parent['age'] ?></dd>
     <dt style="width:75px;font-weight:bold;">ปี&nbsp;&nbsp;กรุ๊ปเลือด</dt>
-    <dd style="width:34px;"><?php echo $parent['blood'] ?></dd>
+    <dd style="width:85px;"><?php echo $parent['blood'] ?></dd>
     <dt style="width:50px;font-weight:bold;">สัญชาติ</dt>
     <dd style="width:40px;"><?php echo $parent['nationality'] ?></dd>
     <dt style="width:50px;font-weight:bold;">เชื้อชาติ</dt>
